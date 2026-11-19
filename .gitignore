@@ -34,3 +34,8 @@ desktop.ini
 
 # bản clone tham khảo, không phải mã của repo này
 re/ref_*/
+
+# nhật ký dò ngược
+data/_*.js
+data/_ai_page.html
+data/spk_cap/
