@@ -1,0 +1,156 @@
+[
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-W6EYX8VWWZ&gtm=45je6bh1v883921298za20ozb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQ&cid=1831245749.1795102644&frm=0&ir=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=page_view&tfd=290",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-W6EYX8VWWZ&gtm=45je6bh1v883921298za20ozb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAACAGQ&cid=1831245749.1795102644&frm=0&ir=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&_s=2&tfd=310",
+  "method": "POST",
+  "body": "en=page_view\r\nen=page_view",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-D88L04PB43&gtm=45je6bh1v9266603305za20ozb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&cid=1831245749.1795102644&frm=0&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034~123785232&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=page_view&tfd=365",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://fcloud-api-gateway.ftech.ai/auth/sdk/init",
+  "method": "POST",
+  "body": "{\"app_id\":\"100034\",\"secret_key\":\"264a5ead3a63c4f33f5e337d192fb605\"}",
+  "status": 200,
+  "res": "{\"code\":0,\"msg\":null,\"data\":{\"token\":\"eyJ0eXAiOiJKV1QiLCJraWQiOiIyIiwiYWxnIjoiUlMyNTYifQ.eyJqdGkiOiIxM2RkYTdiMWRkNjY0ZTM5ODI3YWU2YTg3OTNhYjJjNCIsImlzcyI6ImZjbG91ZCIsImlhdCI6MTc5NTEwMzAyMSwibmJmIjoxNzk1MTAzMDIxLCJleHAiOjE3OTUxODk0MjEsInN1YiI6IjEwMDAzNCIsInNlcnZpY2VfcGFydG5lcl9pZCI6IiIsInNlcnZpY2UiOnsiaWQiOjIsImNvZGUiOiJJT0UiLCJuYW1lIjoixJDDoW5oIGdpw6EgcGjDoXQgw6JtIiwibGluayI6ImRmc2RycmUiLCJpbWFnZSI6Imh0dHBzOi8vbWluaW8uZGV2LmZ0ZWNoLmFpL3BsYXRmb3JtL2ZjbG91bmQtY21zLzIwMjMvMDgvMzAvXzEwODI0MzQyOF9nZXR"
+ },
+ {
+  "url": "/cdn-cgi/rum?",
+  "method": "POST",
+  "body": "{\"startTime\":1795103020412,\"pageloadId\":\"f5a6bc0c-0d78-40e0-8a50-96f29e1a07e9\",\"eventType\":1,\"nt\":\"navigate\",\"location\":\"https://ioe.vn/lam-bai/AI/ky-nang-noi/\",\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.10.1\",\"timings\":2},\"bi\":{\"be\":\"Blink\",\"bev\":\"157\",\"bv\":\"157\",\"ov\":\"11\"},\"memory\":{\"totalJSHeapSize\":50303335,\"usedJSHeapSize\":44703179,\"jsHeapSizeLimit\":2066743296},\"firstPaint\":0,\"firstContentfulPaint\":0,\"timingsV2\":{\"nextHopProtocol\":\"h3\",\"domainLookupStart\":2,\"domainLookupEnd\":2,\"connectStart\":2",
+  "status": 204,
+  "res": ""
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-DBWY5TGCT1&gtm=45je6bh1v879802484za20ozb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&cid=1831245749.1795102644&frm=0&ngs=1&pscdl=noapi&rcb=17&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102646&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=page_view&tfd=417",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://api-edu.go.vn/ioe-service/v2/game/getinfo",
+  "method": "POST",
+  "body": "{\"ipClient\":\"100.108.236.223\",\"deviceId\":\"6c7cce86ecaff7faf675864942d4b88d\",\"sign\":\"webclient\",\"deltatime\":0,\"token\":\"27E1B7E947A2C9447FC2D71839F5094A\",\"serviceCode\":\"IOE\"}",
+  "status": 200,
+  "res": "{\"code\":0,\"message\":\"Thực hiện thành công\",\"data\":{\"idExam\":0,\"subjectName\":null,\"excersiseName\":null,\"timeDoing\":0,\"startTime\":0,\"game\":{\"ExamType\":1,\"examCode\":\"\",\"gameId\":0,\"examKey\":\"2026100392A84F.00120\",\"Subject\":null,\"question\":[{\"id\":1504524,\"Point\":100,\"type\":12,\"Description\":{\"dataType\":2,\"content\":\"https://cdn-s3.vtconline.vn/ioe-resource-02/filePublish/ioe/EOlympic/ExamData/HocCungIOE/Speaking/Ex1/E12_U3_Ex1_Sp4_1-Jun.wav\",\"type\":2,\"contentId\":0,\"Id\":176565,\"subjectId\":0,\"orderTrue\":"
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-W6EYX8VWWZ&gtm=45je6bh1v883921298za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EEAAAGQ&ae=a&cid=1831245749.1795102644&frm=0&ir=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=scroll&epn.percent_scrolled=90&tfd=5862",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-D88L04PB43&gtm=45je6bh1v9266603305za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&cid=1831245749.1795102644&frm=0&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034~123785232&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=scroll&epn.percent_scrolled=90&tfd=5863",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-DBWY5TGCT1&gtm=45je6bh1v879802484za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&cid=1831245749.1795102644&frm=0&ngs=1&pscdl=noapi&rcb=17&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=2&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102646&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&dt=IOE%20Games&en=scroll&epn.percent_scrolled=90&tfd=5863",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://api-edu.go.vn/ioe-service/v2/game/startgame",
+  "method": "POST",
+  "body": "{\"ipClient\":\"100.108.236.223\",\"deviceId\":\"6c7cce86ecaff7faf675864942d4b88d\",\"sign\":\"webclient\",\"deltatime\":0,\"gameId\":0,\"examKey\":\"2026100392A84F.00120\",\"token\":\"ewogICJ0eXAiOiAiSldUIiwKICAiYWxnIjogIkhTMjU2Igp9.ewogICJleGFtQ29kZSI6ICIiLAogICJnYW1lSWQiOiAwLAogICJtYXRjaElkIjogMCwKICAiaWRMZWFybkZybSI6IDI3LAogICJzdGFydFRpbWUiOiAxNzk1MTAzMDE2LAogICJmZ1NlYyI6IDAsCiAgInVybGdhbWUiOiAiIiwKICAicmVkaXJlY3RVcmwiOiAiaHR0cHM6Ly9pb2Uudm4vaG9jLXNpbmgvdHUtbHV5ZW4iLAogICJ1c2VybmFtZSI6IG51bGwsCiAgImZ1bGxuYW1lIjogI",
+  "status": 200,
+  "res": "{\"code\":0,\"message\":\"Thực hiện thành công\",\"data\":\"2026-11-19 22:44:01\",\"IsSuccessed\":true,\"HaveError\":false,\"redirectUrl\":\"https://ioe.vn/hoc-sinh/tu-luyen\",\"token_expired\":false,\"nextStep\":0}"
+ },
+ {
+  "url": "https://api-edu.go.vn/ioe-service/v2/game/getinfo",
+  "method": "POST",
+  "body": "{\"ipClient\":\"100.108.236.223\",\"deviceId\":\"6c7cce86ecaff7faf675864942d4b88d\",\"sign\":\"webclient\",\"deltatime\":0,\"token\":\"ewogICJ0eXAiOiAiSldUIiwKICAiYWxnIjogIkhTMjU2Igp9.ewogICJleGFtQ29kZSI6ICIiLAogICJnYW1lSWQiOiAwLAogICJtYXRjaElkIjogMCwKICAiaWRMZWFybkZybSI6IDI3LAogICJzdGFydFRpbWUiOiAxNzk1MTAzMDE2LAogICJmZ1NlYyI6IDAsCiAgInVybGdhbWUiOiAiIiwKICAicmVkaXJlY3RVcmwiOiAiaHR0cHM6Ly9pb2Uudm4vaG9jLXNpbmgvdHUtbHV5ZW4iLAogICJ1c2VybmFtZSI6IG51bGwsCiAgImZ1bGxuYW1lIjogIlRo4butIE5naGnhu4dtIFRvb2wgRVpJT0UgIiwKICAiY",
+  "status": 200,
+  "res": "{\"code\":0,\"message\":\"Thực hiện thành công\",\"data\":{\"idExam\":0,\"subjectName\":null,\"excersiseName\":null,\"timeDoing\":0,\"startTime\":0,\"game\":{\"ExamType\":1,\"examCode\":\"\",\"gameId\":0,\"examKey\":\"2026100392A84F.00120\",\"Subject\":null,\"question\":[{\"id\":1504524,\"Point\":100,\"type\":12,\"Description\":{\"dataType\":2,\"content\":\"https://cdn-s3.vtconline.vn/ioe-resource-02/filePublish/ioe/EOlympic/ExamData/HocCungIOE/Speaking/Ex1/E12_U3_Ex1_Sp4_1-Jun.wav\",\"type\":2,\"contentId\":0,\"Id\":176565,\"subjectId\":0,\"orderTrue\":"
+ },
+ {
+  "url": "/cdn-cgi/rum?",
+  "method": "POST",
+  "body": "{\"startTime\":1795103041163,\"pageloadId\":\"ea16d350-5583-4f6f-95a6-115b0460ab1e\",\"n\":2,\"eventType\":1,\"nt\":\"soft-navigation\",\"location\":\"https://ioe.vn/lam-bai/AI/ky-nang-noi/start\",\"referrer\":\"https://ioe.vn/lam-bai/AI/ky-nang-noi/\",\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.10.1\",\"timings\":1},\"bi\":{\"be\":\"Blink\",\"bev\":\"157\",\"bv\":\"157\",\"ov\":\"11\"},\"siteToken\":\"c3f594a730bf410a8198735aecd91dbd\",\"st\":2}",
+  "status": 204,
+  "res": ""
+ },
+ {
+  "url": "https://fcloud-streaming-socket-api.ai.ftech.ai/ioe/phoneme",
+  "method": "POST",
+  "body": "{\"reference_text\":\"Absorb\",\"english_accent\":\"en-us\",\"extra_data\":\"\"}",
+  "status": 200,
+  "res": "{\"cleaned_reference_text\":\"absorb\",\"target_phoneme_word\":\"əbzɔːb\",\"target_phoneme_char\":\"['ə b z ɔː b']\",\"target_phoneme_list\":[[[\"ə\",\"b\",\"z\",\"ɔː\",\"b\"]]],\"syllable_info\":[2]}"
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-W6EYX8VWWZ&gtm=45je6bh1v883921298za20ozb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAACAGQ&cid=1831245749.1795102644&frm=0&ir=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=4&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795102644&sct=1&seg=1&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2Fstart%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253A%252F%252Fioe.vn%252Fhoc-sinh%252Ftu-luyen&dt=Speaking%20-%20Word%26Sentence&en=page_view&_et=3776&tfd=21806",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-W6EYX8VWWZ&gtm=45je6bh1v883921298za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EEAAAGQ&ae=a&cid=1831245749.1795102644&frm=0&ir=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=5&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2Fstart%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253A%252F%252Fioe.vn%252Fhoc-sinh%252Ftu-luyen&dr=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&sid=1795102644&sct=1&seg=1&dt=Speaking%20-%20Word%26Sentence&en=page_view&_et=1018&tfd=26814",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://analytics.google.com/g/collect?v=2&tid=G-D88L04PB43&gtm=45je6bh1v9266603305za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&cid=1831245749.1795102644&frm=0&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034~123785232&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2Fstart%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253A%252F%252Fioe.vn%252Fhoc-sinh%252Ftu-luyen&dr=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&sid=1795102644&sct=1&seg=1&dt=Speaking%20-%20Word%26Sentence&en=page_view&_et=4813&tfd=26831",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-DBWY5TGCT1&gtm=45je6bh1v879802484za20gzb812991505zd812991505xf1&_p=1795103020548&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&cid=1831245749.1795102644&frm=0&ngs=1&pscdl=noapi&rcb=17&sr=1280x720&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CMicrosoft%2520Edge%3B157.0.4341.60%7CChromium%3B157.0.8103.80&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=3&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2Fstart%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253A%252F%252Fioe.vn%252Fhoc-sinh%252Ftu-luyen&dr=https%3A%2F%2Fioe.vn%2Flam-bai%2FAI%2Fky-nang-noi%2F%3Ftoken%3D27E1B7E947A2C9447FC2D71839F5094A%26refreshtoken%3D%26exp%3D1795110216%26level%3D12%26round%3D9%26deviceid%3D6c7cce86ecaff7faf675864942d4b88d%26IPCLIENT%3D1.53.37.145%26DELTATIME%3D0%26key%3D2026100392A84F.00120%26redirectUrl%3Dhttps%253a%252f%252fioe.vn%252fhoc-sinh%252ftu-luyen&sid=1795102646&sct=1&seg=1&dt=Speaking%20-%20Word%26Sentence&en=page_view&_et=4829&tfd=26849",
+  "method": "POST",
+  "body": "",
+  "status": 0,
+  "res": ""
+ },
+ {
+  "url": "https://fcloud-streaming-socket-api.ai.ftech.ai/ioe/start_stream_v3",
+  "method": "POST",
+  "body": "{\"reference_text\":\"Absorb\",\"english_accent\":\"en-us\",\"extra_data\":\"ewogICJ0eXAiOiAiSldUIiwKICAiYWxnIjogIkhTMjU2Igp9.ewogICJleGFtQ29kZSI6ICIiLAogICJnYW1lSWQiOiAwLAogICJtYXRjaElkIjogMCwKICAiaWRMZWFybkZybSI6IDI3LAogICJzdGFydFRpbWUiOiAxNzk1MTAzMDE2LAogICJmZ1NlYyI6IDAsCiAgInVybGdhbWUiOiAiIiwKICAicmVkaXJlY3RVcmwiOiAiaHR0cHM6Ly9pb2Uudm4vaG9jLXNpbmgvdHUtbHV5ZW4iLAogICJ1c2VybmFtZSI6IG51bGwsCiAgImZ1bGxuYW1lI",
+  "status": 200,
+  "res": "{\"code\":0,\"data\":{\"request_id\":\"8b6fc98a-ab88-4e5b-a358-4d5dfa0aec9a\",\"minio_link\":\"https://minio-fcloud-api.prod.ftech.ai/fcloud/ioe/8b6fc98a-ab88-4e5b-a358-4d5dfa0aec9a.wav?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fcloud%2F20261119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261119T154413Z&X-Amz-Expires=180&X-Amz-SignedHeaders=host&X-Amz-Signature=fca1e8575c312f7c08a884b32b8e92ca90eaf5f502f2b4a763d1886041a4795f\"}}"
+ },
+ {
+  "url": "https://vad-api.ai.ftech.ai/vad-file",
+  "method": "POST",
+  "body": "[object FormData]",
+  "status": 200,
+  "res": "{\"is_silence\":false}"
+ },
+ {
+  "url": "https://fcloud-streaming-socket-api.ai.ftech.ai/ioe/stop_stream_v3",
+  "method": "POST",
+  "body": "[object FormData]",
+  "status": 200,
+  "res": "{\"code\":0,\"data\":{\"request_id\":\"8b6fc98a-ab88-4e5b-a358-4d5dfa0aec9a\",\"score_data\":{\"accuracy_score\":39,\"processing_time\":0.003,\"words_per_min\":0,\"fluency_score\":\"\",\"speaking_duration\":0,\"user_phoneme\":\"p r ə t e k t\",\"words_score_detail\":[{\"word\":\"absorb\",\"phoneme_word\":\"əbzɔːb\",\"accuracy_score\":40,\"phonemes_score_detail\":[{\"phoneme\":\"ə\",\"accuracy_score\":0,\"audio_link\":\"https://minio.ftech.ai/fcloud/phoneme_tips/7.wav\",\"video_link\":\"https://minio.dev.ftech.ai/platform/fcloud/phoneme_tips/1.mp4\""
+ },
+ {
+  "url": "https://api-edu.go.vn/event-service/v2/FTech/PredictFileRedis",
+  "method": "POST",
+  "body": "{\"ipClient\":\"100.108.236.223\",\"deviceId\":\"6c7cce86ecaff7faf675864942d4b88d\",\"sign\":\"webclient\",\"deltatime\":0,\"token\":\"ewogICJ0eXAiOiAiSldUIiwKICAiYWxnIjogIkhTMjU2Igp9.ewogICJleGFtQ29kZSI6ICIiLAogICJnYW1lSWQiOiAwLAogICJtYXRjaElkIjogMCwKICAiaWRMZWFybkZybSI6IDI3LAogICJzdGFydFRpbWUiOiAxNzk1MTAzMDE2LAogICJmZ1NlYyI6IDAsCiAgInVybGdhbWUiOiAiIiwKICAicmVkaXJlY3RVcmwiOiAiaHR0cHM6Ly9pb2Uudm4vaG9jLXNpbmgvdHUtbHV5ZW4iLAogICJ1c2VybmFtZSI6IG51bGwsCiAgImZ1bGxuYW1lIjogIlRo4butIE5naGnhu4dtIFRvb2wgRVpJT0UgIiwKICAiY",
+  "status": 200,
+  "res": "{\"code\":0,\"message\":\"Thực hiện thành công\",\"data\":{\"request_id\":\"8b6fc98a-ab88-4e5b-a358-4d5dfa0aec9a\",\"reference_text\":\"Absorb\",\"score_data\":{\"accuracy_score\":39,\"processing_time\":0.003,\"words_per_min\":0,\"speaking_duration\":0.0,\"user_phoneme\":\"p r ə t e k t\",\"words_score_detail\":[{\"word\":\"absorb\",\"phoneme_word\":\"əbzɔːb\",\"accuracy_score\":40,\"phonemes_score_detail\":[{\"phoneme\":\"ə\",\"accuracy_score\":0,\"audio_link\":\"https://minio.ftech.ai/fcloud/phoneme_tips/7.wav\",\"description\":\"<ul><li>đặt lưỡi ở "
+ }
+]

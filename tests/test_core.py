@@ -1273,3 +1273,43 @@ def _write(path):
     with open(path, "wb") as fh:
         fh.write(b"RIFF-sapi")
     return True
+
+
+# ------------------------------------------------- câu điền từ bị giấu cả từ
+def test_gap_sentence_reads_underscores_and_numTChar():
+    from ioeauto import games
+
+    question = q(type=games.T_SHAPE, content={"content": ""},
+                 Description={"content": "Some chemicals ___ the air quality."}, numTChar=6)
+    sentence, length = games.gap_sentence(question)
+    assert length == 6 and sentence.startswith("Some chemicals ******")
+
+
+def test_gap_sentence_keeps_a_given_token_mask():
+    from ioeauto import games
+
+    question = q(type=games.T_SHAPE, content={"content": "BIR*HDAY"}, numTChar=8)
+    sentence, length = games.gap_sentence(question)
+    assert sentence == "BIR*HDAY" and length == 8
+
+
+def test_shape_candidates_filters_by_length_and_fits_the_slot(monkeypatch):
+    from ioeauto import games, dicts
+
+    monkeypatch.setattr(dicts, "by_length", lambda size: ["listening", "affect", "arrive", "cat"])
+    question = q(type=games.T_SHAPE, content={"content": ""},
+                 Description={"content": "Some chemicals ___ the air quality."}, numTChar=6)
+    got = games.shape_candidates(question, [], 10)
+    assert "listening" not in got                      # sai độ dài
+    assert {"affect", "arrive"} <= set(got)
+
+
+def test_type_two_bank_key_uses_the_sentence():
+    from ioeauto import games
+
+    first = q(type=games.T_SHAPE, content={"content": "******"},
+              Description={"content": "Some chemicals ___ the air."}, numTChar=6)
+    second = q(type=games.T_SHAPE, content={"content": "******"},
+               Description={"content": "A good ___ can change you."}, numTChar=6)
+    assert games.qkey(first) != games.qkey(second)      # cùng "******" vẫn khác nhau
+    assert games.qkey(first) == games.qkey(first)

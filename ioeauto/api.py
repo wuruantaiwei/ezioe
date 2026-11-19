@@ -22,6 +22,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import uuid
 
 API_BASE = "https://api-edu.go.vn"
 IDENTITY_BASE = "https://identity.go.vn/api"
@@ -131,9 +132,38 @@ class Client:
         self.username = ""
 
     # ------------------------------------------------------------------ http
+    def _upload(self, url: str, fields: dict, filename: str, blob: bytes, *,
+                timeout: int = 90, bearer: str = "") -> dict:
+        """POST multipart (dịch vụ chấm phát âm chỉ nhận multipart)."""
+        boundary = "----ezioe" + uuid.uuid4().hex
+        body = b""
+        for key, value in fields.items():
+            head = f'--{boundary}\r\nContent-Disposition: form-data; name="{key}"\r\n\r\n'
+            body += head.encode() + str(value).encode() + b"\r\n"
+        body += (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; '
+                 f'filename="{filename}"\r\nContent-Type: audio/wav\r\n\r\n').encode()
+        body += blob + f"\r\n--{boundary}--\r\n".encode()
+        req = urllib.request.Request(url, data=body, headers={
+            "Content-Type": f"multipart/form-data; boundary={boundary}",
+            "Accept": "application/json", "Origin": IOE_BASE, "Referer": IOE_BASE + "/",
+            "User-Agent": UA, "x-device-id": self.device_id, "x-device-os": self.device_os,
+            **({"Authorization": "Bearer " + bearer} if bearer else {}),
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read().decode() or "{}")
+        except urllib.error.HTTPError as exc:
+            raw = exc.read().decode(errors="replace")
+            try:
+                return json.loads(raw)
+            except Exception:
+                return {"code": exc.code, "message": raw[:400]}
+        except urllib.error.URLError as exc:
+            raise ApiError(0, f"network error: {exc.reason}") from exc
+
     def _request(self, url: str, body: dict | None = None, *, origin: str = IOE_BASE,
                  referer: str = IOE_BASE + "/", timeout: int = 40,
-                 with_common: bool = True) -> dict:
+                 with_common: bool = True, bearer: str = "") -> dict:
         payload = dict(body or {})
         if with_common:
             payload.setdefault("ipClient", self.ip_client)
@@ -153,6 +183,7 @@ class Client:
                 "User-Agent": UA,
                 "x-device-id": self.device_id,
                 "x-device-os": self.device_os,
+                **({"Authorization": "Bearer " + bearer} if bearer else {}),
             },
         )
         try:

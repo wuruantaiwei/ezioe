@@ -418,7 +418,8 @@ def cmd_run(args) -> int:
 
 
 def _run_api(args, config: dict) -> int:
-    if not _within_hours(config.get("active_hours") or [0, 24]):
+    manual = getattr(args, "only", None) is not None      # --only: chạy tay, bỏ qua khung giờ
+    if not manual and not _within_hours(config.get("active_hours") or [0, 24]):
         print("Ngoài khung giờ cho phép, bỏ qua lượt này")
         return 0
     only = args.only if args.only is not None else config.get("only")

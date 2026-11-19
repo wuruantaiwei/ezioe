@@ -120,7 +120,8 @@ vòng mở và ngủ. Hợp với máy bật 24/7; `--once` để kiểm tra m�
   "dính" trạng thái vòng của tài khoản trước**.
 * `python run.py run` đọc file này: nhiều tài khoản chạy lần lượt, mỗi bài một
   khoảng thời gian ngẫu nhiên (`pace`), nghỉ giữa vòng (`between`), chỉ chạy
-  trong `active_hours`, tối đa `max_rounds_per_day` vòng/ngày.
+  trong `active_hours`, tối đa `max_rounds_per_day` vòng/ngày. Chạy tay bằng
+  `--only <id>` thì bỏ qua khung giờ (để sửa một bài lúc nào cũng được).
 * Vòng được đọc từ chính tài khoản đang chạy (`roundInfoRes.bilInfo`:
   `current_round` / `sysRound`). Khi tài khoản còn vòng chưa làm, tool làm tiếp
   vòng kế **ngay**, không báo "hết vòng"; chỉ khi tài khoản đã làm tới
@@ -374,6 +375,11 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
   `data/tts/`). Giọng neural hơn giọng SAPI cũ 2-3% điểm chấm từng câu
   (98 so với 96) nhờ ngữ điệu; đặt `""` để quay lại giọng SAPI offline.
   Trần thực tế của bài nói hiện ~600/1000 vì một nửa số câu có `Point: 0`.
+* Bài **điền từ giấu cả từ** (type 2, nội dung chỉ là `******` hoặc `___` + `numTChar`)
+  không có đáp án trong payload: tool đoán theo độ dài + ngữ pháp rồi **dò
+  `answercheck` song song** (tới 12.000 ứng viên, ngưỡng 400 giây/câu). Đáp án
+  đúng được lưu vào bank **theo câu** nên các vòng sau gần như tức thì.
+  Một lượt đầu có thể chỉ 60–80/100, chạy lại 2–3 lượt là 100.
 * Bài **nghe - chép** (type 1) được chấm theo tỉ lệ từ khớp nên thường 40–70%;
   ngưỡng pass là ~70% nên có bài phải chạy lại vài lần mới qua.
 * Các dạng còn lại (điền từ, sắp xếp, nối cặp, trắc nghiệm, điền ký tự) đạt 90–100

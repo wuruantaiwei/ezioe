@@ -240,6 +240,10 @@ class Browser:
         raise CdpError(f"{method}: quá thời gian chờ")
 
     # ----------------------------------------------------------------- actions
+    def grant(self, origin: str, permissions: list[str]) -> None:
+        """Cấp quyền (vd. audioCapture) để getUserMedia chạy không cần bấm."""
+        self.send("Browser.grantPermissions", {"origin": origin, "permissions": permissions})
+
     def inject(self, script: str) -> None:
         """Chèn JS chạy trước mọi script của trang (dùng để giả micro, chặn API...)."""
         self.send("Page.addScriptToEvaluateOnNewDocument", {"source": script})

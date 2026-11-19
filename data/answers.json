@@ -237,6 +237,13 @@
   "seen": "2026-11-19 01:30:11",
   "type": 1
  },
+ "09c88011b0f4323a": {
+  "answer": "role _|model",
+  "content": "role _",
+  "point": 10,
+  "seen": "2026-11-20 06:26:51",
+  "type": 7
+ },
  "09d247939973698f": {
   "answer": "computers",
   "content": "What is he talking about?",
@@ -370,6 +377,13 @@
   "seen": "2026-11-19 06:38:58",
   "type": 10
  },
+ "0f7a2e602957cf9a": {
+  "answer": "asthma",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:40:26",
+  "type": 2
+ },
  "1018008509f2ae13": {
   "answer": "False",
   "content": "Edison spent many years at school.",
@@ -483,10 +497,10 @@
   "type": 2
  },
  "15cbf04d6bef3eb5": {
-  "answer": "b1c6a7b2-bb5f-4799-9013-ab6cc0656f3f",
+  "answer": "dbf13613-268c-4ae9-80ed-702a7e957a14",
   "content": "Her diary contains detailed accounts of her travels around Europe.",
   "point": 98,
-  "seen": "2026-11-19 22:06:34",
+  "seen": "2026-11-19 22:49:23",
   "type": 13
  },
  "17932fbfe1d83f8e": {
@@ -622,6 +636,13 @@
   "seen": "2026-11-19 00:10:24",
   "type": 2
  },
+ "1c77840b65d640cf": {
+  "answer": "brain _|drain",
+  "content": "brain _",
+  "point": 10,
+  "seen": "2026-11-20 06:27:10",
+  "type": 7
+ },
  "1c97f7ee95f3d0ca": {
   "answer": "collecting",
   "content": "_____ stamps",
@@ -734,6 +755,13 @@
   "seen": "2026-11-19 07:05:03",
   "type": 10
  },
+ "23e87c3526589a7a": {
+  "answer": "consumption",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:38:50",
+  "type": 2
+ },
  "24347031192b55cc": {
   "answer": "farmer|https://cdn-s3.vtconline.vn/ioe-resource-02/filePublish/ioe/EOlympic/ImageGame/_20110908_105912.jpg",
   "content": "farmer",
@@ -832,6 +860,13 @@
   "seen": "2026-11-19 12:05:45",
   "type": 2
  },
+ "29609b0730bc5383": {
+  "answer": "mentor",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:47:51",
+  "type": 2
+ },
  "296861eb8cc778d5": {
   "answer": "says",
   "content": "Jessica's mom **** \"I love you\".",
@@ -867,6 +902,13 @@
   "seen": "2026-11-19 07:25:21",
   "type": 2
  },
+ "2b5f54601f618bbd": {
+  "answer": "concern|/kənˈsɜːn/",
+  "content": "concern",
+  "point": 10,
+  "seen": "2026-11-19 22:47:19",
+  "type": 7
+ },
  "2bb85fffa26bddad": {
   "answer": "Cottage|https://cdn-s3.vtconline.vn/ioe-resource-02/filePublish/ioe/EOlympic/Tuluyen/Vong4/36.jpg",
   "content": "Cottage",
@@ -879,6 +921,13 @@
   "content": "They didn’t go to the beach be***** it rained all day and night.",
   "point": 10,
   "seen": "2026-11-19 06:45:30",
+  "type": 2
+ },
+ "2bdabd201434a62b": {
+  "answer": "change",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:41:21",
   "type": 2
  },
  "2c38f236d42a15a8": {
@@ -1028,12 +1077,26 @@
   "seen": "2026-11-19 10:14:22",
   "type": 2
  },
+ "33d5258e28db7184": {
+  "answer": "zero _|emissions",
+  "content": "zero _",
+  "point": 10,
+  "seen": "2026-11-20 06:26:53",
+  "type": 7
+ },
  "33fe6f88aee4245e": {
   "answer": "Peter likes football the best.",
   "content": "Peter likes football the best.",
   "point": 25,
   "seen": "2026-11-19 01:23:55",
   "type": 1
+ },
+ "3429e9943393c654": {
+  "answer": "renewable",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:41:18",
+  "type": 2
  },
  "35d8556a41025667": {
   "answer": "dress",
@@ -1161,6 +1224,13 @@
   "seen": "2026-11-19 12:30:15",
   "type": 3
  },
+ "3a7254a59feabd77": {
+  "answer": "True",
+  "content": "Students who continue studying at university after having graduated are called post-graduates.",
+  "point": 25,
+  "seen": "2026-11-19 22:45:34",
+  "type": 1
+ },
  "3a7315431a266166": {
   "answer": "looser",
   "content": "He needs to find a _____ pair.",
@@ -1176,10 +1246,10 @@
   "type": 7
  },
  "3abb80dafd9224e0": {
-  "answer": "8fb84215-ddde-4e75-a2e0-fbeb71ea34be",
+  "answer": "cbf94e57-994f-431b-ac29-bfc8769d306e",
   "content": "Absorb",
   "point": 99,
-  "seen": "2026-11-19 22:08:46",
+  "seen": "2026-11-19 22:49:19",
   "type": 12
  },
  "3aefdd2bcb104ddc": {
@@ -1273,12 +1343,26 @@
   "seen": "2026-11-19 00:19:34",
   "type": 1
  },
+ "3f32c1bf2e119e17": {
+  "answer": "life _|expectancy",
+  "content": "life _",
+  "point": 10,
+  "seen": "2026-11-20 06:26:57",
+  "type": 7
+ },
  "3f34cec77da53d17": {
   "answer": "False",
   "content": "Thanksgiving is celebrated only by government officials.",
   "point": 10,
   "seen": "2026-11-19 12:41:14",
   "type": 1
+ },
+ "3f9672111c21f08a": {
+  "answer": "ritual",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:47:54",
+  "type": 2
  },
  "3fbe236b9097232e": {
   "answer": "a",
@@ -1288,10 +1372,10 @@
   "type": 2
  },
  "3fe38905a1251c0b": {
-  "answer": "3910737e-1167-4f04-90b7-3d362e2cea39",
+  "answer": "b2749af4-a349-41b3-821b-a478ea21c26d",
   "content": "Protect",
   "point": 98,
-  "seen": "2026-11-19 22:08:52",
+  "seen": "2026-11-19 22:49:16",
   "type": 12
  },
  "4030288f3aadb01b": {
@@ -1435,10 +1519,10 @@
   "type": 7
  },
  "46ff6f53a2b4ea3b": {
-  "answer": "proportion|quota",
+  "answer": "proportion|/prəˈpɔː.ʃən/",
   "content": "proportion",
   "point": 10,
-  "seen": "2026-11-19 18:10:24",
+  "seen": "2026-11-19 22:47:16",
   "type": 7
  },
  "4719cef234e7c8b4": {
@@ -1456,10 +1540,10 @@
   "type": 1
  },
  "47369eb1788164fe": {
-  "answer": "88534934-9cbf-424c-b9a4-6c57ab11a9e5",
+  "answer": "c4556f09-6b50-4c0a-919b-b99411918665",
   "content": "Peace",
   "point": 99,
-  "seen": "2026-11-19 22:07:10",
+  "seen": "2026-11-19 22:49:21",
   "type": 12
  },
  "47c56fee6778c6b0": {
@@ -1687,10 +1771,10 @@
   "type": 10
  },
  "4fecc1954ae138e7": {
-  "answer": "691b8d56-243c-42cd-adb2-0697addbeb5f",
+  "answer": "aa971c93-ee76-4f30-9925-1f975fab198b",
   "content": "Carbon dioxide and soot are two of the most dangerous air pollutants.",
   "point": 90,
-  "seen": "2026-11-19 22:09:13",
+  "seen": "2026-11-19 22:49:34",
   "type": 13
  },
  "50143e737047b408": {
@@ -1819,6 +1903,13 @@
   "seen": "2026-11-19 06:48:54",
   "type": 7
  },
+ "55582785667a7b61": {
+  "answer": "lifestyle",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:48:47",
+  "type": 2
+ },
  "55621f13977fb3db": {
   "answer": "ME*TING",
   "content": "ME*TING",
@@ -1924,6 +2015,13 @@
   "seen": "2026-11-19 07:09:53",
   "type": 10
  },
+ "594d16ebb0c20770": {
+  "answer": "courage",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:38:42",
+  "type": 2
+ },
  "59fd0538a7214ef6": {
   "answer": "you’ll visit",
   "content": "I hope that ... us when you come to Ha Noi.",
@@ -1945,12 +2043,26 @@
   "seen": "2026-11-19 09:46:01",
   "type": 7
  },
+ "5aad815012f05965": {
+  "answer": "preserve",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:41:23",
+  "type": 2
+ },
  "5ac0eb90464a327d": {
   "answer": "A lightning-fast 30-degree bow is used for friends.",
   "content": "A lightning-fast 30-degree bow is used for friends.",
   "point": 0,
   "seen": "2026-11-19 01:24:16",
   "type": 1
+ },
+ "5af724b3ea795b04": {
+  "answer": "Underdeveloped female social bees",
+  "content": "What kinds of bees are the workers?",
+  "point": 25,
+  "seen": "2026-11-19 22:45:34",
+  "type": 10
  },
  "5b00e9cb86dc7cce": {
   "answer": "along|with",
@@ -2015,6 +2127,13 @@
   "seen": "2026-11-19 00:10:16",
   "type": 2
  },
+ "5d8cecd8422c5895": {
+  "answer": "Living style",
+  "content": "By what standard are solitary bees and social bees divided?",
+  "point": 25,
+  "seen": "2026-11-19 22:45:30",
+  "type": 10
+ },
  "5dbd7ba42db19e1e": {
   "answer": "G*RL",
   "content": "G*RL",
@@ -2077,6 +2196,13 @@
   "point": 10,
   "seen": "2026-11-19 10:18:07",
   "type": 10
+ },
+ "6108b2552a5d3ee3": {
+  "answer": "generation _|gap",
+  "content": "generation _",
+  "point": 10,
+  "seen": "2026-11-20 06:27:04",
+  "type": 7
  },
  "6157aeef2609e21b": {
   "answer": "mer",
@@ -2184,10 +2310,10 @@
   "type": 1
  },
  "652cfe97448129b3": {
-  "answer": "cd31c8a8-831f-4b79-b8e8-456ae18b97b0",
+  "answer": "52156894-8891-4ab2-9584-f99e93e5746a",
   "content": "Soot like all black things absorbs sunlight and heats up the atmosphere.",
   "point": 94,
-  "seen": "2026-11-19 22:09:12",
+  "seen": "2026-11-19 22:49:30",
   "type": 13
  },
  "6565dab76d88e75b": {
@@ -2281,6 +2407,20 @@
   "seen": "2026-11-19 06:53:31",
   "type": 2
  },
+ "6a281e3d3bd27bf4": {
+  "answer": "False",
+  "content": "The full-time university has two terms of about 10 weeks in each year.",
+  "point": 25,
+  "seen": "2026-11-19 22:45:40",
+  "type": 1
+ },
+ "6a4875141b4212c1": {
+  "answer": "2,000",
+  "content": "How many species of bees are there in North America?",
+  "point": 25,
+  "seen": "2026-11-19 22:45:18",
+  "type": 10
+ },
  "6a708a93e216a946": {
   "answer": "crosswalks",
   "content": "Some places are ___ . Those are places where people cross the street.",
@@ -2330,6 +2470,13 @@
   "seen": "2026-11-19 00:09:06",
   "type": 7
  },
+ "6de7b27563dc00e2": {
+  "answer": "affect",
+  "content": "******",
+  "point": 10,
+  "seen": "2026-11-20 06:48:02",
+  "type": 2
+ },
  "6e44e484d79afa85": {
   "answer": "True",
   "content": "Twitter limits posts of the users to 140 characters.",
@@ -2349,6 +2496,13 @@
   "content": "Look at the two dictionaries and you will see they are the **** in some ways.",
   "point": 0,
   "seen": "2026-11-19 06:55:35",
+  "type": 2
+ },
+ "6f2bc38ea5851c72": {
+  "answer": "legacy",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:40:07",
   "type": 2
  },
  "6f33d961fc5dca04": {
@@ -2513,10 +2667,10 @@
   "type": 1
  },
  "768ed720cfa8e0b4": {
-  "answer": "1e7a694a-e5d4-4920-9674-ce75e9b4b9d2",
+  "answer": "fe714de4-2f2d-4ae0-928d-f468e53b6485",
   "content": "Capture",
   "point": 99,
-  "seen": "2026-11-19 22:07:12",
+  "seen": "2026-11-19 22:49:10",
   "type": 12
  },
  "76c6d7e5a1cdd947": {
@@ -2681,10 +2835,10 @@
   "type": 10
  },
  "7eb94b2e21ca601c": {
-  "answer": "f4f44887-514c-43a6-9904-6ce0f9165934",
+  "answer": "c858bf5e-830b-4ecd-afae-b37f368ef67f",
   "content": "Decade",
   "point": 99,
-  "seen": "2026-11-19 22:08:55",
+  "seen": "2026-11-19 22:47:41",
   "type": 12
  },
  "7eb9ceacb78b0c8d": {
@@ -2757,6 +2911,13 @@
   "seen": "2026-11-19 01:29:51",
   "type": 1
  },
+ "82a08680d1397466": {
+  "answer": "custom|/ˈkʌs.təm/",
+  "content": "custom",
+  "point": 10,
+  "seen": "2026-11-19 22:47:10",
+  "type": 7
+ },
  "833863cd3d1d42c9": {
   "answer": "C*NTER",
   "content": "C*NTER",
@@ -2793,10 +2954,10 @@
   "type": 3
  },
  "84576cd16953d414": {
-  "answer": "e5548226-e9f0-4f11-b51e-7fc22ce47d32",
+  "answer": "5e58c023-04e6-4e4b-9e21-29bcf77b552f",
   "content": "Against",
   "point": 99,
-  "seen": "2026-11-19 22:08:58",
+  "seen": "2026-11-19 22:47:43",
   "type": 12
  },
  "845d643ace4351cf": {
@@ -2807,10 +2968,10 @@
   "type": 1
  },
  "84cfb6c698a7bd26": {
-  "answer": "f8ab0cda-f7aa-4c59-9388-e3ce9d8db457",
+  "answer": "47d008c1-ddfa-4132-b360-b65bf5a78989",
   "content": "Do you discuss any environmental issues with your pen pal?",
   "point": 95,
-  "seen": "2026-11-19 22:09:01",
+  "seen": "2026-11-19 22:47:46",
   "type": 13
  },
  "84e39f5b58c22054": {
@@ -2947,10 +3108,10 @@
   "type": 2
  },
  "8d73b1a37c36fc0f": {
-  "answer": "74a2d7ec-ea0e-478e-9bc8-4deb8f4c319c",
+  "answer": "facfd83b-9285-4501-98f6-7449a530dc3f",
   "content": "Solution",
   "point": 98,
-  "seen": "2026-11-19 22:06:19",
+  "seen": "2026-11-19 22:49:13",
   "type": 12
  },
  "8da876e7e43aed5d": {
@@ -2966,6 +3127,13 @@
   "point": 10,
   "seen": "2026-11-19 12:47:59",
   "type": 7
+ },
+ "8e272b7f4bb5a990": {
+  "answer": "The two kinds of bees",
+  "content": "What is the main idea of the talk?",
+  "point": 25,
+  "seen": "2026-11-19 22:45:13",
+  "type": 10
  },
  "8e400ca9c19fa948": {
   "answer": "nge",
@@ -3084,6 +3252,13 @@
   "content": "renewable",
   "point": 10,
   "seen": "2026-11-19 18:04:06",
+  "type": 7
+ },
+ "93d2085b20a3f938": {
+  "answer": "resistance|/rɪˈzɪs.təns/",
+  "content": "resistance",
+  "point": 10,
+  "seen": "2026-11-19 22:47:33",
   "type": 7
  },
  "94135c65ada21f8e": {
@@ -3276,10 +3451,10 @@
   "type": 1
  },
  "9fa2d4e1677092e8": {
-  "answer": "e3d4d020-fbb7-4a58-8499-d343a6ed0525",
+  "answer": "3bf3cce0-8e00-4a35-a762-dd2d80790c4d",
   "content": "Can you lend me the book when you finish reading it?",
   "point": 98,
-  "seen": "2026-11-19 22:09:05",
+  "seen": "2026-11-19 22:49:27",
   "type": 13
  },
  "9fbaf70d05105482": {
@@ -3443,6 +3618,13 @@
   "seen": "2026-11-19 00:05:00",
   "type": 10
  },
+ "a63deb34997a63a7": {
+  "answer": "resident|/ˈrez.ɪ.dənt/",
+  "content": "resident",
+  "point": 10,
+  "seen": "2026-11-19 22:47:29",
+  "type": 7
+ },
  "a6cd7233dd8adf18": {
   "answer": "go",
   "content": "Tuan ** tall and handsome with a smiling face.",
@@ -3598,10 +3780,10 @@
   "type": 2
  },
  "adda0f35a5a81b0b": {
-  "answer": "9a2c0315-7459-4645-8b13-832f134781f5",
+  "answer": "ab5c2448-2cb3-4e64-832a-5cc670eee8b7",
   "content": "Volunteer",
   "point": 99,
-  "seen": "2026-11-19 22:08:49",
+  "seen": "2026-11-19 22:47:35",
   "type": 12
  },
  "adfb621215fa1d2e": {
@@ -3639,6 +3821,13 @@
   "seen": "2026-11-19 12:44:54",
   "type": 2
  },
+ "af6c6dd93526a045": {
+  "answer": "popular|/ˈpɒp.jə.lər/",
+  "content": "popular",
+  "point": 10,
+  "seen": "2026-11-19 22:47:24",
+  "type": 7
+ },
  "afcfdaf45987624f": {
   "answer": "on",
   "content": "My mother goes to work ** foot everyday.",
@@ -3654,10 +3843,10 @@
   "type": 2
  },
  "b0cabad1dc0579bb": {
-  "answer": "3fb7f776-8e98-4560-892f-02a7ff5b428a",
+  "answer": "6105dbee-278a-41e3-8391-e8eb47647b34",
   "content": "The more organic food we consume, the more health benefits we gain.",
   "point": 97,
-  "seen": "2026-11-19 22:09:08",
+  "seen": "2026-11-19 22:47:53",
   "type": 13
  },
  "b0dde0c10c53ee87": {
@@ -3819,6 +4008,13 @@
   "content": "A*RAID",
   "point": 0,
   "seen": "2026-11-19 00:10:02",
+  "type": 2
+ },
+ "b79d16f789c2176e": {
+  "answer": "vinegar",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:48:08",
   "type": 2
  },
  "b86f06e6eeee875a": {
@@ -4304,6 +4500,13 @@
   "seen": "2026-11-19 09:38:39",
   "type": 10
  },
+ "cfe2c9d126550dde": {
+  "answer": "chemicals",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:47:59",
+  "type": 2
+ },
  "cfe39c79d085668b": {
   "answer": "important",
   "content": "The communal house is one of the most ********* places in the village.",
@@ -4556,6 +4759,13 @@
   "seen": "2026-11-19 00:10:04",
   "type": 2
  },
+ "db1ecd0ff2fbd7d0": {
+  "answer": "perseverance",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:48:47",
+  "type": 2
+ },
  "dbff6c0e34d91efd": {
   "answer": "P*ESENT",
   "content": "P*ESENT",
@@ -4620,10 +4830,10 @@
   "type": 7
  },
  "de64a4cae7419e87": {
-  "answer": "4e60b1c2-839f-4ae9-8148-a1dba088b45b",
+  "answer": "8935d08a-8d08-4e18-9ec6-88ab63c38939",
   "content": "An American soldier found it and saved it from being burnt.",
   "point": 98,
-  "seen": "2026-11-19 22:07:31",
+  "seen": "2026-11-19 22:49:32",
   "type": 13
  },
  "de69f091839022df": {
@@ -4661,6 +4871,13 @@
   "seen": "2026-11-19 10:19:50",
   "type": 10
  },
+ "df5c95d0beba0ae3": {
+  "answer": "False",
+  "content": "Medical students have to follow a course lasting for four or five years.",
+  "point": 25,
+  "seen": "2026-11-19 22:45:45",
+  "type": 1
+ },
  "e008aa895e7a250f": {
   "answer": "obedient",
   "content": "Your child is so well-behaved! I wish my children would be as ... as yours.",
@@ -4673,6 +4890,13 @@
   "content": "Traditional clothing is an important part of our national iden****.",
   "point": 10,
   "seen": "2026-11-19 17:31:58",
+  "type": 2
+ },
+ "e03c8c1ad6636b20": {
+  "answer": "ancestry",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:48:04",
   "type": 2
  },
  "e0595cfaa3968b35": {
@@ -4766,6 +4990,13 @@
   "seen": "2026-11-19 12:11:42",
   "type": 7
  },
+ "e3eb740a406ee988": {
+  "answer": "drought",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:41:20",
+  "type": 2
+ },
  "e4a75f3fe2450ea5": {
   "answer": "trousers",
   "content": "The Black Dao often wear black _____ and jackets.",
@@ -4835,6 +5066,13 @@
   "point": 10,
   "seen": "2026-11-19 12:30:13",
   "type": 3
+ },
+ "e8f56c08753d5b07": {
+  "answer": "ecosystem",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:48:46",
+  "type": 2
  },
  "e8fc69de38d9c4cf": {
   "answer": "referred",
@@ -4920,6 +5158,13 @@
   "seen": "2026-11-19 06:47:16",
   "type": 2
  },
+ "ee9eb4c8896f01b9": {
+  "answer": "True",
+  "content": "Students working for their first degree at a university are called undergraduates.",
+  "point": 25,
+  "seen": "2026-11-19 22:45:53",
+  "type": 1
+ },
  "eed8b34eeb06fea2": {
   "answer": "o",
   "content": "FL*OD",
@@ -4947,6 +5192,13 @@
   "point": 0,
   "seen": "2026-11-19 06:52:53",
   "type": 2
+ },
+ "f01ddbaf8a87b51f": {
+  "answer": "mother _|tongue",
+  "content": "mother _",
+  "point": 10,
+  "seen": "2026-11-20 06:27:02",
+  "type": 7
  },
  "f0ada93ae13e44ce": {
   "answer": "go",
@@ -5102,6 +5354,13 @@
   "seen": "2026-11-19 17:30:49",
   "type": 3
  },
+ "f8fda18e1ea0cf45": {
+  "answer": "products",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:41:20",
+  "type": 2
+ },
  "f98969a18c7ef185": {
   "answer": "Hoi An",
   "content": "1.",
@@ -5213,5 +5472,12 @@
   "point": 10,
   "seen": "2026-11-18 23:50:47",
   "type": 7
+ },
+ "ffc564ce5588847f": {
+  "answer": "campaign",
+  "content": "",
+  "point": 10,
+  "seen": "2026-11-20 06:47:47",
+  "type": 2
  }
 }

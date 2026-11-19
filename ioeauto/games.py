@@ -65,7 +65,11 @@ STATUS_LOCKED = 3
 
 
 def qkey(question: dict) -> str:
-    raw = f"{question['type']}|{question['content']['content']}".encode()
+    text = question["content"]["content"]
+    if question["type"] == T_SHAPE:
+        # nội dung chỉ là "******": lấy cả câu để không lẫn giữa các câu
+        text = gap_sentence(question)[0] or text
+    raw = f"{question['type']}|{text}".encode()
     return hashlib.sha1(raw).hexdigest()[:16]
 
 
@@ -188,17 +192,41 @@ def heard_candidates(question: dict) -> list[str]:
     return out
 
 
+GAP = re.compile(r"\*+|_{2,}")
+
+
+def gap_sentence(question: dict) -> tuple[str, int]:
+    """Câu có chỗ trống, chỗ trống đưa về đúng số dấu `*` cần điền.
+
+    Game điền từ giấu cả từ bằng dấu `*`, nhưng nhiều đề chỉ để `___` trong
+    `Description` rồi trả `content` rỗng: độ dài lấy từ `numTChar`.
+    """
+    desc = str((question.get("Description") or {}).get("content") or "")
+    own = str(question["content"]["content"] or "")
+    text = desc or own
+    hit = GAP.search(text) or GAP.search(own)
+    length = int(question.get("numTChar") or 0)
+    if not hit:
+        return text, length
+    if " " not in text.strip():                 # cả nội dung chỉ là một từ bị giấu
+        return text, len(text.strip())
+    if not length:
+        length = hit.end() - hit.start()
+    return text[:hit.start()] + "*" * length + text[hit.end():], length
+
+
 def _context(question: dict) -> tuple[str, str]:
-    text = question["content"]["content"]
-    parts = MASK.split(text, maxsplit=1)
-    before = parts[0].rstrip().split()[-1].lower().strip(".,!?;:()\"'") if parts and parts[0].strip() else ""
-    tail = parts[1].strip().split()[:2] if len(parts) > 1 else []
-    after = " ".join(t.lower().strip(".,!?;:()\"'") for t in tail)
+    text, _length = gap_sentence(question)
+    if "*" not in text:
+        return "", ""
+    parts = text.split("*", 1)
+    before = parts[0].rstrip().split()[-1].lower().strip(".,!?;:()\"'") if parts[0].strip() else ""
+    tail = [w.strip("*") for w in parts[1].strip().split()[:2]] if len(parts) > 1 else []
+    after = " ".join(w for w in (t.lower().strip(".,!?;:()\"'") for t in tail) if w)
     return before, after
 
 
 DETERMINERS = {"a", "an", "the", "this", "that", "my", "his", "her", "their", "our", "its"}
-
 
 def _hinted(words: list[str], context: tuple[str, str]) -> list[str]:
     """Words that fit the grammatical slot, by plain suffix heuristics."""
@@ -280,7 +308,7 @@ def _slot_scorer(size: int, text: str, context: tuple[str, str]):
     "noted" beats the machine-made inflection "noter".
     """
     before, after = context
-    next_word = after.split()[0] if after else ""
+    next_word = (after.split() or [""])[0]
     verbs = set(dicts.verb_forms(size))
     adverbs = dicts.adverbs(size)
     adjectives = set(dicts.adjective_forms(size))
@@ -289,6 +317,15 @@ def _slot_scorer(size: int, text: str, context: tuple[str, str]):
     in_text = set(re.findall(r"[a-z]+", text.lower()))   # IOE reuses the exercise words
     after_nounish = bool(next_word) and bool(dicts.noun_ish([next_word]))
     determiner = before in DETERMINERS
+    verbs_all = dicts.verb_set()
+    # chỗ trống là động từ: "surfaces ___ the air quality", "They ___ football"
+    verb_slot = (before in SUBJECTS or bool(next_word) and next_word in DETERMINERS | PRE_NOMINAL
+                 and bool(before) and bool(dicts.noun_ish([before])))
+    # chỗ trống là tính từ: "use ___ resources", "a ___ story"
+    adj_slot = bool(before) and before in verbs_all and after_nounish and not determiner
+    noun_slot_2 = next_word in AUX_BEFORE or next_word in verbs_all    # "good ___ can"
+    is_adj = lambda w: bool(w) and w in dicts.adjective_forms(len(w))   # noqa: E731
+    noun_after_adj = is_adj(before) or before in PREPOSITIONS          # "great ___ for"
 
     def score(word: str) -> int:
         low = word.lower()
@@ -333,6 +370,23 @@ def _slot_scorer(size: int, text: str, context: tuple[str, str]):
             points -= 6
         if determiner:
             points += 2 if low not in verbs and not low.endswith(("ed", "ing", "ly")) else 0
+        if verb_slot:
+            if low in verbs and not low.endswith(("ed", "ing")):
+                points += 10
+            elif low in verbs or low.endswith(("ed", "ing")):
+                points += 4
+            points -= 8 if low in PREPOSITIONS or low in adverbs or low.endswith("ly") else 0
+        if adj_slot:
+            points += 8 if low in adjectives or low.endswith(("ed", "ing")) else 0
+            points -= 5 if low in adverbs or low in PREPOSITIONS else 0
+        if noun_after_adj:
+            points += 8 if low in dicts.noun_ish([low]) else 0
+            points -= 4 if low in adverbs or low.endswith("ly") else 0
+        if noun_slot_2:
+            points += 8 if low in dicts.noun_ish([low]) else 0
+            points -= 5 if low in adverbs else 0
+        if low == next_word:
+            points -= 4
         if low in in_text:
             points += 3
         if size <= 6:
@@ -371,41 +425,41 @@ def _masked_token(text: str) -> str:
 
 
 def shape_candidates(question: dict, pool: list[str], limit: int = 60) -> list[str]:
-    """Missing letters of a masked word ("BIR*HDAY" -> "t")."""
-    template = _masked_token(
-        question["content"]["content"] if MASK.search(question["content"]["content"])
-        else str((question.get("Description") or {}).get("content") or "")
-    ).lower().replace("_", "*")
-    holes = [i for i, ch in enumerate(template) if ch == "*"]
-    if not holes or len(holes) > 6:
+    """Từ còn thiếu của một chỗ trống bị giấu ("BIR*HDAY" -> "t").
+
+    Đề có thể giấu cả từ (`content` toàn dấu `*`) hoặc chỉ để `___` trong câu
+    và cho `numTChar`: khi đó phải đoán đúng độ dài, xếp theo ngữ pháp rồi để
+    oracle quyết.
+    """
+    sentence, length = gap_sentence(question)
+    own = str(question["content"]["content"] or "").strip()
+    one_word = bool(own) and bool(GAP.search(own)) and " " not in own
+    token = own if one_word else "*" * length           # "BIR*HDAY" giữ chữ đã cho
+    length = len(token) if token else length
+    holes = [i for i, ch in enumerate(token) if ch == "*"]
+    if not holes or len(holes) > 12 or len(token) != length:
         return []
-    pattern = "".join("[a-z]" if ch == "*" else re.escape(ch) for ch in template)
+    pattern = "".join("[a-z]" if ch == "*" else re.escape(ch) for ch in token.lower())
     out: list[str] = []
     seen: set[str] = set()
-    here = _context(question)
-    text = question["content"]["content"] + " " + str((question.get("Description") or {}).get("content") or "")
-    words = _ranked_slots(list(pool) + dicts.by_length(len(template)), len(template), text, here)
+    before, after = _context(question)
+    words = _ranked_slots(list(pool) + dicts.by_length(length), length,
+                          sentence or token, (before, after))
     for word in words:
         low = word.lower()
-        if len(low) != len(template) or not re.fullmatch(pattern, low) or low in seen:
+        if len(low) != length or low in seen or not re.fullmatch(pattern, low):
             continue
         seen.add(low)
-        if len(template) == len(holes):
-            for value in (low,):
-                if value not in out:
-                    out.append(value)
+        if len(holes) == length:                        # giấu cả từ
+            out.append(low)
         else:
             letters = "".join(low[i] for i in holes)
             for value in (letters, "|".join(letters), low):
                 if value and value not in out:
                     out.append(value)
-    if out:
-        return out[:limit]
-    spread = "etaoinshrdlucmfwypvbgkjqxz"
-    for combo in itertools.islice(itertools.product(spread, repeat=len(holes)), limit // 4):
-        out.append("".join(combo))
-    return out
-
+        if len(out) >= limit:
+            break
+    return out[:limit]
 
 def pool_words(questions: list[dict], passage: str = "") -> list[str]:
     """Vocabulary hints: words from the exercise itself, then the built-in list."""
@@ -508,10 +562,12 @@ def candidates(question: dict, limit: int = 200, pool: list[str] | None = None) 
         given = [a["content"] for a in sorted(question.get("ans") or [], key=lambda a: a.get("orderTrue") or 0) if a["content"].strip()]
         if given:
             return given
-        masked = bool(MASK.search(question["content"]["content"] + " " +
-                                  str((question.get("Description") or {}).get("content") or "")))
+        sentence, gap = gap_sentence(question)
+        masked = bool(sentence and gap)
         if masked:
-            return shape_candidates(question, pool or [], limit) or free_candidates(question, 700)
+            wide = 12000 if sentence.count("*") == gap else min(limit, 60)
+            return (shape_candidates(question, pool or [], wide)
+                    or free_candidates(question, 700))
         return free_candidates(question, 700)
     if question["type"] == T_ORDER:
         words = _ordered(question)
@@ -646,6 +702,52 @@ class Session:
             resp = self.client._request(api.game_root() + "finishgame", body, referer="https://ioe.vn/")
         return resp
 
+    def sweep(self, question: dict, values: list[str], position: int,
+              deadline: float, workers: int = 10) -> tuple[str, int]:
+        """Thử nhiều đáp án song song (câu điền-từ giấu cả từ: phải dò cả danh sách).
+
+        Chỉ dùng cho danh sách dài; câu thường vẫn đi tuần tự như trước.
+        """
+        import concurrent.futures
+
+        best = values[0] if values else ""
+        best_point = 0
+        if not values:
+            return best, 0
+
+        def attempt(value: str) -> tuple[str, int]:
+            try:
+                return value, self.check(question, value, position)
+            except ApiError as exc:
+                if exc.code in AUTH_ERRORS or exc.code in (0, None):
+                    raise
+                return value, 0
+
+        def done() -> tuple[str, int]:
+            if best_point > 0:               # gửi lại đáp án đúng để server lưu nó
+                try:
+                    self.check(question, best, position)
+                except ApiError:
+                    pass
+            return best, best_point
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+            for start in range(0, len(values), workers * 3):
+                batch = values[start:start + workers * 3]
+                futures = [pool.submit(attempt, value) for value in batch]
+                hit = False
+                for future in concurrent.futures.as_completed(futures):
+                    value, point = future.result()
+                    if point > best_point:
+                        best, best_point = value, point
+                    hit = hit or best_point >= question["Point"]
+                if hit:
+                    # batch đã gửi xong hết: gửi lại đáp án đúng để nó là bản ghi cuối
+                    return done()
+                if time.time() > deadline:
+                    break
+        return done()
+
     def answer(self, question: dict, position: int, bank: dict, budget: float = 45.0,
                use_oracle: bool = True) -> tuple[str, int]:
         """Chọn đáp án. Không có oracle thì vẫn trả về đoán tốt nhất (điểm 0).
@@ -671,6 +773,8 @@ class Session:
         if not use_oracle or self.oracle_dead:
             return best, 0
         deadline = time.time() + budget
+        if len(values) > 24:                 # dò cả danh sách: chạy song song cho nhanh
+            return self.sweep(question, values, position, deadline)
         for value in values:
             try:
                 point = self.check(question, value, position)
@@ -948,6 +1052,10 @@ def _attempt(
         search = max(4.0, min(30.0, room / remaining_q + 2.0))
         if turbo:
             search = 6.0
+        if question["type"] == T_SHAPE:
+            sentence, gap = gap_sentence(question)
+            if sentence.count("*") == gap:
+                search = max(search, 400.0)     # phải dò cả từ: cần nhiều lượt thử
         if speaking and speaking.get("submit") and question["type"] in SPEAK_TYPES:
             value, point = speak_answer(question, str(speaking.get("voice") or ""),
                                         speak_token)
