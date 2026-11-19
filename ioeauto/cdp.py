@@ -240,6 +240,10 @@ class Browser:
         raise CdpError(f"{method}: quá thời gian chờ")
 
     # ----------------------------------------------------------------- actions
+    def inject(self, script: str) -> None:
+        """Chèn JS chạy trước mọi script của trang (dùng để giả micro, chặn API...)."""
+        self.send("Page.addScriptToEvaluateOnNewDocument", {"source": script})
+
     def goto(self, url: str, wait: float = 2.0) -> None:
         self.send("Page.navigate", {"url": url})
         time.sleep(wait)

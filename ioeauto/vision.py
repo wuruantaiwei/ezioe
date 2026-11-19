@@ -308,14 +308,21 @@ def login(browser: cdp.Browser, user: str, password: str, timeout: float = 45.0)
     if logged_in(browser):
         return True
     # logged_in() đã để trình duyệt ở đúng trang đăng nhập do IOE tự chuyển tới
+    forms = "document.querySelectorAll('input[type=password]').length"
     if "dang-nhap" not in browser.url_now():
         browser.goto(LOGIN_PAGE, 5)
-    if not browser.eval("document.querySelectorAll('input').length"):
-        browser.goto("https://ioe.vn/", 3)
-        _click_text(browser, "Đăng nhập")
-        time.sleep(3)
-        browser.attach_newest()
-        time.sleep(2)
+    for attempt in range(8):
+        if browser.eval(forms):
+            break
+        time.sleep(1.5)
+        if attempt == 3:                       # thử đường vòng qua trang chủ
+            browser.goto("https://ioe.vn/", 3)
+            _click_text(browser, "Đăng nhập")
+            time.sleep(3)
+            browser.attach_newest()
+    else:
+        if not browser.eval(forms):
+            raise VisionError("không thấy form đăng nhập (đăng nhập tay một lần rồi chạy lại)")
     point = browser.eval("""(() => {
         const inputs = [...document.querySelectorAll('input')];
         const mail = inputs.find(i => /mail|user|phone|tài khoản/i.test(i.name + i.id + i.placeholder));

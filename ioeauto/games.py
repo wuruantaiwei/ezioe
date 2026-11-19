@@ -28,6 +28,7 @@ import random
 import threading
 import time
 import urllib.parse
+import uuid
 
 from . import asr, dicts
 from . import api, schema
@@ -43,7 +44,9 @@ BANK_LOCK = threading.Lock()
 T_FILL = 3      # words dragged into a masked sentence / paragraph
 T_PAIR = 7      # matching pairs (left card | right card)
 T_CHOICE = 10   # multiple choice, usually listening
-T_SPEAK = 12    # AI scored speaking
+T_SPEAK = 12    # AI scored pronunciation (word)
+T_SPEAK_TEXT = 13  # AI scored pronunciation (sentence) - cùng hợp đồng với T_SPEAK
+SPEAK_TYPES = (T_SPEAK, T_SPEAK_TEXT)
 T_ORDER = 5     # words put back into a sentence
 T_DICTATION = 1 # listen and type what you hear
 T_SHAPE = 2     # fill the missing letters of a word
@@ -626,19 +629,13 @@ class Session:
         return resp.get("data") or {}
 
     # ---------------------------------------------------------------- answers
-    def check(self, question: dict, answer: str, position: int = 1) -> int:
-        data = self._game(
-            "answercheck",
-            {
-                **self._base(),
-                "ans": {
-                    "ans": answer,
-                    "point": question["Point"],
-                    "questId": question["id"],
-                    "position": position,
-                },
-            },
-        )
+    def check(self, question: dict, answer: str, position: int = 1,
+              exam_count: int | None = None) -> int:
+        ans = {"ans": answer, "point": question["Point"], "questId": question["id"],
+               "position": position}
+        if exam_count is not None:
+            ans["examCount"] = exam_count
+        data = self._game("answercheck", {**self._base(), "ans": ans})
         return int(data.get("point") or 0)
 
     def submit(self, answers: list[dict], seconds: int) -> dict:
@@ -812,17 +809,93 @@ def play_exercise(
     return result
 
 
-def _spoken(question: dict, speaking: dict) -> str:
-    """Speak the sentence with a local TTS and hand the audio to the game."""
+# ------------------------------------------------------------------- speaking
+FTECH_INIT = "https://fcloud-api-gateway.ftech.ai/auth/sdk/init"
+FTECH_STREAM = "https://fcloud-streaming-socket-api.ai.ftech.ai/ioe/start_stream_v3"
+FTECH_STOP = "https://fcloud-streaming-socket-api.ai.ftech.ai/ioe/stop_stream_v3"
+FTECH_VAD = "https://vad-api.ai.ftech.ai/vad-file"
+FTECH_APP = {"app_id": "100034", "secret_key": "264a5ead3a63c4f33f5e337d192fb605"}
+SPEAK_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
+
+
+def _http(url: str, data: bytes | None = None, headers: dict | None = None,
+          timeout: int = 60) -> tuple[int, bytes]:
+    import urllib.error
+    import urllib.request
+
+    request = urllib.request.Request(url, data=data, headers=headers or {})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return response.status, response.read()
+    except urllib.error.HTTPError as exc:
+        return exc.code, exc.read()[:200]
+
+
+def _multipart(fields: dict, name: str, blob: bytes) -> tuple[bytes, str]:
+    boundary = "----ezioe" + uuid.uuid4().hex
+    out = b""
+    for key, value in fields.items():
+        out += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"{key}\"\r\n\r\n"
+                f"{value}\r\n").encode()
+    out += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"file\"; "
+            f"filename=\"{name}\"\r\nContent-Type: audio/wav\r\n\r\n").encode()
+    out += blob + f"\r\n--{boundary}--\r\n".encode()
+    return out, f"multipart/form-data; boundary={boundary}"
+
+
+def ftech_token() -> str:
+    """Token của dịch vụ chấm phát âm (chung cho mọi tài khoản IOE)."""
+    _status, body = _http(FTECH_INIT, json.dumps(FTECH_APP).encode(),
+                          {"Content-Type": "application/json", "Origin": "https://ioe.vn",
+                           "User-Agent": SPEAK_UA})
+    return json.loads(body)["data"]["token"]
+
+
+def speak_answer(question: dict, voice: str = "", token: str = "") -> tuple[str, int]:
+    """Nộp audio cho một câu nói.
+
+    Hợp đồng (dò từ SDK của IOE, 19/11/2026):
+      1. `POST /ioe/start_stream_v3` {reference_text, english_accent, extra_data}
+         -> {request_id, minio_link}
+      2. `POST /vad-api.../vad-file` (multipart file) -> {is_silence}
+      3. `POST /ioe/stop_stream_v3` (multipart file + request_id + extra_data="{}")
+         -> {data:{score_data:{accuracy_score}}}
+      4. `answercheck` với `ans` = {questId, examCount, ans: request_id, position}
+
+    `ans` **không phải** audio base64 mà là `request_id` phía server.
+    Trả (request_id, điểm chấm của AI; 0 nếu lỗi).
+    """
     from . import tts
 
     text = str(question["content"]["content"] or "").strip()
     if not text:
-        return ""
+        return "", 0
+    wav = tts.speak(text, voice)
+    if not wav:
+        return "", 0
+    bearer = token or ftech_token()
+    auth = {"Origin": "https://ioe.vn", "User-Agent": SPEAK_UA, "Authorization": "Bearer " + bearer}
+    _status, body = _http(FTECH_STREAM, json.dumps({
+        "reference_text": text, "english_accent": "en-us", "extra_data": ""}).encode(),
+        {"Content-Type": "application/json", **auth})
     try:
-        return tts.as_answer(text, str(speaking.get("voice") or ""))
-    except Exception:
-        return ""
+        request_id = (json.loads(body).get("data") or {}).get("request_id") or ""
+    except ValueError:
+        return "", 0
+    if not request_id:
+        return "", 0
+    vad_body, vad_type = _multipart({}, request_id + ".wav", wav)
+    _http(FTECH_VAD, vad_body, {"Content-Type": vad_type, **auth})   # im lặng vẫn gửi
+    body_bytes, content_type = _multipart({
+        "request_id": request_id, "reference_text": text, "extra_data": "{}",
+        "english_accent": "en-us"}, request_id + ".wav", wav)
+    _status, body = _http(FTECH_STOP, body_bytes, {"Content-Type": content_type, **auth})
+    try:
+        score = ((json.loads(body).get("data") or {}).get("score_data") or {}).get("accuracy_score")
+    except ValueError:
+        score = 0
+    return request_id, int(score or 0)
 
 
 def _is_search(client: Client, exercise: dict) -> bool:
@@ -849,6 +922,7 @@ def _attempt(
     turbo: bool = False,
     dry_run: bool = False,
     speaking: dict | None = None,
+    use_oracle: bool = True,
 ) -> dict:
     """One answer pass. ``deadline`` bounds both the search and the pauses."""
     session = Session(client, exercise["idexercise"], exercise["gameId"]).open()
@@ -858,6 +932,12 @@ def _attempt(
     if seen:
         session.pool = seen + session.pool
     started = time.time()
+    speak_token = ""
+    if speaking and speaking.get("submit") and any(q["type"] in SPEAK_TYPES for q in session.questions):
+        try:
+            speak_token = ftech_token()
+        except Exception:                                        # noqa: BLE001
+            speak_token = ""
     questions = session.questions
     step = max(0.0, deadline - started) / max(1, len(questions))
 
@@ -868,14 +948,25 @@ def _attempt(
         search = max(4.0, min(30.0, room / remaining_q + 2.0))
         if turbo:
             search = 6.0
-        if speaking and speaking.get("submit") and question["type"] == T_SPEAK:
-            value, point = _spoken(question, speaking), 0
+        if speaking and speaking.get("submit") and question["type"] in SPEAK_TYPES:
+            value, point = speak_answer(question, str(speaking.get("voice") or ""),
+                                        speak_token)
+            if value:                           # báo server biết đã nộp câu này
+                try:
+                    session.check(question, value, index, exam_count=index)
+                except ApiError:
+                    pass
         else:
             value, point = session.answer(question, index, bank, budget=search,
                                           use_oracle=use_oracle)
         if value and point > 0:
             _store(bank, question, value, point)
-        answers.append({"ans": value, "point": point, "questId": question["id"], "position": index})
+        if question["type"] in SPEAK_TYPES and speaking and speaking.get("submit"):
+            answers.append({"ans": value, "point": point, "questId": question["id"],
+                            "position": index, "examCount": index})
+        else:
+            answers.append({"ans": value, "point": point, "questId": question["id"],
+                            "position": index})
         if index < len(questions):
             pause = random.uniform(delay[0], delay[1]) + random.uniform(step * 0.5, step * 1.4)
             left = deadline - time.time()
@@ -930,6 +1021,7 @@ def solve_round(
     dry_run: bool = False,
     speaking: dict | None = None,
     include_optional: bool = False,
+    use_oracle: bool = True,
     on_event=None,
 ) -> list[dict]:
     """Play the rank exercises of the open round, then persist the result."""
@@ -952,7 +1044,7 @@ def solve_round(
         try:
             data = play_exercise(client, exercise, bank, delay=delay, pace=pace,
                                  attempts=attempts, turbo=turbo, dry_run=dry_run,
-                                 speaking=speaking)
+                                 speaking=speaking, use_oracle=use_oracle)
             try:
                 from . import report
 

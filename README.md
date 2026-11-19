@@ -203,7 +203,7 @@ Hai đặc điểm quan trọng của gateway:
 | 10 | trắc nghiệm / nghe | nội dung option |
 | 1 | nghe - chép / nghe âm / True-False | **ASR (Vosk) nghe chính mp3 của đề** rồi lấy nguyên văn; True/False thì hỏi oracle `answercheck` (đúng = Point, sai = 0) |
 | 2 | điền từ / điền ký tự / nghe chọn đáp án | có audio → ASR + so khớp ngữ cảnh để xếp hạng đáp án; có options → thử từng option bằng oracle; không có gì → tra từ điển theo tần suất (wordfreq) + gợi ý ngữ pháp |
-| 12 | nói (AI chấm) | TTS offline (SAPI/espeak) đọc câu đề rồi nộp audio (`speaking.submit`) |
+| 12, 13 | nói / đọc câu (AI chấm) | TTS offline → tải audio lên dịch vụ chấm của IOE → nộp `request_id` (`speaking.submit`) |
 
 Mọi đáp án đúng được lưu vào `data/answers.json` (khoá = hash của `type|nội dung câu`),
 lần gặp lại sẽ trả lời ngay.
@@ -349,6 +349,7 @@ ioeauto/
   userscript.py    sinh userscript (phương án B)
   cdp.py     điều khiển Chrome/Edge qua DevTools, không cần thư viện
   vision.py  phương án C: chụp ảnh, chia lưới, AI bấm
+  # bài nói: speak_answer() trong games.py (hợp đồng ftech: upload -> chấm -> request_id)
   planner.py kế hoạch theo hạn (plan)
   # lệnh phụ: watch, capture, weak, backup/restore, bank show|prune, plan
   proxy.py   addon mitmproxy
@@ -364,8 +365,11 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
 ## Ghi chú
 
 * Đây là công cụ học tập/ngâm cứu API; dùng cho tài khoản của bạn.
-* Bài **nói** (type 12): đã có TTS sinh audio, nhưng cần bật `speaking.submit`
-  và kiểm tra lại với một vòng mở (định dạng upload của game 36 chưa được xác minh).
+* Bài **nói** (type 12 và 13) đã chạy được bằng API, không cần micro: hợp đồng dò
+  từ SDK của IOE — `start_stream_v3` → `vad-file` → `stop_stream_v3` → `answercheck`
+  với `ans` là `request_id` (không phải audio base64). Bật bằng `speaking.submit`
+  hoặc `--with-speaking`. Điểm phụ thuộc chất lượng TTS: giọng SAPI đạt 60–100%,
+  tốt nhất là cài thêm giọng bản ngữ và đặt `speaking.voice`.
 * Bài **nghe - chép** (type 1) được chấm theo tỉ lệ từ khớp nên thường 40–70%;
   ngưỡng pass là ~70% nên có bài phải chạy lại vài lần mới qua.
 * Các dạng còn lại (điền từ, sắp xếp, nối cặp, trắc nghiệm, điền ký tự) đạt 90–100

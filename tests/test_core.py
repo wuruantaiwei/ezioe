@@ -1181,3 +1181,53 @@ def test_plan_apply_writes_pace_and_hours(tmp_path, monkeypatch, capsys):
     assert saved["max_rounds_per_day"] >= 1
     assert saved["active_hours"][0] < saved["active_hours"][1]
     assert "vòng 9/15" in capsys.readouterr().out
+
+
+# ------------------------------------------------------- bài nói (hợp đồng thật)
+def test_speak_answer_runs_the_upload_contract(monkeypatch):
+    from ioeauto import games, tts
+
+    calls = []
+
+    def fake_http(url, data=None, headers=None, timeout=60):
+        calls.append((url, data, headers))
+        if url == games.FTECH_STREAM:
+            return 200, json.dumps({"code": 0, "data": {"request_id": "rid-1"}}).encode()
+        if url == games.FTECH_STOP:
+            return 200, json.dumps({"code": 0, "data": {"score_data": {"accuracy_score": 88}}}).encode()
+        return 200, b'{"is_silence": false}'
+
+    monkeypatch.setattr(games, "_http", fake_http)
+    monkeypatch.setattr(tts, "speak", lambda text, voice="": b"RIFFwav")
+    question = q(type=games.T_SPEAK, content={"content": "Absorb"})
+    request_id, score = games.speak_answer(question, "", "tok-1")
+    assert (request_id, score) == ("rid-1", 88)
+    urls = [call[0] for call in calls]
+    assert urls == [games.FTECH_STREAM, games.FTECH_VAD, games.FTECH_STOP]
+    assert b'name="reference_text"' in calls[2][1] and b"Absorb" in calls[2][1]
+    assert b"rid-1.wav" in calls[2][1] and b'name="extra_data"' in calls[2][1]
+    assert calls[0][2]["Authorization"] == "Bearer tok-1"
+
+
+def test_speak_answer_survives_service_errors(monkeypatch):
+    from ioeauto import games, tts
+
+    monkeypatch.setattr(games, "_http", lambda *a, **k: (500, "hỏng".encode()))
+    monkeypatch.setattr(tts, "speak", lambda text, voice="": b"RIFF")
+    question = q(type=games.T_SPEAK, content={"content": "Absorb"})
+    assert games.speak_answer(question, "", "t") == ("", 0)
+
+
+def test_speak_answer_skips_empty_text(monkeypatch):
+    from ioeauto import games, tts
+
+    monkeypatch.setattr(tts, "speak", lambda text, voice="": b"RIFF")
+    question = q(type=games.T_SPEAK, content={"content": "   "})
+    assert games.speak_answer(question) == ("", 0)
+
+
+def test_sentence_pronunciation_counts_as_speaking():
+    from ioeauto import games
+
+    assert games.T_SPEAK_TEXT == 13
+    assert set(games.SPEAK_TYPES) == {12, 13}
