@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IOEAuto Plus - 404 Không tìm thấy trang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/small.ico">
+<link rel="shortcut icon" href="/small.ico">
+    <style>
+
+
+:root {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-glass: #ffffff;
+    --bg-input: #ffffff;
+    --bg-hover: #f1f5f9;
+
+    --text-main: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #64748b;
+
+    --border-color: #e2e8f0;
+
+    --primary-blue: #2563eb;
+    --primary-purple: #2563eb;
+
+    --gradient-brand: linear-gradient(
+        135deg,
+        #2563eb 0%,
+        #2563eb 100%
+    );
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+    --shadow-drawer: -4px 0 24px rgba(15, 23, 42, 0.1);
+
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+}
+
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+
+/* ---------- Header ---------- */
+
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px;
+
+    background: var(--bg-glass);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 19px;
+
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+
+    border-radius: var(--radius-sm);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+
+    overflow: hidden;
+}
+
+
+/* ---------- Header actions ---------- */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: var(--bg-input);
+
+    border: 1px solid var(--border-color);
+
+    padding: 4px 16px 4px 4px;
+
+    border-radius: 30px;
+
+    transition: all 0.2s;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--gradient-brand);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: var(--text-main);
+
+    line-height: 1.2;
+}
+
+.user-balance {
+    font-size: 11px;
+
+    font-family: var(--font-mono);
+    font-weight: 700;
+
+    color: var(--primary-purple);
+
+    line-height: 1.2;
+
+    margin-top: 2px;
+}
+
+
+/* ---------- Back button ---------- */
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-color);
+
+    background: var(--bg-input);
+    color: var(--text-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background: var(--bg-hover);
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
+
+/* ---------- Mobile menu button ---------- */
+
+.btn-menu-toggle {
+    display: none;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: var(--text-main);
+
+    cursor: pointer;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+/* ---------- Mobile overlay ---------- */
+
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.6);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    z-index: 2000;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ---------- Mobile drawer ---------- */
+
+.mobile-drawer {
+    position: fixed;
+
+    top: 0;
+    right: -300px;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 24px;
+
+    background: var(--bg-card);
+
+    box-shadow: var(--shadow-drawer);
+
+    z-index: 2001;
+
+    transition:
+        right 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-drawer.active {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.drawer-header h3 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.btn-close-drawer {
+    width: 34px;
+    height: 34px;
+
+    border: 0;
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+    background: #f1f5f9;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drawer-content .user-profile {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    padding: 12px;
+    gap: 12px;
+
+    background: #f8fafc;
+}
+
+.drawer-content .user-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #3b82f6;
+    color: #fff;
+
+    border-radius: 50%;
+}
+
+.drawer-content .user-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.drawer-content .user-balance {
+    font-size: 13px;
+    margin-top: 4px;
+
+    color: var(--text-muted);
+}
+
+.drawer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border-color);
+
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* ---------- Main ---------- */
+
+.main-container {
+    max-width: 1000px;
+
+    margin: 32px auto;
+
+    padding: 0 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* ---------- 404 ---------- */
+
+.not-found-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    min-height: 65vh;
+
+    padding: 24px;
+}
+
+.not-found-banner {
+    width: 100%;
+    max-width: 800px;
+
+    aspect-ratio: 1672 / 941;
+
+    border-radius: 16px;
+
+    object-fit: cover;
+
+    margin-bottom: 32px;
+}
+
+.not-found-title {
+    font-family: var(--font-heading);
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: var(--text-main);
+
+    margin-bottom: 12px;
+}
+
+.not-found-desc {
+    font-size: 15px;
+
+    color: var(--text-muted);
+
+    max-width: 450px;
+
+    margin-bottom: 24px;
+
+    line-height: 1.6;
+}
+
+.btn-back-home {
+    background: #3b82f6;
+    color: #fff;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    transition: opacity 0.2s;
+}
+
+.btn-back-home:hover {
+    opacity: 0.9;
+}
+
+
+/* ---------- Animation ---------- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation:
+        fadeInUp
+        0.6s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+
+/* ---------- Footer ---------- */
+
+.app-footer {
+    text-align: center;
+
+    padding: 10px 0 30px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .btn-menu-toggle {
+        display: block;
+    }
+
+    .top-header {
+        padding: 0 16px;
+    }
+
+    .main-container {
+        padding: 0 16px;
+        margin: 16px auto;
+    }
+
+    .not-found-title {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1001px) {
+    .btn-menu-toggle {
+        display: none;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="top-header" style="background: var(--bg-glass); border-bottom: 1px solid var(--border-color);">
+        <a href="main.html" class="logo"><div class="logo-icon"><img src="https://ioeauto.web.app/ioeauto2.png" alt="IOEAuto Logo" style="width:100%;height:100%;border-radius:inherit;object-fit:cover;"></div><span style="color:var(--text-main)"></span></a>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header"><h3 style="color:var(--text-main)">Menu</h3><button class="btn-close-drawer" id="btnCloseMenu" type="button" aria-label="Đóng menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+        <div class="drawer-content">
+            <div class="user-profile" style="display:flex;align-items:center;"><div class="user-avatar">?</div><div class="user-info"><span class="user-name" style="color:var(--text-main)">Đang tải...</span><span class="user-balance" style="display:block">Số dư: 0đ</span></div></div>
+            <div>
+                <a class="drawer-item" href="main.html" style="text-decoration:none;color:var(--text-main)"><span>Trang chủ IOEAuto Plus</span></a>
+                <div class="drawer-item" onclick="window.history.back()" style="cursor:pointer; color:var(--text-main)"><span>Quay lại</span></div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-container" style="max-width: 1000px; margin: 0 auto;">
+        
+        <section class="not-found-container animate-fade-in delay-1">
+            
+            <img src="0c05b4a9-125a-46e9-af80-2b0b274a957e.png" alt="404 Not Found" class="not-found-banner">
+            
+            <h2 class="not-found-title">Oops! Không tìm thấy trang</h2>
+            <p class="not-found-desc">Trang bạn đang tìm kiếm có thể đã bị xóa, đổi tên hoặc tạm thời không truy cập được. Vui lòng kiểm tra lại đường dẫn.</p>
+            
+            <a href="plus.html" class="btn-back-home">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Quay về Trang chủ
+            </a>
+        </section>
+
+        <footer class="app-footer animate-fade-in delay-3" style="color:var(--text-muted); text-align:center; margin-top:24px; font-size:13px; padding-bottom: 24px;">&copy; IOEAuto 2026 - 2027 by giauydev. All Rights Reserved.</footer>
+    </main>
+
+    <script>
+
+        // Logic xử lý Mobile Drawer
+        const drawer = document.getElementById('mobileDrawer'), 
+              overlay = document.getElementById('mobileOverlay'), 
+              openButton = document.getElementById('btnOpenMenu');
+        
+        const closeDrawer = () => { 
+            drawer.classList.remove('active'); 
+            overlay.classList.remove('active'); 
+            document.body.classList.remove('menu-open'); 
+            openButton.setAttribute('aria-expanded','false'); 
+            drawer.setAttribute('aria-hidden','true'); 
+        };
+        
+        openButton.addEventListener('click', () => { 
+            drawer.classList.add('active'); 
+            overlay.classList.add('active'); 
+            document.body.classList.add('menu-open'); 
+            openButton.setAttribute('aria-expanded','true'); 
+            drawer.setAttribute('aria-hidden','false'); 
+        }); 
+        
+        document.getElementById('btnCloseMenu').addEventListener('click', closeDrawer); 
+        overlay.addEventListener('click', closeDrawer); 
+        
+
+    </script>
+</body>
+</html>

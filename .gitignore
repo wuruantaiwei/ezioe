@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------- dữ liệu riêng
+# mật khẩu, token, khoá AI, lịch sử chạy: KHÔNG đẩy lên GitHub
+data/config.json
+data/session.json
+data/session_*.json
+data/report.json
+data/capabilities.json
+data/ioe-fallback.user.js
+data/backup-*.zip
+data/capture/
+data/vision/
+data/fixtures/
+data/test_run.log
+
+# ------------------------------------------------------- sinh ra khi chạy / build
+data/browser_*/
+data/asr/
+data/tts/
+data/rank_*.txt
+.work/
+build/
+dist/
+*.spec
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.browser-profile/
+*.log
+
+# ------------------------------------------------------------------------ hệ điều hành
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# bản clone tham khảo, không phải mã của repo này
+re/ref_*/

@@ -1,0 +1,115 @@
+"use strict";
+(globalThis.webpackChunkmyioe_hocsinh_v3 ||= []).push([
+ [272, 382, 961], {
+  15961(e, o, t) {
+   t.d(o, {
+    e: () => i.e,
+    exchangeCodeForToken: () => a
+   });
+   var n = t(40894),
+    r = t(39658),
+    i = t(80032),
+    s = t(29382);
+   const c = () => {
+    const e = (0, r.gf)();
+    return {
+     token: e,
+     isLoggedIn: !!e,
+     redirectToLogin: i.e,
+     redirectToLogout: e => {
+      (0, r.eF)(), (0, r.FA)(), window.location.href = "https://edu.go.vn/user/dang-xuat?client_id=myioe-hocsinh-v3" + (e ? `&redirect_uri=${e}` : "")
+     }
+    }
+   };
+   async function a(e, o) {
+    try {
+     const {
+      code: t,
+      data: i
+     } = await n.MU.post("https://identity.go.vn/api/auth/exchange-token", {
+      auth_code: e,
+      client_id: "jXEJcp17qKvkZwo",
+      client_secret: "m5N678JDwZGlpMEbyY",
+      oidcParams: {
+       code_verifier: o,
+       redirect_uri: encodeURIComponent((0, r.FL)())
+      }
+     });
+     return 0 === t && null !== i && void 0 !== i && i.access_token ? ((0, r.f7)(i.access_token), i.refresh_token && (0, r.kr)(i.refresh_token), !0) : (s.logger.error("[auth] exchange-token tr\u1ea3 v\u1ec1 code != 0 ho\u1eb7c thi\u1ebfu access_token", {
+      code: t
+     }), !1)
+    } catch (t) {
+     return s.logger.error("[auth] exchange-token th\u1ea5t b\u1ea1i:", t), !1
+    }
+   }
+   t.d(o, ["A", 0, c])
+  },
+  19272(e, o, t) {
+   t.d(o, {
+    ensureClientIp: () => w,
+    registerSDK: () => f
+   });
+   var n, r, i, s, c = t(19092),
+    a = t(39658),
+    g = t(15961),
+    d = t(9781),
+    u = t(95486),
+    h = t(29382);
+   const l = new u.O,
+    k = l.getOS(),
+    I = l.getBrowser(),
+    v = `${null!==(n=k.name)&&void 0!==n?n:"unknown"} ${null!==(r=k.version)&&void 0!==r?r:"unknown"}; ${null!==(i=I.name)&&void 0!==i?i:"unknown"} ${null!==(s=I.version)&&void 0!==s?s:"unknown"}`;
+   let _ = !1;
+
+   function f() {
+    _ || (_ = !0, c.d.setConfig({
+     API_BASE_URL: "https://api-edu.go.vn",
+     API_SIGN: void 0,
+     API_IDENTITY: "https://identity.go.vn/api",
+     getToken: a.gf,
+     getIPClient: a.Ot,
+     getRefreshToken: a.ve,
+     getDeltaTime: a.EQ,
+     getDeviceId: () => (0, a.IP)(),
+     getDeviceOS: () => v,
+     onRefreshToken: (e, o) => {
+      if (e)(0, g.e)();
+      else if (o) {
+       const {
+        token: e,
+        rfToken: t
+       } = o;
+       sessionStorage.setItem(d.d.TOKEN, e), sessionStorage.setItem(d.d.RF_TOKEN, t)
+      }
+     }
+    }))
+   }
+   async function w() {
+    if (!sessionStorage.getItem(d.d.IP)) try {
+     const e = await c.d.MIX_SERVICE.IP.getIP();
+     e && sessionStorage.setItem(d.d.IP, e)
+    } catch (e) {
+     h.logger.error("reqIP failed:", e)
+    }
+   }
+  },
+  29382(e, o, t) {
+   const n = globalThis.console,
+    r = {
+     debug: (...e) => {
+      0
+     },
+     info: (...e) => {
+      0
+     },
+     warn: (...e) => {
+      n.warn(...e)
+     },
+     error: (...e) => {
+      n.error(...e)
+     }
+    };
+   t.d(o, ["logger", 0, r])
+  }
+ }
+]);

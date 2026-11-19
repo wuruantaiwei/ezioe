@@ -1,0 +1,9 @@
+requests>=2.31
+soundfile>=0.12
+vosk>=0.3.45
+# tuỳ chọn
+# mitmproxy>=10      # chế độ proxy MITM (xem đáp án stream)
+# pystray>=0.19      # thu nhỏ GUI xuống khay hệ thống
+# Pillow>=10         # icon cho khay
+# pyinstaller>=6     # đóng gói .exe
+# wordfreq>=3        # xếp hạng từ theo tần suất (chất lượng điền từ)

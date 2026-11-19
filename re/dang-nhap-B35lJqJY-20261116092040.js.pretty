@@ -1,0 +1,644 @@
+import {
+ i as e,
+ r as t,
+ t as n
+} from "./trackingEvent-C0cFABOd-20261116092040.js";
+import "./CheckCircleIcon-26o6p_XI-20261116092040.js";
+import {
+ a as r,
+ c as i,
+ n as a,
+ s as o
+} from "./PasswordRuleList-DcOdP8XK-20261116092040.js";
+import {
+ t as s
+} from "./UserIcon-Be3ZcSho-20261116092040.js";
+import {
+ t as c
+} from "./XMarkIcon-DyaU62Js-20261116092040.js";
+import {
+ D as l,
+ Ft as u,
+ It as d,
+ K as f,
+ Lt as p,
+ M as m,
+ O as ee,
+ P as h,
+ Pt as g,
+ X as te,
+ Z as ne,
+ _r as _,
+ at as v,
+ br as y,
+ ct as b,
+ dt as x,
+ ft as S,
+ g as C,
+ gt as w,
+ j as T,
+ kt as E,
+ lt as D,
+ n as O,
+ ot as k,
+ q as A,
+ t as j,
+ vt as M,
+ wt as N,
+ zt as P
+} from "./index-Br0ETWTa-20261116092040.js";
+import {
+ t as re
+} from "./passwordHash-B2QqFUB3-20261116092040.js";
+import "./CheckCircleIcon-DEQABmDX-20261116092040.js";
+import {
+ t as ie
+} from "./PopupKhoiPhucMatKhau-GgIOHfOj-20261116092040.js";
+import {
+ t as ae
+} from "./Decor-82Qdg2p--20261116092040.js";
+import {
+ r as oe,
+ t as se
+} from "./accountNameRules-Dry2-2hC-20261116092040.js";
+var F = y(_()),
+ ce = `data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%20clip-path='url(%23clip0_0_9)'%3e%3cpath%20id='Vector'%20d='M10%204.2C11.6167%204.2%2012.925%204.76667%2013.9583%205.70833L16.8833%202.78333C14.925%201.03333%2012.675%200%2010%200C6.09167%200%202.70833%202.24167%201.03333%205.525L4.33333%208.08333C5.125%205.95833%207.375%204.2%2010%204.2V4.2'%20fill='var(--fill-0,%20%23EA4335)'/%3e%3cpath%20id='Vector_2'%20d='M19.575%2010.225C19.575%209.55833%2019.5167%208.91667%2019.4083%208.29167H10V11.95H15.3667C15.1333%2013.15%2014.4583%2014.1667%2013.4417%2014.85L16.4417%2017.1833C18.1917%2015.5667%2019.575%2013.1833%2019.575%2010.225V10.225'%20fill='var(--fill-0,%20%234285F4)'/%3e%3cpath%20id='Vector_3'%20d='M4.33333%2012.275C4.125%2011.65%204.00833%2010.9833%204.00833%2010.3C4.00833%209.61667%204.125%208.95%204.33333%208.325L1.03333%205.75C0.375%207.04167%200%208.48333%200%2010C0%2011.5167%200.375%2012.9583%201.03333%2014.25L4.33333%2011.4417V12.275'%20fill='var(--fill-0,%20%2334A853)'/%3e%3cpath%20id='Vector_4'%20d='M10%2020C12.7%2020%2014.975%2019.1%2016.6333%2017.5667L13.6333%2015.2333C12.7167%2015.85%2011.5417%2016.2167%2010%2016.2167C7.375%2016.2167%205.125%2014.4583%204.325%2012.0833L1.03333%2014.25C2.70833%2017.7583%206.09167%2020%2010%2020V20'%20fill='var(--fill-0,%20%23FBBC05)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_9'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e`,
+ le = `data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%20clip-path='url(%23clip0_0_5)'%3e%3cpath%20id='Vector'%20d='M24%2012.073C24%205.446%2018.627%200.073%2012%200.073C5.373%200.073%200%205.446%200%2012.073C0%2018.063%204.388%2023.027%2010.125%2023.927V15.542H7.078V12.072H10.125V9.43C10.125%206.423%2011.917%204.761%2014.658%204.761C15.97%204.761%2017.344%204.996%2017.344%204.996V7.949H15.83C14.339%207.949%2013.874%208.874%2013.874%209.823V12.073H17.202L16.67%2015.543H13.874V23.928C19.612%2023.027%2024%2018.062%2024%2012.073V12.073'%20fill='var(--fill-0,%20%231877F2)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_5'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e`,
+ I = y(d());
+
+function L({
+ open: e,
+ onClose: t,
+ onOtpSent: n
+}) {
+ let r = g(M),
+  [i, a] = (0, F.useState)(``),
+  [o, s] = (0, F.useState)(!1),
+  [l, u] = (0, F.useState)(``);
+
+ function d() {
+  a(``), u(``), t()
+ }
+ async function f() {
+  if (!i.trim()) {
+   u(`Vui lòng nhập tên đăng nhập`);
+   return
+  }
+  s(!0), u(``);
+  try {
+   let e = await T({
+    username: i.trim(),
+    captchaToken: `string`,
+    serviceCode: (r ?? ``).toUpperCase(),
+    oidcParams: {
+     client_id: b(r)
+    }
+   });
+   e?.code === 0 ? (n(e.data?.mobile ?? ``, i.trim(), e.data?.userId ?? 0), a(``)) : u(e?.message || `Có lỗi xảy ra, vui lòng thử lại`)
+  } catch (e) {
+   u(D(e, `Có lỗi xảy ra, vui lòng thử lại`))
+  } finally {
+   s(!1)
+  }
+ }
+ return (0, I.jsx)(R, {
+  open: e,
+  footer: null,
+  centered: !0,
+  width: 502,
+  onCancel: d,
+  closable: !1,
+  maskClosable: !1,
+  children: (0, I.jsxs)(`div`, {
+   className: `flex flex-col gap-[16px] w-full`,
+   style: {
+    fontFamily: `Montserrat, sans-serif`
+   },
+   children: [(0, I.jsxs)(`div`, {
+    className: `flex flex-col items-center gap-[6px]`,
+    children: [(0, I.jsx)(`p`, {
+     className: `text-[24px] font-bold text-[#1a1d1f] leading-[1.3] text-center`,
+     children: `Khôi phục mật khẩu`
+    }), (0, I.jsx)(`p`, {
+     className: `text-[14px] text-[#6f767e] text-center leading-normal`,
+     children: `Nhập tên đăng nhập để thực hiện khôi phục mật khẩu`
+    })]
+   }), (0, I.jsxs)(`div`, {
+    className: `flex flex-col gap-[6px]`,
+    children: [(0, I.jsx)(`label`, {
+     className: `text-[14px] font-bold text-[#1a1d1f]`,
+     children: `Tên đăng nhập`
+    }), (0, I.jsxs)(`div`, {
+     className: `flex items-center gap-2 px-[16px] h-[52px] bg-white border-2 rounded-[12px] transition-colors ${l?`border-[#ff6a55]`:`border-[#0095da]`}`,
+     children: [(0, I.jsx)(`input`, {
+      type: `text`,
+      value: i,
+      onChange: e => {
+       a(e.target.value), u(``)
+      },
+      onKeyDown: e => e.key === `Enter` && f(),
+      placeholder: `Nhập tài khoản`,
+      autoFocus: !0,
+      className: `flex-1 outline-none text-[15px] text-[#1a1d1f] placeholder-[#9a9fa5] bg-transparent`,
+      style: {
+       fontFamily: `Montserrat, sans-serif`
+      }
+     }), i && (0, I.jsx)(`button`, {
+      type: `button`,
+      onClick: () => {
+       a(``), u(``)
+      },
+      className: `shrink-0 text-[#6f767e] hover:text-[#1a1d1f] transition-colors`,
+      children: (0, I.jsx)(c, {
+       className: `size-5`
+      })
+     })]
+    }), l && (0, I.jsx)(`p`, {
+     className: `text-[13px] text-[#ff6a55]`,
+     children: l
+    })]
+   }), (0, I.jsx)(`button`, {
+    onClick: f,
+    disabled: o,
+    className: `w-full h-[52px] rounded-[12px] bg-[#0095da] text-white text-[16px] font-bold hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition-opacity`,
+    style: {
+     fontFamily: `Montserrat, sans-serif`
+    },
+    children: o ? `Đang gửi...` : `Tiếp tục`
+   }), (0, I.jsxs)(`div`, {
+    className: `flex flex-col gap-[4px] text-[13px] text-[#1a1d1f]`,
+    children: [(0, I.jsx)(`p`, {
+     className: `font-bold`,
+     children: `Lưu ý:`
+    }), (0, I.jsxs)(`p`, {
+     className: `leading-[1.6]`,
+     children: [(0, I.jsx)(`span`, {
+      className: `text-[#ff6a55] font-bold`,
+      children: `*`
+     }), `Trường hợp số điện thoại xác thực không sử dụng được hoặc tài khoản chưa xác thực số điện thoại vui lòng liên hệ`, ` `, (0, I.jsx)(`a`, {
+      href: x(r).url,
+      target: `_blank`,
+      rel: `noreferrer`,
+      className: `font-bold text-[#0095da] underline`,
+      children: `Chăm sóc khách hàng`
+     })]
+    })]
+   })]
+  })
+ })
+}
+var R = p(P)`
+    .ant-modal-content {
+        padding: 32px;
+        border-radius: 16px;
+        background: #f4f5f6;
+
+        .ant-modal-body {
+            padding: 0;
+        }
+    }
+`,
+ z = () => {
+  let c = ne(),
+   d = te(),
+   p = g(M),
+   [_, y] = (0, F.useState)(``),
+   [x, T] = (0, F.useState)(``),
+   [P, se] = (0, F.useState)(!1),
+   [R, z] = (0, F.useState)(!1),
+   [B, V] = (0, F.useState)(``),
+   [H, U] = (0, F.useState)(!1),
+   [W, ue] = (0, F.useState)({}),
+   [de, G] = (0, F.useState)(!1),
+   [K, q] = (0, F.useState)(null),
+   [fe, J] = (0, F.useState)(!1),
+   [Y, X] = (0, F.useState)(!1),
+   Z = (0, F.useRef)(null),
+   {
+    execute: pe,
+    doAuthorize: me
+   } = C(),
+   Q = O(me),
+   $ = (e, t) => pe(e, t, {
+    onIomNotAllowed: () => X(!0),
+    onMustChangeInfo: () => J(!0),
+    onNeedVerifyPhone: (e, t) => {
+     t === E.Student ? Q.startWithAsk(e, !0, `Tài khoản học sinh của bạn đã được đăng ký thành công!`) : t === E.Parrent ? Q.startWithAsk(e, !0, `Tài khoản phụ huynh của bạn đã được đăng ký thành công!`) : Q.start(e, !1)
+    },
+    onError: e => u.show({
+     title: `Thất bại`,
+     type: `error`,
+     message: e,
+     btnCancelText: `Đóng`
+    })
+   });
+  (0, F.useEffect)(() => {
+   p || c(A.CHON_DICH_VU + `?redirect_uri=${d.pathname}`)
+  }, []);
+  let he = () => {
+    let e = {},
+     t = oe(_);
+    return t.valid || (e.username = t.message), x ? r(x) ? x.length < 6 && (e.password = `Mật khẩu tối thiểu 6 ký tự`) : e.password = a : e.password = `Vui lòng nhập mật khẩu`, ue(e), Object.keys(e).length === 0
+   },
+   ge = async e => {
+    if (e.preventDefault(), he()) {
+     U(!0);
+     try {
+      let e = await v({
+       baseURL: `https://identity.go.vn/api`,
+       url: w.auth.endpoints.login.path,
+       method: w.auth.endpoints.login.method,
+       data: {
+        username: _,
+        password: re(x),
+        captchaToken: B,
+        publicKey: S(p),
+        oidcParams: k(b(p)),
+        remember: P
+       }
+      });
+      e?.code === 0 ? (N(), await n(`password`), await $(e.data.access_token, e.data?.refresh_token)) : (Z.current?.reset(), V(``), u.show({
+       title: `Thất bại`,
+       type: `error`,
+       message: e?.message,
+       btnCancelText: `Đóng`
+      }))
+     } catch (e) {
+      Z.current?.reset(), V(``), u.show({
+       title: `Thất bại`,
+       type: `error`,
+       message: D(e, `Đã có lỗi xảy ra, vui lòng thử lại`),
+       btnCancelText: `Đóng`
+      })
+     } finally {
+      U(!1)
+     }
+    }
+   }, _e = () => {
+    let e = window.location.origin + `/user` + d.pathname,
+     t = `https://www.facebook.com/v21.0/dialog/oauth?${new URLSearchParams({client_id:`2619563881430304`,redirect_uri:e,scope:`email,public_profile`,response_type:`token`,state:`facebook_login`}).toString()}`,
+     r = window.open(t, `facebook_oauth`, `width=520,height=620,scrollbars=yes,resizable=yes`),
+     i = setInterval(async () => {
+      if (!r || r.closed) {
+       clearInterval(i);
+       return
+      }
+      let t;
+      try {
+       t = r.location.href
+      } catch {
+       return
+      }
+      if (!t.startsWith(e)) return;
+      clearInterval(i);
+      let a = new URLSearchParams(r.location.hash.substring(1)).get(`access_token`);
+      if (r.close(), a) try {
+       let e = await (await fetch(`https://graph.facebook.com/me?fields=id,name,email,token_for_business&access_token=${a}`)).json(),
+        t = await l({
+         fbId: e.id,
+         fbName: e.name,
+         fbToken: a,
+         businessToken: e.token_for_business,
+         oidcParams: k(b(p))
+        });
+       t?.code === 0 ? (N(), await n(`facebook`), $(t.data.access_token, t.data?.refresh_token)) : u.show({
+        title: `Thất bại`,
+        type: `error`,
+        message: t?.message,
+        btnCancelText: `Đóng`
+       })
+      } catch (e) {
+       u.show({
+        title: `Thất bại`,
+        type: `error`,
+        message: D(e, `Đăng nhập Facebook thất bại`),
+        btnCancelText: `Đóng`
+       })
+      }
+     }, 300)
+   }, ve = j({
+    flow: `implicit`,
+    onSuccess: async e => {
+     try {
+      let t = await (await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${e.access_token}`)).json(),
+       r = await ee({
+        googleId: t.id,
+        googleEmail: t.email,
+        googleName: t.name,
+        token: e.access_token,
+        oidcParams: k(b(p))
+       });
+      r?.code === 0 ? (N(), await n(`google`), $(r.data.access_token, r.data?.refresh_token)) : u.show({
+       title: `Thất bại`,
+       type: `error`,
+       message: r?.message,
+       btnCancelText: `Đóng`
+      })
+     } catch (e) {
+      u.show({
+       title: `Thất bại`,
+       type: `error`,
+       message: D(e, `Đăng nhập Google thất bại`),
+       btnCancelText: `Đóng`
+      })
+     }
+    },
+    onError: () => {
+     u.show({
+      title: `Thất bại`,
+      type: `error`,
+      message: `Đăng nhập Google thất bại`,
+      btnCancelText: `Đóng`
+     })
+    }
+   });
+  return (0, I.jsxs)(`div`, {
+   className: `min-h-screen flex flex-col lg:flex-row`,
+   children: [(0, I.jsx)(`div`, {
+    className: `relative h-48 lg:h-auto lg:flex-1 overflow-hidden`,
+    style: {
+     background: h[p]?.bg ?? `#FFFFFF`
+    },
+    children: (0, I.jsx)(ae, {
+     sv: p
+    })
+   }), (0, I.jsx)(`div`, {
+    className: `flex-1 bg-white flex items-center justify-center p-4 sm:p-6 lg:p-8`,
+    children: (0, I.jsxs)(`div`, {
+     className: `w-full max-w-[540px] flex flex-col gap-6 lg:gap-8 items-center p-6 sm:p-8 lg:p-10 rounded-[24px] lg:rounded-[32px]`,
+     style: {
+      background: `rgba(240,242,245,0.8)`,
+      boxShadow: `0px 8px 24px 0px rgba(0,174,239,0.08)`
+     },
+     children: [(0, I.jsxs)(`div`, {
+      className: `flex flex-col items-center gap-2 w-full`,
+      children: [(0, I.jsx)(`span`, {
+       className: `text-[#071e27] text-2xl font-semibold`,
+       "data-testid": `login-title`,
+       style: {
+        fontFamily: `Montserrat, sans-serif`
+       },
+       children: `Đăng nhập`
+      }), (0, I.jsx)(`div`, {
+       className: `w-16 h-1.5 rounded-full bg-[#00aeef]`
+      })]
+     }), (0, I.jsxs)(`form`, {
+      onSubmit: ge,
+      autoComplete: `off`,
+      className: `flex flex-col gap-6 w-full`,
+      children: [(0, I.jsxs)(`div`, {
+       className: `flex flex-col gap-2`,
+       children: [(0, I.jsx)(`label`, {
+        className: `text-[#3e4850] text-base`,
+        "data-testid": `username-label`,
+        style: {
+         fontFamily: `Montserrat, sans-serif`
+        },
+        children: `Tên đăng nhập`
+       }), (0, I.jsxs)(`div`, {
+        className: `flex gap-4 items-center p-4 bg-white border rounded-2xl ${W.username?`border-red-500`:`border-[#0095da]`}`,
+        children: [(0, I.jsx)(s, {
+         className: `size-6 text-[#071e27] shrink-0`
+        }), (0, I.jsx)(`input`, {
+         type: `text`,
+         value: _,
+         onChange: e => y(e.target.value),
+         placeholder: `Nhập tài khoản của bạn`,
+         autoComplete: `off`,
+         maxLength: 60,
+         "data-testid": `username-input`,
+         className: `flex-1 outline-none text-base text-[#071e27] placeholder-[#bdc8d1] bg-transparent font-bold`,
+         style: {
+          fontFamily: `BeVietnam, sans-serif`
+         }
+        })]
+       }), W.username && (0, I.jsx)(`span`, {
+        className: `text-red-500 text-sm`,
+        style: {
+         fontFamily: `BeVietnam, sans-serif`
+        },
+        children: W.username
+       })]
+      }), (0, I.jsxs)(`div`, {
+       className: `flex flex-col gap-2`,
+       children: [(0, I.jsx)(`label`, {
+        className: `text-[#3e4850] text-base`,
+        "data-testid": `password-label`,
+        style: {
+         fontFamily: `Montserrat, sans-serif`
+        },
+        children: `Mật khẩu`
+       }), (0, I.jsxs)(`div`, {
+        className: `flex gap-4 items-center p-4 bg-white border rounded-2xl ${W.password?`border-red-500`:`border-[#0095da]`}`,
+        children: [(0, I.jsx)(t, {
+         className: `size-6 text-[#071e27] shrink-0`
+        }), (0, I.jsx)(`input`, {
+         type: R ? `text` : `password`,
+         value: x,
+         onChange: e => T(e.target.value),
+         placeholder: `••••••••`,
+         autoComplete: `current-password`,
+         "data-testid": `password-input`,
+         className: `flex-1 outline-none text-base text-[#071e27] placeholder-[#bdc8d1] bg-transparent font-bold`,
+         style: {
+          fontFamily: `BeVietnam, sans-serif`
+         }
+        }), (0, I.jsx)(`button`, {
+         type: `button`,
+         onClick: () => z(e => !e),
+         "data-testid": `toggle-password-button`,
+         className: `shrink-0 text-[#bdc8d1] hover:text-[#0095da]`,
+         children: R ? (0, I.jsx)(i, {
+          className: `size-5`
+         }) : (0, I.jsx)(o, {
+          className: `size-5`
+         })
+        })]
+       }), W.password && (0, I.jsx)(`span`, {
+        className: `text-red-500 text-sm`,
+        style: {
+         fontFamily: `BeVietnam, sans-serif`
+        },
+        children: W.password
+       })]
+      }), (0, I.jsxs)(`div`, {
+       className: `flex items-center justify-between`,
+       children: [(0, I.jsxs)(`label`, {
+        className: `flex items-center gap-2 cursor-pointer`,
+        children: [(0, I.jsx)(`input`, {
+         type: `checkbox`,
+         checked: P,
+         onChange: e => se(e.target.checked),
+         "data-testid": `remember-login-checkbox`,
+         className: `size-5 rounded border-2 border-[#bdc8d1] accent-[#00aeef]`
+        }), (0, I.jsx)(`span`, {
+         className: `text-[#3e4850] text-base`,
+         "data-testid": `remember-login-text`,
+         style: {
+          fontFamily: `Montserrat, sans-serif`
+         },
+         children: `Ghi nhớ đăng nhập`
+        })]
+       }), (0, I.jsx)(`button`, {
+        type: `button`,
+        onClick: () => G(!0),
+        "data-testid": `forgot-password-button`,
+        className: `text-[#00aeef] text-base`,
+        style: {
+         fontFamily: `Montserrat, sans-serif`
+        },
+        children: `Quên mật khẩu?`
+       })]
+      }), (0, I.jsx)(`button`, {
+       type: `submit`,
+       "data-testid": `login-button`,
+       disabled: H,
+       className: `flex items-center justify-center gap-2 h-14 w-full rounded-2xl text-white text-base font-bold ${H?`bg-[#00aeef]/70 cursor-not-allowed`:`bg-[#00aeef] cursor-pointer`}`,
+       style: {
+        fontFamily: `BeVietnam, sans-serif`,
+        boxShadow: `0px 4px 0px rgba(0,0,0,0.1)`
+       },
+       children: H ? (0, I.jsxs)(I.Fragment, {
+        children: [(0, I.jsxs)(`svg`, {
+         className: `animate-spin size-5`,
+         viewBox: `0 0 24 24`,
+         fill: `none`,
+         children: [(0, I.jsx)(`circle`, {
+          className: `opacity-25`,
+          cx: `12`,
+          cy: `12`,
+          r: `10`,
+          stroke: `currentColor`,
+          strokeWidth: `4`
+         }), (0, I.jsx)(`path`, {
+          className: `opacity-75`,
+          fill: `currentColor`,
+          d: `M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z`
+         })]
+        }), (0, I.jsx)(`span`, {
+         children: `Đang xử lý...`
+        })]
+       }) : (0, I.jsxs)(I.Fragment, {
+        children: [(0, I.jsx)(`span`, {
+         children: `Đăng nhập`
+        }), (0, I.jsx)(e, {
+         className: `size-6`
+        })]
+       })
+      }), (0, I.jsxs)(`div`, {
+       className: `relative flex items-center justify-center py-2`,
+       children: [(0, I.jsx)(`div`, {
+        className: `absolute inset-x-0 top-1/2 border-t border-[rgba(189,200,209,0.3)]`
+       }), (0, I.jsx)(`span`, {
+        className: `relative bg-[rgba(240,242,245,0.8)] px-4 text-[14px] text-[#364153]`,
+        "data-testid": `social-login-title`,
+        style: {
+         fontFamily: `Montserrat, sans-serif`
+        },
+        children: `Hoặc tiếp tục với`
+       })]
+      }), (0, I.jsxs)(`div`, {
+       className: `grid grid-cols-2 gap-4`,
+       children: [(0, I.jsxs)(`button`, {
+        type: `button`,
+        onClick: () => ve(),
+        "data-testid": `google-login-button`,
+        className: `flex items-center justify-center gap-2 h-14 bg-white border-2 border-[rgba(189,200,209,0.2)] rounded-2xl font-bold text-[#071e27] text-base`,
+        style: {
+         fontFamily: `BeVietnam, sans-serif`,
+         boxShadow: `0px 1px 1px rgba(0,0,0,0.05)`
+        },
+        children: [(0, I.jsx)(`img`, {
+         src: ce,
+         alt: `Google`,
+         className: `size-5`
+        }), (0, I.jsx)(`span`, {
+         children: `Google`
+        })]
+       }), (0, I.jsxs)(`button`, {
+        type: `button`,
+        onClick: _e,
+        "data-testid": `facebook-login-button`,
+        className: `flex items-center justify-center gap-2 h-14 bg-white border-2 border-[#f2f4f6] rounded-2xl font-bold text-[#071e27] text-base`,
+        style: {
+         fontFamily: `BeVietnam, sans-serif`,
+         boxShadow: `0px 1px 1px rgba(0,0,0,0.05)`
+        },
+        children: [(0, I.jsx)(`img`, {
+         src: le,
+         alt: `Facebook`,
+         className: `size-6`
+        }), (0, I.jsx)(`span`, {
+         children: `Facebook`
+        })]
+       })]
+      })]
+     }), (0, I.jsxs)(`div`, {
+      className: `flex gap-2 items-center justify-center`,
+      children: [(0, I.jsx)(`span`, {
+       className: `text-[#3e4850] text-base`,
+       "data-testid": `new-user-text`,
+       style: {
+        fontFamily: `Montserrat, sans-serif`
+       },
+       children: `Bạn mới tham gia?`
+      }), (0, I.jsx)(`button`, {
+       onClick: () => c(A.DANG_KY),
+       "data-testid": `register-now-button`,
+       className: `text-[#fd8100] text-base font-bold`,
+       style: {
+        fontFamily: `BeVietnam, sans-serif`
+       },
+       children: `Đăng ký ngay`
+      })]
+     }), (0, I.jsxs)(`div`, {
+      className: `text-center text-base`,
+      style: {
+       fontFamily: `Montserrat, sans-serif`
+      },
+      children: [(0, I.jsx)(`a`, {
+       href: `https://edu.go.vn/policy/terms-of-use?_gl=1*hshhu2*_gcl_au*MTMzMzAxODkzMC4xNzc5MTYxMzgw`,
+       "data-testid": `terms-of-service-link`,
+       className: `text-[#00aeef] font-semibold underline`,
+       children: `Điều khoản sử dụng`
+      }), (0, I.jsx)(`span`, {
+       className: `text-[#3e4850]`,
+       children: ` và `
+      }), (0, I.jsx)(`a`, {
+       href: `https://edu.go.vn/policy/privacy`,
+       "data-testid": `privacy-policy-link`,
+       className: `text-[#00aeef] font-semibold underline`,
+       children: `Chính sách bảo mật`
+      })]
+     })]
+    })
+   }), Q.renderPopups(), (0, I.jsx)(L, {
+    open: de,
+    onClose: () => G(!1),
+    onOtpSent: (e, t, n) => {
+     G(!1), q({
+      phone: e,
+      phoneInput: t,
+      userId: n
+     })
+    }
+   }), (0, I.jsx)(ie, {
+    open: !!K,
+    phone: K?.phone ?? ``,
+    phoneInput: K?.phoneInput ?? ``,
+    userId: K?.userId ?? 0,
+    onClose: () => q(null)
+   }), (0, I.jsx)(f, {
+    open: fe,
+    onClose: () => J(!1)
+   }), (0, I.jsx)(m, {
+    open: Y,
+    onClose: () => X(!1)
+   })]
+  })
+ };
+export {
+ z as
+ default
+};
+//# sourceMappingURL=dang-nhap-B35lJqJY-20261116092040.js.map

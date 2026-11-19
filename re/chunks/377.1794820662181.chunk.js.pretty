@@ -1,0 +1,2445 @@
+"use strict";
+(globalThis.webpackChunkmyioe_hocsinh_v3 ||= []).push([
+ [377], {
+  5371(e, t, a) {
+   a.d(t, {
+    th: () => o,
+    tB: () => c,
+    pN: () => d,
+    EA: () => s,
+    Cl: () => i,
+    RW: () => r
+   });
+   a(9950);
+   var n = a(44414);
+   const l = {
+     full: "ioe-skeleton--w-full",
+     "3/4": "ioe-skeleton--w-3\\/4",
+     "2/3": "ioe-skeleton--w-2\\/3",
+     "1/2": "ioe-skeleton--w-1\\/2",
+     "1/3": "ioe-skeleton--w-1\\/3",
+     "1/4": "ioe-skeleton--w-1\\/4"
+    },
+    s = ({
+     shape: e = "line",
+     width: t,
+     height: a,
+     radius: s,
+     className: i = "",
+     style: o
+    }) => {
+     const r = ["ioe-skeleton", `ioe-skeleton--${e}`, t && "string" === typeof t && l[t] ? l[t] : "", i].filter(Boolean).join(" "),
+      c = {
+       ...t && "string" !== typeof t || t && !l[t] ? {
+        width: t
+       } : {},
+       ...a ? {
+        height: a
+       } : {},
+       ...s ? {
+        borderRadius: s
+       } : {},
+       ...o
+      };
+     return (0, n.jsx)("span", {
+      className: r,
+      style: Object.keys(c).length ? c : void 0,
+      "aria-hidden": "true"
+     })
+    },
+    i = ({
+     gap: e = 8,
+     row: t = !1,
+     children: a,
+     className: l = ""
+    }) => (0, n.jsx)("div", {
+     className: ["ioe-skeleton-wrap", `ioe-skeleton-wrap--gap-${e}`, t ? "ioe-skeleton-wrap--row" : "", l].filter(Boolean).join(" "),
+     "aria-busy": "true",
+     "aria-label": "\u0110ang t\u1ea3i...",
+     children: a
+    }),
+    o = ({
+     count: e = 4
+    }) => (0, n.jsxs)(i, {
+     gap: 8,
+     children: [(0, n.jsx)(s, {
+      shape: "title",
+      width: "1/2"
+     }), (0, n.jsx)("div", {
+      style: {
+       display: "flex",
+       flexWrap: "wrap",
+       gap: 8
+      },
+      children: Array.from({
+       length: e
+      }).map((e, t) => (0, n.jsx)(s, {
+       shape: "pill",
+       width: ["120px", "150px", "130px", "140px", "110px"][t % 5]
+      }, t))
+     })]
+    }),
+    r = () => (0, n.jsxs)(i, {
+     gap: 12,
+     children: [(0, n.jsx)(s, {
+      shape: "title",
+      width: "1/2"
+     }), (0, n.jsx)(s, {
+      shape: "avatar",
+      width: 100,
+      height: 100,
+      radius: "50%"
+     }), (0, n.jsx)(s, {
+      shape: "line",
+      width: "2/3",
+      height: 18
+     }), (0, n.jsx)(s, {
+      shape: "text",
+      width: "1/2",
+      height: 14
+     }), Array.from({
+      length: 4
+     }).map((e, t) => (0, n.jsx)(s, {
+      shape: "text",
+      width: "full",
+      height: 14
+     }, t))]
+    }),
+    c = () => (0, n.jsxs)(i, {
+     gap: 16,
+     children: [(0, n.jsx)(s, {
+      shape: "heading",
+      width: "2/3",
+      height: 22
+     }), Array.from({
+      length: 3
+     }).map((e, t) => (0, n.jsxs)("div", {
+      style: {
+       display: "flex",
+       alignItems: "center",
+       gap: 12
+      },
+      children: [(0, n.jsx)(s, {
+       shape: "circle",
+       width: 20,
+       height: 20
+      }), (0, n.jsx)(s, {
+       shape: "line",
+       width: ["70%", "80%", "40%"][t],
+       height: 16
+      })]
+     }, t)), (0, n.jsxs)("div", {
+      style: {
+       display: "flex",
+       gap: 24,
+       alignItems: "center",
+       paddingTop: 8
+      },
+      children: [(0, n.jsx)(s, {
+       shape: "line",
+       style: {
+        flex: 1
+       },
+       height: 20
+      }), (0, n.jsx)(s, {
+       shape: "line",
+       style: {
+        flex: 1
+       },
+       height: 20
+      }), (0, n.jsx)(s, {
+       shape: "button",
+       style: {
+        flex: 1
+       },
+       height: 46,
+       radius: 24
+      })]
+     })]
+    }),
+    d = () => (0, n.jsxs)("div", {
+     className: "h-full flex flex-col gap-2",
+     children: [(0, n.jsx)(s, {
+      shape: "line",
+      width: "1/3",
+      height: 20
+     }), Array.from({
+      length: 5
+     }).map((e, t) => (0, n.jsxs)("div", {
+      className: "flex items-center gap-4 border border-[#BEDBFF] rounded-[20px] p-4",
+      style: {
+       background: "#EFF6FF"
+      },
+      children: [(0, n.jsx)(s, {
+       shape: "circle",
+       width: 48,
+       height: 48,
+       radius: "14px"
+      }), (0, n.jsxs)(i, {
+       gap: 8,
+       children: [(0, n.jsx)(s, {
+        shape: "line",
+        width: "1/3",
+        height: 16
+       }), (0, n.jsx)(s, {
+        shape: "text",
+        width: "1/2",
+        height: 12
+       })]
+      }), (0, n.jsxs)("div", {
+       className: "flex gap-4 shrink-0",
+       children: [(0, n.jsx)(s, {
+        shape: "line",
+        width: "60px",
+        height: 14
+       }), (0, n.jsx)(s, {
+        shape: "line",
+        width: "60px",
+        height: 14
+       }), (0, n.jsx)(s, {
+        shape: "line",
+        width: "80px",
+        height: 14
+       })]
+      })]
+     }, t))]
+    })
+  },
+  37110(e, t, a) {
+   a.r(t), a.d(t, {
+    HomePage: () => lt,
+    default: () => st
+   });
+   var n = a(9950),
+    l = a(5371),
+    s = a(39658),
+    i = a(42838),
+    o = a(15395),
+    r = a(78605);
+   var c = a(21481),
+    d = a(44414);
+   const h = ({
+     Icon: e,
+     Title: t
+    }) => (0, d.jsxs)("div", {
+     className: "ioe-achievement__badge",
+     children: [(0, d.jsx)("img", {
+      className: "ioe-achievement__badge-icon",
+      src: e,
+      alt: "",
+      "aria-hidden": "true",
+      draggable: !1
+     }), (0, d.jsx)(c.A, {
+      placement: "top",
+      content: t,
+      children: (0, d.jsxs)("p", {
+       className: "ioe-achievement__badge-label",
+       style: {
+        cursor: "default"
+       },
+       children: [t.substring(0, 20), "..."]
+      })
+     })]
+    }),
+    m = ({
+     showViewAll: e = !0,
+     className: t = ""
+    }) => {
+     const a = (0, i.j)(),
+      c = (0, i.G)(o.Xh);
+     return (0, n.useEffect)(() => {
+      a((0, r.t9)({
+       token: (0, s.gf)(),
+       serviceCode: "IOE"
+      }))
+     }, [a]), (0, d.jsx)("div", {
+      className: `ioe-achievement ${t}`,
+      children: c.loading ? (0, d.jsx)(l.th, {
+       count: 4
+      }) : (0, d.jsxs)(n.Fragment, {
+       children: [(0, d.jsxs)("div", {
+        className: "ioe-achievement__header",
+        children: [(0, d.jsx)("p", {
+         className: "ioe-achievement__title",
+         children: "Th\xe0nh t\xedch c\u1ee7a b\u1ea1n"
+        }), e && (0, d.jsx)("button", {
+         type: "button",
+         className: "ioe-achievement__view-all",
+         onClick: () => window.location.href = "https://ioe.vn/hoc-sinh/my-ioe/thanh-tich-ca-nhan",
+         "aria-label": "Xem t\u1ea5t c\u1ea3 th\xe0nh t\xedch",
+         children: "Xem t\u1ea5t c\u1ea3"
+        })]
+       }), c.data.length > 0 ? (0, d.jsx)(n.Fragment, {
+        children: (0, d.jsx)("div", {
+         className: "ioe-achievement__badges",
+         role: "list",
+         "aria-label": "Danh s\xe1ch th\xe0nh t\xedch",
+         children: c.data.slice(0, 4).map((e, t) => (0, d.jsx)("div", {
+          role: "listitem",
+          children: (0, d.jsx)(h, {
+           ...e
+          })
+         }, t))
+        })
+       }) : (0, d.jsx)("span", {
+        "data-testid": "achievement-no-data",
+        children: "B\u1ea1n Ch\u01b0a c\xf3 th\xe0nh t\xedch n\xe0o, C\u1ed1 l\xean nh\xe9!"
+       })]
+      })
+     })
+    };
+   const x = a.p + "static/media/icon-school.5ac6239dd002769260161f90ad1633ba.svg";
+   const u = a.p + "static/media/icon-location.5ac6239dd002769260161f90ad1633ba.svg";
+   const p = a.p + "static/media/icon-map.a63810e0f7cdf8a3d53cd59fff9457da.svg";
+   const g = a.p + "static/media/icon-globe.4e7f8b561a9e55a0eae0d8dd7b987abc.svg";
+   var f = a(13557);
+   const v = ({
+     iconSrc: e,
+     iconAlt: t = "",
+     label: a,
+     value: n,
+     testId: l
+    }) => (0, d.jsxs)("div", {
+     className: "flex items-center gap-2 h-5 w-full shrink-0",
+     children: [(0, d.jsx)("div", {
+      className: "relative shrink-0 w-4 h-4",
+      children: (0, d.jsx)("img", {
+       src: e,
+       alt: t,
+       "aria-hidden": "true",
+       className: "absolute inset-0 w-full h-full object-contain"
+      })
+     }), (0, d.jsx)("p", {
+      className: "shrink-0 mb-0 text-[14px] font-normal leading-5 text-[#717182] whitespace-nowrap",
+      style: {
+       fontFamily: "'Montserrat', sans-serif"
+      },
+      children: a
+     }), (0, d.jsx)("p", {
+      className: "flex-1 min-w-0 mb-0 text-[14px] font-normal leading-5 text-[#252525] truncate",
+      style: {
+       fontFamily: "'Montserrat', sans-serif"
+      },
+      title: n,
+      "data-testid": l,
+      children: n
+     })]
+    }),
+    b = ({
+     className: e = ""
+    }) => {
+     const t = (0, i.G)(f.Qg);
+     return (0, d.jsxs)("div", {
+      className: ["w-full border border-[#C8C8C8] rounded-[20px] p-6", "flex flex-col gap-6", "sm:flex-row sm:items-start", e].join(" "),
+      children: [(0, d.jsx)("div", {
+       className: "flex flex-col items-start flex-1 min-w-0",
+       children: (0, d.jsxs)("div", {
+        className: "flex flex-col gap-[6px] w-full",
+        children: [(0, d.jsx)("h2", {
+         className: "mb-0 text-[20px] font-semibold leading-7 text-[#0A0A0A] truncate w-full",
+         style: {
+          fontFamily: "'Montserrat', sans-serif"
+         },
+         title: null === t || void 0 === t ? void 0 : t.s_fullname,
+         "data-testid": "user-info-name",
+         children: null === t || void 0 === t ? void 0 : t.s_fullname
+        }), (0, d.jsx)("p", {
+         className: "mb-0 text-[14px] font-normal text-[#252525]",
+         style: {
+          fontFamily: "'Montserrat', sans-serif",
+          lineHeight: 1.2
+         },
+         "data-testid": "user-info-id",
+         children: `ID: ${null===t||void 0===t?void 0:t.pk_user_id}`
+        }), (0, d.jsx)("p", {
+         className: "mb-0 text-[14px] font-normal leading-5 text-[#252525]",
+         style: {
+          fontFamily: "'Montserrat', sans-serif"
+         },
+         "data-testid": "user-info-class",
+         children: `L\u1edbp: ${null===t||void 0===t?void 0:t.s_class_name}`
+        }), (0, d.jsx)(v, {
+         iconSrc: x,
+         iconAlt: "Tr\u01b0\u1eddng",
+         label: "Tr\u01b0\u1eddng:",
+         value: (null === t || void 0 === t ? void 0 : t.s_school_name) || "",
+         testId: "user-info-school"
+        })]
+       })
+      }), (0, d.jsxs)("div", {
+       className: "flex flex-col gap-2 items-start flex-1 min-w-0",
+       children: [(0, d.jsx)(v, {
+        iconSrc: u,
+        iconAlt: "X\xe3/Ph\u01b0\u1eddng/\u0110\u1eb7c khu",
+        label: "X\xe3/Ph\u01b0\u1eddng/\u0110\u1eb7c khu:",
+        value: (null === t || void 0 === t ? void 0 : t.s_village_name) || "",
+        testId: "user-info-village"
+       }), (0, d.jsx)(v, {
+        iconSrc: p,
+        iconAlt: "T\u1ec9nh/Th\xe0nh ph\u1ed1",
+        label: "T\u1ec9nh/Th\xe0nh ph\u1ed1:",
+        value: (null === t || void 0 === t ? void 0 : t.s_province_name) || "",
+        testId: "user-info-province"
+       }), (0, d.jsx)(v, {
+        iconSrc: g,
+        iconAlt: "Qu\u1ed1c gia",
+        label: "Qu\u1ed1c gia:",
+        value: "Vi\u1ec7t Nam",
+        testId: "user-info-country"
+       })]
+      })]
+     })
+    };
+   const j = a.p + "static/media/icon-trend-up.abeed8188b6767dc3661f1b99a38d07b.svg";
+   var w = a(19045);
+   const y = a.p + "static/media/icon-arrow-right.4b9e1170d67355441415f19dd1c9bbac.svg",
+    N = ({
+     onClick: e,
+     disabled: t,
+     textBtn: a,
+     testId: n
+    }) => (0, d.jsxs)(w.A, {
+     onClick: e,
+     disabled: t,
+     "data-testid": n,
+     className: "flex items-center gap-2 border-none outline-none cursor-pointer shrink-0",
+     style: {
+      color: "#FFFFFF",
+      background: "#FF6B6B",
+      borderRadius: "24px",
+      padding: "6px 8px 6px 12px",
+      height: "auto",
+      boxShadow: "inset -3px -3px 2px 0px rgba(0,0,0,0.15)",
+      border: "none",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "8px"
+     },
+     children: [(0, d.jsx)("span", {
+      className: "text-white text-[16px] leading-[1.4] tracking-[0.48px] whitespace-nowrap font-normal",
+      style: {
+       fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+      },
+      children: a
+     }), (0, d.jsx)("span", {
+      className: "relative w-6 h-6 shrink-0 flex items-center justify-center",
+      children: (0, d.jsx)("img", {
+       src: y,
+       alt: "",
+       "aria-hidden": "true",
+       className: "w-full h-full object-contain"
+      })
+     })]
+    });
+   const k = a.p + "static/media/icon-lock.3b75e17988d2e77c06864a827f6cbab0.svg",
+    _ = ({
+     currentRound: e,
+     totalRounds: t,
+     milestones: a,
+     endLabel: l
+    }) => {
+     const s = (0, n.useRef)(null),
+      [i, o] = (0, n.useState)(824);
+     (0, n.useEffect)(() => {
+      const e = () => {
+       s.current && o(s.current.offsetWidth)
+      };
+      e();
+      const t = new ResizeObserver(e);
+      return s.current && t.observe(s.current), () => t.disconnect()
+     }, []);
+     const r = (e, t) => Math.min(100, Math.max(0, e / t * 100)),
+      c = (e, t, a = 60) => Math.abs((e - t) / 100 * i) < a,
+      h = r(e, t),
+      m = a.find(e => e.hasMarker),
+      x = h,
+      u = m ? r(m.round, t) : null,
+      p = null !== u && c(x, u, 60),
+      g = c(x, r(l.round, t), 60),
+      f = !!m && !p && !g;
+     return (0, d.jsxs)("div", {
+      className: "w-full shrink-0 min-w-0 pr-[5px]",
+      children: [(0, d.jsxs)("p", {
+       className: "mb-2 text-[14px] font-normal text-[#0A0A0A]",
+       style: {
+        fontFamily: "'Montserrat', sans-serif",
+        lineHeight: 1.4
+       },
+       "data-testid": "practice-progress-round-text",
+       children: ["Ti\u1ebfn \u0111\u1ed9 v\xf2ng t\u1ef1 luy\u1ec7n c\u1ee7a b\u1ea1n: ", (0, d.jsxs)("b", {
+        children: ["V\xf2ng ", e]
+       })]
+      }), (0, d.jsxs)("div", {
+       ref: s,
+       className: "relative w-full",
+       style: {
+        paddingTop: 26
+       },
+       children: [null !== u && (0, d.jsxs)("div", {
+        className: "absolute flex flex-col items-center pointer-events-none",
+        style: {
+         top: 0,
+         left: `${u}%`,
+         transform: "translateX(-50%)",
+         gap: 4
+        },
+        children: [(0, d.jsx)("div", {
+         className: "relative shrink-0 w-5 h-5",
+         children: (0, d.jsx)("img", {
+          src: k,
+          alt: `${m.label} b\u1ecb kh\xf3a`,
+          className: "absolute inset-0 w-full h-full object-contain"
+         })
+        }), f && (0, d.jsx)("div", {
+         className: "shrink-0 bg-[#0095DA]",
+         style: {
+          width: 4,
+          height: 16
+         }
+        })]
+       }), (0, d.jsx)("div", {
+        className: "w-full rounded-full overflow-hidden bg-[#D9D9D9]",
+        style: {
+         height: 12
+        },
+        "data-testid": "practice-progress-bar-bg",
+        children: (0, d.jsx)("div", {
+         className: "h-full bg-[#0095DA] transition-[width] duration-500 ease-out",
+         style: {
+          width: `${h}%`,
+          borderRadius: h >= 100 ? "9999px" : "9999px 0 0 9999px"
+         },
+         "data-testid": "practice-progress-bar-fill"
+        })
+       })]
+      }), (0, d.jsx)("div", {
+       className: "relative w-full mt-2 hidden 2xl:block",
+       style: {
+        height: 16
+       },
+       children: null !== u && (0, d.jsxs)("span", {
+        className: "absolute text-[12px] font-bold text-[#717182]",
+        style: {
+         fontFamily: "'Montserrat', sans-serif",
+         lineHeight: "16px",
+         top: 0,
+         whiteSpace: "nowrap",
+         overflow: "hidden",
+         textOverflow: "ellipsis",
+         maxWidth: "45%",
+         left: `${u}%`,
+         transform: "translateX(-50%)"
+        },
+        children: ["V\xf2ng ", m.label]
+       })
+      }), (0, d.jsx)("div", {
+       className: "my-2 flex flex-col gap-2 2xl:hidden",
+       children: (0, d.jsxs)("span", {
+        children: ["V\xf2ng h\u1ec7 th\u1ed1ng \u0111ang m\u1edf: ", (0, d.jsx)("b", {
+         children: null === m || void 0 === m ? void 0 : m.label
+        })]
+       })
+      })]
+     })
+    };
+   var F = a(13564),
+    T = a(5014);
+   const C = () => {
+    const e = (0, F.Zp)(),
+     t = (0, i.j)(),
+     a = (0, i.G)(o.CB);
+    (0, n.useEffect)(() => {
+     t((0, r.yj)({
+      token: (0, s.gf)(),
+      serviceCode: "IOE"
+     }))
+    }, [t]);
+    const l = null === a || void 0 === a ? void 0 : a.data;
+    return (0, d.jsxs)("div", {
+     className: ["w-full flex flex-col gap-2 items-start", "border border-[#C8C8C8] rounded-[20px]", "p-4 sm:p-6", "h-[calc(100%-24px)]"].join(" "),
+     children: [(0, d.jsx)(_, {
+      currentRound: (null === l || void 0 === l ? void 0 : l.CurrrentRound) || 0,
+      totalRounds: (null === l || void 0 === l ? void 0 : l.CurrentSystemOpenRound) || 0,
+      milestones: [{
+       round: (null === l || void 0 === l ? void 0 : l.CurrrentRound) || 0,
+       label: `${(null===l||void 0===l?void 0:l.CurrrentRound)||0}`
+      }, {
+       round: (null === l || void 0 === l ? void 0 : l.CurrentSystemOpenRound) || 0,
+       label: `${(null===l||void 0===l?void 0:l.CurrentSystemOpenRound)||0}`,
+       hasMarker: !0
+      }],
+      endLabel: {
+       round: (null !== l && void 0 !== l && l.TargetRound && (null === l || void 0 === l ? void 0 : l.TargetRound) > 0 ? null === l || void 0 === l ? void 0 : l.TargetRound : null === l || void 0 === l ? void 0 : l.CurrentSystemOpenRound) || 0,
+       label: (null === l || void 0 === l ? void 0 : l.TargetRoundTitle) || ""
+      }
+     }), (0, d.jsxs)("div", {
+      className: "flex flex-col gap-2 items-end w-full px-0 sm:px-4",
+      children: [(null === l || void 0 === l ? void 0 : l.TargetRoundTitle) && (0, d.jsxs)("p", {
+       className: ["mb-0 w-full font-normal leading-[1.4] text-[#252525]", "text-sm sm:text-[16px]"].join(" "),
+       style: {
+        fontFamily: "'Montserrat', sans-serif"
+       },
+       "data-testid": "practice-progress-alert",
+       children: ["B\u1ea1n c\u1ea7n ho\xe0n th\xe0nh v\xf2ng T\u1ef1 luy\u1ec7n ", null === l || void 0 === l ? void 0 : l.PassRound, " \u0111\u1ec3 \u0111\u01b0\u1ee3c \u0111\u0103ng k\xfd tham gia V\xf2ng ", null === l || void 0 === l ? void 0 : l.TargetRoundTitle, "!"]
+      }), (null === l || void 0 === l ? void 0 : l.EngagementText) && (0, d.jsxs)("div", {
+       className: "flex items-start gap-2 w-full",
+       children: [(0, d.jsx)("div", {
+        className: "relative shrink-0 w-4 h-4 mt-[3px]",
+        children: (0, d.jsx)("img", {
+         src: j,
+         alt: "",
+         "aria-hidden": "true",
+         className: "absolute inset-0 w-full h-full object-contain"
+        })
+       }), (0, d.jsx)("p", {
+        className: ["mb-0 flex-1 min-w-0 font-medium leading-5 text-[#0095DA]", "text-sm sm:text-[16px]"].join(" "),
+        style: {
+         fontFamily: "'Montserrat', sans-serif"
+        },
+        children: null === l || void 0 === l ? void 0 : l.EngagementText
+       })]
+      }), (0, d.jsx)(N, {
+       textBtn: "T\u1ef1 luy\u1ec7n ngay",
+       onClick: () => e(T.ROUTER_APP.PRACTICE_YOUR_SELF),
+       testId: "practice-progress-btn"
+      })]
+     })]
+    })
+   };
+   var I = a(40894);
+   const S = "/events",
+    A = e => {
+     try {
+      const t = new URL(e, window.location.origin);
+      return t.pathname === S || t.pathname.startsWith(`${S}/`) ? t : null
+     } catch {
+      return null
+     }
+    },
+    E = e => {
+     const t = e.pathname.slice(7).split("/").find(Boolean);
+     return t ? t.replace(/-/g, "_").toLowerCase() : "here_i_come"
+    },
+    M = (e, t) => {
+     if (!e) return e;
+     const a = A(e);
+     if (!a) return e;
+     const n = {
+      utm_source: "myioe",
+      utm_medium: t,
+      utm_campaign: E(a)
+     };
+     return Object.entries(n).forEach(([e, t]) => {
+      a.searchParams.has(e) || a.searchParams.set(e, t)
+     }), a.toString()
+    };
+   var D;
+   const B = null !== (D = "G-W6EYX8VWWZ") ? D : "",
+    $ = "here_i_come";
+
+   function R(...e) {
+    window.dataLayer = window.dataLayer || [], window.dataLayer.push(arguments)
+   }
+   const L = ({
+     active: e,
+     onClick: t,
+     index: a
+    }) => (0, d.jsx)("button", {
+     type: "button",
+     "aria-label": `Go to slide ${a+1}`,
+     onClick: t,
+     className: "border-none p-0 cursor-pointer shrink-0 rounded-[20px] transition-all duration-300 ease-in-out",
+     style: {
+      width: e ? 20 : 8,
+      height: 8,
+      background: e ? "#1D9DFF" : "#FF6B6B",
+      outline: "none",
+      display: "block"
+     }
+    }),
+    V = ({
+     autoPlayInterval: e = 3e3,
+     activeIndex: t,
+     onChange: a,
+     className: l = ""
+    }) => {
+     var o;
+     const [r, c] = (0, n.useState)(0), h = (0, i.G)(e => {
+      var t;
+      return null === (t = e.userReducer.dataUser) || void 0 === t ? void 0 : t.pk_user_id
+     }), [m, x] = (0, n.useState)([]), u = void 0 !== t, p = u ? t : r, g = (0, n.useRef)(null), f = (0, n.useRef)(!1), v = (0, n.useRef)(null), b = (0, n.useCallback)(e => {
+      const t = (e + m.length) % m.length;
+      u || c(t), null === a || void 0 === a || a(t)
+     }, [m.length, u, a]), j = (0, n.useCallback)(() => b(p + 1), [p, b]), w = (0, n.useCallback)(() => b(p - 1), [p, b]), y = (0, n.useCallback)(() => {
+      v.current && (clearInterval(v.current), v.current = null)
+     }, []), N = (0, n.useCallback)(() => {
+      !e || e <= 0 || m.length <= 1 || (v.current = setInterval(j, e))
+     }, [e, j, m.length]), k = (0, n.useCallback)(() => {
+      y(), N()
+     }, [y, N]), _ = e => {
+      g.current = e, f.current = !1, y()
+     }, F = e => {
+      null !== g.current && Math.abs(e - g.current) > 5 && (f.current = !0)
+     }, T = e => {
+      if (null !== g.current) {
+       const t = g.current - e;
+       Math.abs(t) >= 50 && (t > 0 ? j() : w())
+      }
+      g.current = null, k()
+     }, C = e => {
+      f.current || e.href && (((e, t, a) => {
+       try {
+        if (!e) return;
+        const n = A(e);
+        if (!n || E(n) !== $) return;
+        const l = {
+         event_campaign: $,
+         action_type: "click_mini_banner_hoc_sinh",
+         entry_point: `myioe_${t}`
+        };
+        null != a && R("set", {
+         user_id: `${a}`
+        }), R("event", "ioe_event_here_I_come_tracking", {
+         ...l,
+         page_path: window.location.pathname,
+         send_to: B
+        })
+       } catch {}
+      })(e.href, "banner", h), e.openInNewTab ? window.open(e.href, "_blank", "noopener noreferrer") : window.location.href = e.href)
+     };
+     return (0, n.useEffect)(() => {
+      (async () => {
+       const {
+        code: e,
+        data: t
+       } = await I.MU.post("https://api-edu.go.vn/event-service/v2/eventsConfig/getEventActive", {
+        token: (0, s.gf)(),
+        serviceCode: "IOE"
+       });
+       if (0 === e) {
+        const e = (null === t || void 0 === t ? void 0 : t.map((e, t) => ({
+         id: t,
+         imageSrc: e.imgUrl,
+         href: M(e.url, "banner"),
+         imageAlt: e.Name
+        }))) || [];
+        x(e)
+       }
+      })()
+     }, []), (0, n.useEffect)(() => (N(), y), [N, y]), m.length ? (0, d.jsxs)("div", {
+      className: `flex flex-col items-center w-full ${l}`,
+      style: {
+       gap: 16
+      },
+      children: [(0, d.jsx)("div", {
+       className: "relative w-full rounded-[20px] overflow-hidden select-none",
+       style: {
+        aspectRatio: "425 / 239",
+        maxHeight: 239,
+        cursor: null !== (o = m[p]) && void 0 !== o && o.href ? "pointer" : "default"
+       },
+       onTouchStart: e => _(e.touches[0].clientX),
+       onTouchMove: e => F(e.touches[0].clientX),
+       onTouchEnd: e => T(e.changedTouches[0].clientX),
+       onMouseDown: e => _(e.clientX),
+       onMouseMove: e => F(e.clientX),
+       onMouseUp: e => {
+        T(e.clientX), C(m[p])
+       },
+       onMouseLeave: () => {
+        g.current = null, k()
+       },
+       children: m.map((e, t) => {
+        var a, n;
+        return (0, d.jsx)("div", {
+         className: "absolute inset-0 w-full h-full transition-opacity duration-500",
+         style: {
+          opacity: t === p ? 1 : 0,
+          zIndex: t === p ? 1 : 0,
+          pointerEvents: t === p ? "auto" : "none"
+         },
+         role: e.href ? "link" : void 0,
+         tabIndex: t === p && e.href ? 0 : -1,
+         onKeyDown: t => {
+          "Enter" !== t.key && " " !== t.key || !e.href || C(e)
+         },
+         "aria-label": null !== (a = e.imageAlt) && void 0 !== a ? a : `Banner slide ${t+1}`,
+         children: (0, d.jsx)("img", {
+          src: e.imageSrc,
+          alt: null !== (n = e.imageAlt) && void 0 !== n ? n : `Banner slide ${t+1}`,
+          draggable: !1,
+          width: 850,
+          height: 446,
+          decoding: "async",
+          loading: 0 === t ? "eager" : "lazy",
+          fetchpriority: 0 === t ? "high" : "low",
+          className: "w-full h-full object-cover rounded-[20px]",
+          style: {
+           pointerEvents: "none",
+           userSelect: "none"
+          }
+         })
+        }, e.id)
+       })
+      }), (0, d.jsx)("div", {
+       className: "flex flex-row items-center justify-center w-full",
+       style: {
+        gap: 10
+       },
+       role: "tablist",
+       "aria-label": "Slider navigation",
+       children: m.map((e, t) => (0, d.jsx)(L, {
+        active: t === p,
+        index: t,
+        onClick: () => {
+         b(t), k()
+        }
+       }, e.id))
+      })]
+     }) : null
+    },
+    Y = a.p + "static/media/mascot-dolphin.6adf2c56698adde8fa31.png",
+    O = ({
+     title: e,
+     className: t
+    }) => (0, d.jsx)("div", {
+     className: `flex flex-col items-start w-full ${t||""}`,
+     children: (0, d.jsxs)("div", {
+      className: "flex items-center gap-4 w-full mb-0 shrink-0",
+      children: [(0, d.jsx)("div", {
+       className: "relative shrink-0 overflow-hidden w-9 h-9 sm:w-11 sm:h-11 lg:w-[54px] lg:h-[54px]",
+       children: (0, d.jsx)("img", {
+        src: Y,
+        alt: "Mascot IOE",
+        className: "absolute max-w-none",
+        style: {
+         width: "100%",
+         height: "100%"
+        }
+       })
+      }), (0, d.jsx)("h2", {
+       className: ["mb-0 font-normal leading-[1.2] text-[#0095DA] min-w-0", "text-[18px]", "sm:text-[24px]", "lg:text-[30px]", "lg:leading-[1.1]"].join(" "),
+       style: {
+        fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+       },
+       children: e
+      })]
+     })
+    });
+   const X = a.p + "static/media/icon-clock.36128ea4e73cef4523bfc3cbe964782a.svg";
+   const H = a.p + "static/media/icon-trophy.f1e730c5d6980bf3551f4a68e0b839df.svg",
+    P = ({
+     title: e,
+     children: t,
+     showHeaderBox: a = !0,
+     className: n = "",
+     testId: l
+    }) => (0, d.jsxs)("div", {
+     className: `flex flex-col items-start w-full ${n}`,
+     children: [a && (0, d.jsxs)("div", {
+      className: "flex items-center gap-4 w-full mb-0 shrink-0",
+      children: [(0, d.jsx)("div", {
+       className: "relative shrink-0 overflow-hidden w-9 h-9 sm:w-11 sm:h-11 lg:w-[54px] lg:h-[54px]",
+       children: (0, d.jsx)("img", {
+        src: Y,
+        alt: "Mascot IOE",
+        className: "absolute max-w-none",
+        style: {
+         width: "100%",
+         height: "100%"
+        }
+       })
+      }), (0, d.jsx)("h2", {
+       className: ["mb-0 font-normal leading-[1.2] text-[#0095DA] min-w-0", "text-[18px]", "sm:text-[24px]", "lg:text-[30px]", "lg:leading-[1.1]"].join(" "),
+       style: {
+        fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+       },
+       "data-testid": l ? `${l}-title` : void 0,
+       children: e
+      })]
+     }), (0, d.jsx)("div", {
+      className: ["w-full", "flex-1", "min-h-0", "mt-0", "border border-[rgba(37,37,37,0.25)]", "rounded-[20px]", "p-6", "flex flex-col", "gap-10", "items-end", "overflow-hidden"].join(" "),
+      children: t
+     })]
+    });
+   var W = a(8019);
+   const G = ({
+     icon: e,
+     iconAlt: t,
+     children: a,
+     "data-testid": n
+    }) => (0, d.jsxs)("div", {
+     className: "flex items-start gap-2 w-full sm:items-center",
+     "data-testid": n,
+     children: [(0, d.jsx)("div", {
+      className: "mt-[2px] sm:mt-0 relative w-4 h-4 flex-shrink-0",
+      children: (0, d.jsx)("img", {
+       src: e,
+       alt: t,
+       className: "absolute inset-0 w-full h-full object-contain"
+      })
+     }), (0, d.jsx)("p", {
+      className: "text-[14px] leading-5 text-[#252525] whitespace-normal sm:whitespace-nowrap mb-0",
+      style: {
+       fontFamily: "'Montserrat', sans-serif"
+      },
+      children: a
+     })]
+    }),
+    K = () => {
+     var e, t, a, c, h, m, x, u;
+     const p = (0, F.Zp)(),
+      g = (0, i.j)(),
+      f = (0, i.G)(o.wL),
+      v = null !== (e = null === (t = f.data) || void 0 === t ? void 0 : t.LastestScore) && void 0 !== e ? e : 0,
+      b = null !== (a = null === (c = f.data) || void 0 === c ? void 0 : c.BestScore) && void 0 !== a ? a : 0,
+      j = null !== (h = null === (m = f.data) || void 0 === m ? void 0 : m.TotalTime) && void 0 !== h ? h : 0,
+      w = null !== (x = null === (u = f.data) || void 0 === u ? void 0 : u.EngagementText) && void 0 !== x ? x : "";
+     return (0, n.useEffect)(() => {
+      g((0, r.Gu)({
+       token: (0, s.gf)(),
+       serviceCode: "IOE"
+      }))
+     }, [g]), (0, d.jsx)(P, {
+      className: "h-full",
+      title: "C\xf9ng t\u1edb thi th\u1eed nh\xe9!",
+      testId: "mock-exam-section",
+      children: (0, d.jsx)("div", {
+       className: "flex flex-col gap-4 items-end w-full h-full",
+       children: f.loading ? (0, d.jsx)(l.th, {
+        count: 3
+       }) : (0, d.jsxs)(n.Fragment, {
+        children: [(0, d.jsxs)("div", {
+         className: "flex flex-col gap-3 w-full min-h-[91px]",
+         children: [(0, d.jsxs)(G, {
+          icon: X,
+          iconAlt: "L\u1ecbch s\u1eed thi",
+          "data-testid": "mock-exam-last-result",
+          children: [(0, d.jsx)("span", {
+           style: {
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 400
+           },
+           children: "K\u1ebft qu\u1ea3 thi g\u1ea7n nh\u1ea5t: "
+          }), (0, d.jsxs)("span", {
+           style: {
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 700
+           },
+           children: [v, " \u0111i\u1ec3m"]
+          }), (0, d.jsxs)("span", {
+           style: {
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 400
+           },
+           children: [" ", j > 0 ? `- ${(0,W.bl)(j)}` : ""]
+          })]
+         }), (0, d.jsxs)(G, {
+          icon: H,
+          iconAlt: "\u0110i\u1ec3m cao nh\u1ea5t",
+          "data-testid": "mock-exam-best-result",
+          children: [(0, d.jsx)("span", {
+           style: {
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 400
+           },
+           children: "K\u1ebft qu\u1ea3 cao nh\u1ea5t: "
+          }), (0, d.jsxs)("span", {
+           style: {
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 700
+           },
+           children: [b, " \u0111i\u1ec3m"]
+          })]
+         }), w && (0, d.jsx)("p", {
+          className: "mb-0 text-[16px] leading-5 font-medium text-[#0095DA] w-full",
+          style: {
+           fontFamily: "'Montserrat', sans-serif"
+          },
+          children: w
+         })]
+        }), (0, d.jsx)("div", {
+         className: "mt-auto w-full flex justify-end",
+         children: (0, d.jsx)(N, {
+          textBtn: "Thi Th\u1eed ngay",
+          onClick: () => p(T.ROUTER_APP.PRACTICE_TEST),
+          testId: "mock-exam-btn"
+         })
+        })]
+       })
+      })
+     })
+    },
+    U = a.p + "static/media/icon-progress-course.8aa4aaf4d221852699eb.png",
+    Z = a.p + "static/media/icon-clock-course.08c034c5eecb172a70a2.png";
+   var q = a(58450),
+    z = a(25766);
+   const Q = e => {
+     const t = Math.floor(e / 3600),
+      a = Math.floor(e % 3600 / 60),
+      n = e % 60,
+      l = [];
+     return t > 0 && l.push(`${t} gi\u1edd`), a > 0 && l.push(`${a} ph\xfat`), (n > 0 || 0 === l.length) && l.push(`${n} gi\xe2y`), l.join(" ")
+    },
+    J = () => {
+     const e = (0, i.j)(),
+      {
+       loading: t,
+       data: a
+      } = (0, i.G)(q.i);
+     return (0, n.useEffect)(() => {
+      e((0, z.Q)({
+       token: (0, s.gf)()
+      }))
+     }, [e]), (0, d.jsxs)("div", {
+      className: "flex flex-col items-start w-full h-full",
+      "data-testid": "learning-path-section",
+      children: [(0, d.jsxs)("div", {
+       className: "flex items-center gap-4 w-full shrink-0",
+       children: [(0, d.jsx)("div", {
+        className: "relative shrink-0 overflow-hidden w-9 h-9 sm:w-11 sm:h-11 lg:w-[54px] lg:h-[54px]",
+        children: (0, d.jsx)("img", {
+         src: Y,
+         alt: "Mascot IOE",
+         className: "absolute max-w-none w-full h-full"
+        })
+       }), (0, d.jsx)("h2", {
+        className: "mb-0 font-normal leading-[1.1] text-[#0095DA] min-w-0 text-[18px] sm:text-[24px] lg:text-[30px]",
+        style: {
+         fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+        },
+        "data-testid": "learning-path-section-title",
+        children: "Ta h\u1ecdc c\xf9ng IOE n\xe0o!"
+       })]
+      }), (0, d.jsxs)("div", {
+       className: "border border-[#c8c8c8] flex flex-col gap-6 p-6 rounded-[20px] w-full flex-1 min-h-0 overflow-hidden",
+       children: [a && (0, d.jsxs)("div", {
+        className: "flex items-center gap-2 w-full text-[16px]",
+        children: [(0, d.jsxs)("p", {
+         className: "flex-1 min-w-0 mb-0 font-bold leading-[1.4] text-[#0095DA]",
+         style: {
+          fontFamily: "'Montserrat', sans-serif"
+         },
+         children: ["Kho\xe1 h\u1ecdc c\u01a1 b\u1ea3n ", null !== a && void 0 !== a && a.block ? `kh\u1ed1i ${null===a||void 0===a?void 0:a.block}` : ""]
+        }), (0, d.jsx)("button", {
+         type: "button",
+         className: "shrink-0 bg-transparent border-none p-0 cursor-pointer leading-[1.4] tracking-[0.48px] text-[#FF6B6B] whitespace-nowrap",
+         style: {
+          fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+         },
+         onClick: () => {
+          window.location.href = "https://ioe.vn/hoc-cung-ioe"
+         },
+         children: "Xem t\u1ea5t c\u1ea3 kho\xe1 h\u1ecdc"
+        })]
+       }), (0, d.jsxs)("div", {
+        className: "flex flex-col gap-4 items-end w-full flex-1 min-h-0",
+        children: [t ? (0, d.jsxs)(l.Cl, {
+         gap: 8,
+         className: "w-full",
+         children: [(0, d.jsx)(l.EA, {
+          shape: "line",
+          width: "2/3",
+          height: 16
+         }), (0, d.jsx)(l.EA, {
+          shape: "line",
+          width: "1/2",
+          height: 16
+         })]
+        }) : a ? (0, d.jsxs)(d.Fragment, {
+         children: [(0, d.jsxs)("div", {
+          className: "flex gap-2 items-center w-full h-5",
+          children: [(0, d.jsx)("img", {
+           src: U,
+           alt: "",
+           "aria-hidden": "true",
+           className: "w-4 h-4 shrink-0"
+          }), (0, d.jsxs)("p", {
+           className: "mb-0 text-[14px] leading-[20px] text-[#252525] whitespace-nowrap",
+           style: {
+            fontFamily: "'Montserrat', sans-serif"
+           },
+           children: ["Ti\u1ebfn \u0111\u1ed9 ho\xe0n th\xe0nh: ", (0, d.jsxs)("strong", {
+            children: [a.completedLessons, "/", a.totalLessons, " b\xe0i h\u1ecdc"]
+           })]
+          })]
+         }), (0, d.jsxs)("div", {
+          className: "flex gap-2 items-center w-full h-5",
+          children: [(0, d.jsx)("img", {
+           src: Z,
+           alt: "",
+           "aria-hidden": "true",
+           className: "w-4 h-4 shrink-0"
+          }), (0, d.jsxs)("p", {
+           className: "mb-0 text-[14px] leading-[20px] text-[#252525] whitespace-nowrap",
+           style: {
+            fontFamily: "'Montserrat', sans-serif"
+           },
+           children: ["Th\u1eddi gian h\u1ecdc: ", (0, d.jsx)("strong", {
+            children: Q(a.totalStudyTimeSeconds)
+           })]
+          })]
+         })]
+        }) : (0, d.jsx)(n.Fragment, {
+         children: (0, d.jsxs)("div", {
+          className: "flex flex-col gap-3 w-full",
+          children: [(0, d.jsx)("p", {
+           className: "mb-0 text-[16px] font-bold leading-normal text-[#0095DA]",
+           style: {
+            fontFamily: "'Montserrat', sans-serif"
+           },
+           children: "B\u1ea1n ch\u01b0a \u0111\u0103ng k\xfd kh\xf3a h\u1ecdc n\xe0o"
+          }), (0, d.jsx)("p", {
+           className: "mb-0 text-[14px] font-medium leading-normal text-[#252525]",
+           style: {
+            fontFamily: "'Montserrat', sans-serif"
+           },
+           children: "Kh\xe1m ph\xe1 nh\u1eefng n\u1ed9i dung h\u1ecdc t\u1eadp h\u1ea5p d\u1eabn v\xe0 n\xe2ng cao k\u1ef9 n\u0103ng ti\u1ebfng Anh qua ph\u01b0\u01a1ng ph\xe1p hi\u1ec7n \u0111\u1ea1i"
+          })]
+         })
+        }), (0, d.jsx)("div", {
+         className: "mt-auto w-full flex justify-end",
+         children: (0, d.jsx)(N, {
+          textBtn: a ? "Ti\u1ebfp t\u1ee5c h\u1ecdc" : "V\xe0o h\u1ecdc ngay",
+          onClick: () => {
+           window.location.href = a ? `https://ioe.vn/hoc-cung-ioe/khoa-hoc/danh-sach-khoa-hoc?block=${null===a||void 0===a?void 0:a.block}` : "https://ioe.vn/hoc-cung-ioe"
+          },
+          testId: "learning-path-btn"
+         })
+        })]
+       })]
+      })]
+     })
+    },
+    ee = ({
+     label: e,
+     value: t,
+     testId: a
+    }) => void 0 === t || null === t || "" === t ? null : (0, d.jsxs)("div", {
+     className: "ioe-rank-card__info-row",
+     children: [(0, d.jsx)("p", {
+      className: "ioe-rank-card__info-label",
+      "data-testid": a ? `${a}-label` : void 0,
+      children: e
+     }), (0, d.jsx)("p", {
+      className: "ioe-rank-card__info-value",
+      "data-testid": a ? `${a}-value` : void 0,
+      children: t
+     })]
+    }),
+    te = ({
+     src: e,
+     alt: t,
+     name: a
+    }) => {
+     var l;
+     const [s, i] = n.useState(!1), o = a ? a.split(" ").slice(-2).map(e => e[0]).join("").toUpperCase() : "?";
+     var r;
+     return !e || s ? (0, d.jsx)("div", {
+      className: "ioe-rank-card__avatar",
+      role: "img",
+      "aria-label": null !== (r = null !== t && void 0 !== t ? t : a) && void 0 !== r ? r : "Avatar",
+      style: {
+       display: "flex",
+       alignItems: "center",
+       justifyContent: "center",
+       fontFamily: "'Montserrat', sans-serif",
+       fontWeight: 700,
+       fontSize: 28,
+       color: "#0095DA",
+       userSelect: "none"
+      },
+      children: o
+     }) : (0, d.jsx)("img", {
+      className: "ioe-rank-card__avatar",
+      src: e,
+      alt: null !== (l = null !== t && void 0 !== t ? t : a) && void 0 !== l ? l : "Avatar",
+      onError: () => i(!0),
+      draggable: !1
+     })
+    },
+    ae = ({
+     title: e = "Ch\xfac m\u1eebng",
+     avatarSrc: t,
+     avatarAlt: a,
+     name: n,
+     rank: l,
+     school: s,
+     className: i,
+     score: o,
+     attemptCount: r,
+     duration: c,
+     wrapperClassName: h = ""
+    }) => (0, d.jsx)("div", {
+     className: `ioe-rank-card ${h}`,
+     children: (0, d.jsxs)("div", {
+      className: "ioe-rank-card__content",
+      children: [(0, d.jsx)("p", {
+       className: "ioe-rank-card__title",
+       "data-testid": "rank-card-title",
+       children: e
+      }), (0, d.jsx)("div", {
+       className: "ioe-rank-card__avatar-wrapper",
+       "data-testid": "rank-card-avatar",
+       children: (0, d.jsx)(te, {
+        src: t,
+        alt: a,
+        name: n
+       })
+      }), n && (0, d.jsx)("div", {
+       className: "ioe-rank-card__name-row",
+       children: (0, d.jsx)("p", {
+        className: "ioe-rank-card__name",
+        "data-testid": "rank-card-name",
+        children: n
+       })
+      }), l && (0, d.jsxs)("div", {
+       className: "ioe-rank-card__rank-row",
+       children: [(0, d.jsx)("p", {
+        className: "ioe-rank-card__rank-label",
+        children: "X\u1ebfp h\u1ea1ng c\u1ee7a b\u1ea1n:"
+       }), (0, d.jsx)("p", {
+        className: "ioe-rank-card__rank-value",
+        children: l
+       })]
+      }), (0, d.jsx)(ee, {
+       label: "Tr\u01b0\u1eddng:",
+       value: s,
+       testId: "rank-card-school"
+      }), (0, d.jsx)(ee, {
+       label: "L\u1edbp:",
+       value: i,
+       testId: "rank-card-grade"
+      })]
+     })
+    }),
+    ne = a.p + "static/media/icon-crown.e7337e049f805df022f7.png",
+    le = ({
+     rank: e,
+     avatarSrc: t,
+     name: a
+    }) => {
+     const [l, s] = n.useState(!1);
+     return e <= 3 ? (0, d.jsxs)("div", {
+      className: "ioe-lb-item__rank",
+      children: [t && !l ? (0, d.jsx)("img", {
+       className: "ioe-lb-item__avatar",
+       src: t,
+       alt: a,
+       onError: () => s(!0),
+       draggable: !1
+      }) : (0, d.jsx)("div", {
+       className: "ioe-lb-item__avatar",
+       style: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "'Montserrat', sans-serif",
+        fontWeight: 700,
+        fontSize: 16,
+        color: "#0095DA",
+        userSelect: "none",
+        border: "2px solid #BEDBFF"
+       },
+       children: a.split(" ").slice(-2).map(e => e[0]).join("").toUpperCase()
+      }), (0, d.jsx)("div", {
+       className: "ioe-lb-item__badge",
+       children: (0, d.jsx)("span", {
+        className: "ioe-lb-item__badge-text",
+        children: e
+       })
+      }), 1 === e && (0, d.jsx)("div", {
+       className: "ioe-lb-item__crown",
+       children: (0, d.jsx)("img", {
+        src: ne,
+        alt: "Crown"
+       })
+      })]
+     }) : (0, d.jsx)("div", {
+      className: "ioe-lb-item__rank",
+      children: (0, d.jsx)("span", {
+       className: "ioe-lb-item__rank-number",
+       children: e
+      })
+     })
+    },
+    se = ({
+     entry: e
+    }) => (0, d.jsxs)("div", {
+     className: "ioe-lb-item",
+     role: "row",
+     children: [(0, d.jsx)(le, {
+      rank: e.rank,
+      avatarSrc: e.avatarSrc,
+      name: e.name
+     }), (0, d.jsxs)("div", {
+      className: "ioe-lb-item__info",
+      children: [(0, d.jsx)("p", {
+       className: "ioe-lb-item__name",
+       title: e.name,
+       children: e.name
+      }), (0, d.jsx)("p", {
+       className: "ioe-lb-item__sub",
+       title: `L\u1edbp: ${e.class} - ${e.school}`,
+       children: `L\u1edbp: ${e.class} - ${e.school}`
+      })]
+     }), (0, d.jsxs)("div", {
+      className: "ioe-lb-item__stats",
+      children: [(0, d.jsxs)("p", {
+       className: "ioe-lb-item__stat",
+       children: [e.score, " \u0111i\u1ec3m"]
+      }), (0, d.jsxs)("p", {
+       className: "ioe-lb-item__stat",
+       children: [e.attempts, " l\u1ea7n thi"]
+      }), (0, d.jsx)("p", {
+       className: "ioe-lb-item__stat",
+       children: e.duration
+      })]
+     })]
+    }),
+    ie = () => (0, d.jsx)("div", {
+     className: "ioe-leaderboard__empty",
+     children: (0, d.jsx)("p", {
+      className: "ioe-leaderboard__empty-text",
+      children: "Ch\u01b0a c\xf3 d\u1eef li\u1ec7u x\u1ebfp h\u1ea1ng"
+     })
+    }),
+    oe = ({
+     period: e,
+     entries: t,
+     maxHeight: a = 0,
+     className: n = "",
+     onViewAll: l
+    }) => (0, d.jsxs)("div", {
+     className: `ioe-leaderboard ${n}`,
+     children: [(e || l) && (0, d.jsxs)("div", {
+      className: "ioe-leaderboard__header",
+      children: [e && (0, d.jsx)("p", {
+       className: "ioe-leaderboard__period",
+       children: e
+      }), l && (0, d.jsx)("button", {
+       type: "button",
+       className: "ioe-leaderboard__view-all",
+       onClick: l,
+       children: "Xem t\u1ea5t c\u1ea3 BXH"
+      })]
+     }), (0, d.jsx)("div", {
+      className: "ioe-leaderboard__list",
+      role: "table",
+      "aria-label": "B\u1ea3ng x\u1ebfp h\u1ea1ng",
+      style: a > 0 ? {
+       maxHeight: a
+      } : void 0,
+      children: t.length > 0 ? t.map(e => (0, d.jsx)(se, {
+       entry: e
+      }, `rank-${e.rank}-${e.name}`)) : (0, d.jsx)(ie, {})
+     })]
+    });
+   var re = a(40221),
+    ce = a(33679);
+   const de = ({
+    label: e,
+    options: t,
+    value: a,
+    defaultValue: l,
+    placeholder: s = "Ch\u1ecdn...",
+    disabled: i = !1,
+    onChange: o,
+    className: r = "",
+    testId: c
+   }) => {
+    const h = void 0 !== a,
+     [m, x] = (0, n.useState)(null !== l && void 0 !== l ? l : void 0),
+     [u, p] = (0, n.useState)(!1),
+     g = (0, n.useRef)(null),
+     f = (0, n.useId)();
+    (0, n.useEffect)(() => {
+     h || x(null !== l && void 0 !== l ? l : void 0)
+    }, [l, h]);
+    const v = h ? a : m,
+     b = void 0 !== v ? t.find(e => e.value === v) : void 0;
+    (0, n.useEffect)(() => {
+     const e = e => {
+      g.current && !g.current.contains(e.target) && p(!1)
+     };
+     return document.addEventListener("mousedown", e), () => document.removeEventListener("mousedown", e)
+    }, []);
+    const j = e => {
+     h || x(e.value), null === o || void 0 === o || o(e.value, e), p(!1)
+    };
+    return (0, d.jsxs)("div", {
+     ref: g,
+     className: `ioe-dropdown ${r}`,
+     "data-testid": c,
+     children: [e && (0, d.jsx)("div", {
+      className: "flex items-center w-full px-6 shrink-0",
+      children: (0, d.jsx)("p", {
+       className: "ioe-dropdown__label flex-1 min-w-0 truncate",
+       "data-testid": c ? `${c}-label` : void 0,
+       children: e
+      })
+     }), (0, d.jsxs)("div", {
+      className: "relative w-full",
+      children: [(0, d.jsxs)("button", {
+       type: "button",
+       role: "combobox",
+       "aria-expanded": u,
+       "aria-controls": f,
+       "aria-haspopup": "listbox",
+       "aria-disabled": i,
+       disabled: i,
+       onClick: () => !i && p(e => !e),
+       onKeyDown: e => {
+        if (!i) switch (e.key) {
+         case "Enter":
+         case " ":
+          e.preventDefault(), p(e => !e);
+          break;
+         case "Escape":
+          p(!1);
+          break;
+         case "ArrowDown": {
+          if (!u) {
+           p(!0);
+           break
+          }
+          e.preventDefault();
+          const a = t.findIndex(e => e.value === v),
+           n = t[Math.min(a + 1, t.length - 1)];
+          n && j(n);
+          break
+         }
+         case "ArrowUp": {
+          e.preventDefault();
+          const a = t.findIndex(e => e.value === v),
+           n = t[Math.max(a - 1, 0)];
+          n && j(n);
+          break
+         }
+        }
+       },
+       "data-testid": c ? `${c}-btn` : void 0,
+       className: ["ioe-dropdown__trigger", u ? "ioe-dropdown__trigger--open" : ""].join(" "),
+       children: [(0, d.jsx)("span", {
+        className: ["ioe-dropdown__value", b ? "" : "ioe-dropdown__value--placeholder"].join(" "),
+        children: b ? b.label : s
+       }), (0, d.jsx)("span", {
+        className: "ioe-dropdown__chevron",
+        children: (0, d.jsx)(ce.D3, {
+         open: u
+        })
+       })]
+      }), u && (0, d.jsx)("ul", {
+       id: f,
+       role: "listbox",
+       className: "ioe-dropdown__panel",
+       children: 0 === t.length ? (0, d.jsx)("li", {
+        className: "ioe-dropdown__empty",
+        children: "Kh\xf4ng c\xf3 d\u1eef li\u1ec7u"
+       }) : t.map(e => (0, d.jsx)("li", {
+        role: "option",
+        "aria-selected": e.value === v,
+        onClick: () => j(e),
+        className: ["ioe-dropdown__option", e.value === v ? "ioe-dropdown__option--selected" : ""].join(" "),
+        children: e.label
+       }, e.value))
+      })]
+     })]
+    })
+   };
+   var he = a(19092),
+    me = a(28285);
+   const xe = ({
+     onFilter: e
+    }) => {
+     const t = (0, i.j)(),
+      a = (0, i.G)(f.Qg),
+      l = (0, i.G)(o.Co),
+      c = (0, n.useRef)(!1),
+      [h, m] = (0, n.useState)([]),
+      [x, u] = (0, n.useState)({
+       leaderboardType: me._S.TuLuyen
+      }),
+      p = (0, n.useMemo)(() => {
+       if (!x) return !1;
+       switch (x.leaderboardType) {
+        case me._S.TuLuyen:
+         return null != x.roundFilterType && null != x.rankingScope;
+        case me._S.ThiThu:
+         return null != x.block && null != x.rankingScope && null != x.period;
+        case me._S.ThiChinhThuc:
+         return null != x.rankingScope && null != x.provinceId && null != x.block;
+        default:
+         return !1
+       }
+      }, [x]),
+      g = (0, n.useMemo)(() => {
+       var e;
+       const t = null === (e = l.data) || void 0 === e ? void 0 : e.map(e => ({
+        label: `L\u1edbp ${e.block}`,
+        value: e.block
+       }));
+       return t && (null === t || void 0 === t ? void 0 : t.length) > 0 ? t.sort((e, t) => e.value - t.value) : []
+      }, [l]),
+      v = (0, n.useMemo)(() => {
+       switch (null === x || void 0 === x ? void 0 : x.leaderboardType) {
+        case me._S.TuLuyen:
+         return (0, d.jsxs)(n.Fragment, {
+          children: [(0, d.jsx)(de, {
+           options: me.xg,
+           value: x.roundFilterType,
+           label: "V\xf2ng t\u1ef1 luy\u1ec7n",
+           testId: "ranking-round",
+           onChange: e => {
+            u({
+             ...x,
+             roundFilterType: e,
+             rankingScope: void 0
+            })
+           }
+          }), (0, d.jsx)(de, {
+           options: (null === x || void 0 === x ? void 0 : x.roundFilterType) === me.zv.Year ? me.bZ : me.Vr,
+           value: x.rankingScope,
+           label: "C\u1ea5p \u0111\u1ed9 x\u1ebfp h\u1ea1ng",
+           testId: "ranking-level",
+           onChange: e => {
+            u({
+             ...x,
+             rankingScope: e
+            })
+           }
+          })]
+         });
+        case me._S.ThiThu:
+         return (0, d.jsxs)(n.Fragment, {
+          children: [(0, d.jsx)(de, {
+           options: g,
+           label: "Kh\u1ed1i l\u1edbp",
+           value: null === x || void 0 === x ? void 0 : x.block,
+           onChange: e => {
+            u({
+             ...x,
+             block: e,
+             rankingScope: void 0,
+             period: void 0
+            })
+           }
+          }), (0, d.jsx)(de, {
+           options: me.Vr,
+           label: "Ph\u1ea1m vi x\u1ebfp h\u1ea1ng",
+           value: null === x || void 0 === x ? void 0 : x.rankingScope,
+           onChange: e => {
+            u({
+             ...x,
+             rankingScope: e,
+             period: void 0
+            })
+           }
+          }), (0, d.jsx)(de, {
+           options: me.eW,
+           label: "Th\u1eddi gian x\u1ebfp h\u1ea1ng",
+           value: null === x || void 0 === x ? void 0 : x.period,
+           onChange: e => {
+            u({
+             ...x,
+             period: e
+            })
+           }
+          })]
+         });
+        case me._S.ThiChinhThuc:
+         return (0, d.jsxs)(n.Fragment, {
+          children: [(0, d.jsx)(de, {
+           options: me.Vr,
+           label: "V\xf2ng thi",
+           value: null === x || void 0 === x ? void 0 : x.rankingScope,
+           onChange: e => {
+            u({
+             ...x,
+             rankingScope: e,
+             provinceId: void 0,
+             block: void 0
+            })
+           }
+          }), (0, d.jsx)(de, {
+           options: h,
+           label: "T\u1ec9nh/Th\xe0nh ph\u1ed1",
+           value: null === x || void 0 === x ? void 0 : x.provinceId,
+           onChange: e => {
+            u({
+             ...x,
+             provinceId: e,
+             block: void 0
+            })
+           }
+          }), (0, d.jsx)(de, {
+           options: null != (null === x || void 0 === x ? void 0 : x.rankingScope) ? me.jd[x.rankingScope] : [],
+           label: "Kh\u1ed1i l\u1edbp",
+           value: null === x || void 0 === x ? void 0 : x.block,
+           onChange: e => {
+            u({
+             ...x,
+             block: e
+            })
+           }
+          })]
+         });
+        default:
+         return null
+       }
+      }, [x, h, g]);
+     return (0, n.useEffect)(() => {
+      a && !c.current && (c.current = !0, u({
+       leaderboardType: me._S.TuLuyen,
+       roundFilterType: me.xg[0].value,
+       rankingScope: me.Vr[0].value
+      }))
+     }, [a]), (0, n.useEffect)(() => {
+      (async () => {
+       t((0, r.Y7)({
+        token: (0, s.gf)(),
+        serviceCode: "IOE"
+       }));
+       const e = await he.d.MIX_SERVICE.INFORMIX.getProvince(0),
+        a = ((e, t, a = "AZ") => {
+         const n = [...e];
+         switch (a) {
+          case "AZ":
+           return n.sort((e, a) => e[t] - a[t]);
+          case "ZA":
+           return n.sort((e, a) => a[t] - e[t]);
+          default:
+           return []
+         }
+        })(null === e || void 0 === e ? void 0 : e.data, "ViewOrder");
+       m(a.map(e => ({
+        label: e.LocationName,
+        value: e.LocationID
+       })))
+      })()
+     }, [t]), (0, d.jsxs)("div", {
+      className: "grid grid-cols-1 gap-3 sm:grid-cols-2 items-end lg:flex lg:gap-6",
+      children: [(0, d.jsx)(de, {
+       options: me.us,
+       label: "H\xecnh th\u1ee9c thi",
+       value: null === x || void 0 === x ? void 0 : x.leaderboardType,
+       testId: "ranking-form-type",
+       onChange: e => {
+        u({
+         leaderboardType: e
+        })
+       }
+      }), v, (0, d.jsx)(re.A, {
+       disabled: !p,
+       type: "button",
+       label: "Xem ngay",
+       className: "w-full max-w-[235px] h-full min-h-[52px]",
+       testId: "ranking-btn-view",
+       onClick: () => x && e(x)
+      })]
+     })
+    },
+    ue = {
+     [me._S.TuLuyen]: "https://ioe.vn/tong-hop/bang-xep-hang/tu-luyen",
+     [me._S.ThiThu]: "https://ioe.vn/tong-hop/bang-xep-hang/thi-thu",
+     [me._S.ThiChinhThuc]: "https://ioe.vn/tong-hop/bang-xep-hang/thi-chinh-thuc"
+    },
+    pe = () => {
+     var e, t, a;
+     const c = (0, i.j)(),
+      [h, m] = (0, n.useState)(me._S.TuLuyen),
+      x = (0, i.G)(o.IN),
+      u = null !== (e = null === x || void 0 === x ? void 0 : x.loading) && void 0 !== e && e,
+      [p, g] = (0, n.useState)(u),
+      [f, v] = (0, n.useState)(!u),
+      b = (0, n.useRef)(0),
+      j = (0, n.useRef)(null),
+      w = null === x || void 0 === x || null === (t = x.data) || void 0 === t ? void 0 : t.PersonalArchivement,
+      y = null === x || void 0 === x || null === (a = x.data) || void 0 === a ? void 0 : a.Students,
+      N = (0, n.useMemo)(() => (y || []).map(e => ({
+       name: null === e || void 0 === e ? void 0 : e.FullName,
+       avatarSrc: "",
+       rank: null === e || void 0 === e ? void 0 : e.Rank,
+       school: null === e || void 0 === e ? void 0 : e.School,
+       score: null === e || void 0 === e ? void 0 : e.Score,
+       class: null === e || void 0 === e ? void 0 : e.ClassName,
+       attempts: null === e || void 0 === e ? void 0 : e.TotalAttempt,
+       duration: (0, W.bl)((null === e || void 0 === e ? void 0 : e.TotalTime) || 0)
+      })), [y]);
+     (0, n.useEffect)(() => {
+      c((0, r.OC)({
+       token: (0, s.gf)(),
+       leaderboardType: me.us[0].value,
+       roundFilterType: me.xg[0].value,
+       rankingScope: me.Vr[0].value,
+       top: 5,
+       serviceCode: "IOE"
+      }))
+     }, [c]);
+     const k = (0, n.useCallback)(() => {
+      const e = ue[h];
+      void 0 !== e && (window.location.href = e)
+     }, [h]);
+     return (0, n.useEffect)(() => {
+      if (j.current && clearTimeout(j.current), u) b.current = Date.now(), g(!0), v(!1);
+      else {
+       const e = Date.now() - b.current,
+        t = Math.max(0, 600 - e);
+       j.current = setTimeout(() => {
+        g(!1), setTimeout(() => v(!0), 50)
+       }, t)
+      }
+      return () => {
+       j.current && clearTimeout(j.current)
+      }
+     }, [u]), (0, d.jsxs)(n.Fragment, {
+      children: [(0, d.jsxs)("div", {
+       className: "flex items-center gap-4 w-full mb-0 shrink-0",
+       children: [(0, d.jsx)("div", {
+        className: "relative shrink-0 overflow-hidden w-9 h-9 sm:w-11 sm:h-11 lg:w-[54px] lg:h-[54px]",
+        children: (0, d.jsx)("img", {
+         src: Y,
+         alt: "Mascot IOE",
+         className: "absolute max-w-none",
+         style: {
+          width: "100%",
+          height: "100%"
+         }
+        })
+       }), (0, d.jsx)("h2", {
+        className: ["mb-0 font-normal leading-[1.2] text-[#0095DA] min-w-0", "text-[18px]", "sm:text-[24px]", "lg:text-[30px]", "lg:leading-[1.1]"].join(" "),
+        style: {
+         fontFamily: "'Baloo 2', 'Baloo', sans-serif"
+        },
+        "data-testid": "ranking-section-title",
+        children: "Kh\xe1m ph\xe1 b\u1ea3ng x\u1ebfp h\u1ea1ng \u0111\u1ec3 bi\u1ebft b\u1ea1n \u0111ang c\u1ed1 g\u1eafng th\u1ebf n\xe0o!"
+       })]
+      }), (0, d.jsxs)("div", {
+       className: ["w-full mt-0", "border border-[rgba(37,37,37,0.25)]", "rounded-[20px] p-6", "flex flex-col gap-8", "overflow-hidden"].join(" "),
+       children: [(0, d.jsx)(xe, {
+        onFilter: e => {
+         void 0 !== e.leaderboardType && m(e.leaderboardType), c((0, r.OC)({
+          ...e,
+          top: 5,
+          token: (0, s.gf)(),
+          serviceCode: "IOE"
+         }))
+        }
+       }), (0, d.jsxs)("div", {
+        className: "grid grid-cols-12 gap-y-6 lg:gap-x-6 items-stretch",
+        style: {
+         minHeight: 480,
+         willChange: "opacity",
+         transition: p ? "opacity 0.15s ease" : "opacity 0.35s ease",
+         opacity: f ? 1 : .4
+        },
+        children: [(0, d.jsx)("div", {
+         className: "col-span-12 lg:col-span-3 flex flex-col",
+         style: {
+          minHeight: 480
+         },
+         children: p ? (0, d.jsx)(l.RW, {}) : (0, d.jsx)(ae, {
+          title: "Ch\xfac m\u1eebng",
+          name: null === w || void 0 === w ? void 0 : w.FullName,
+          rank: null === w || void 0 === w ? void 0 : w.Rank,
+          school: null === w || void 0 === w ? void 0 : w.School,
+          className: null === w || void 0 === w ? void 0 : w.ClassName,
+          score: null === w || void 0 === w ? void 0 : w.TotalScore,
+          attemptCount: 2,
+          duration: (0, W.bl)((null === w || void 0 === w ? void 0 : w.TotalTime) || 0),
+          wrapperClassName: "h-full"
+         })
+        }), (0, d.jsx)("div", {
+         className: "col-span-12 lg:col-span-9 flex flex-col",
+         style: {
+          minHeight: 480
+         },
+         children: p ? (0, d.jsx)(l.pN, {}) : (0, d.jsx)(oe, {
+          entries: N,
+          className: "h-full",
+          onViewAll: void 0 !== ue[h] && N.length > 0 ? k : void 0
+         })
+        })]
+       })]
+      })]
+     })
+    };
+   const ge = a.p + "static/media/icon-clock-outline-gray.4cb0d65a08ee4405c3a6aba5e8632c7c.svg";
+   const fe = a.p + "static/media/icon-arrow-narrow-right-spring.50aba0b270e241902eb91d40d3fbf00a.svg";
+   const ve = a.p + "static/media/icon-arrow-narrow-right-white.b7c07163ff49970a29778ea6f95cf865.svg";
+   const be = a.p + "static/media/icon-arrow-narrow-right-gray.50a0c5dd013bff1e32d06fcb0f808e0c.svg",
+    je = a.p + "static/media/vong-thi-chinh-thuc-decor.c8f7a2a8660179f2b0ea.png";
+   var we = a(33416),
+    ye = a(44140),
+    Ne = a(40318);
+   const ke = a.p + "static/media/icon-x-mark-outline-gray.308c6ed8aab9d70645118712624bc077.svg";
+   const _e = a.p + "static/media/icon-check-circle-solid-green700.6eb223975d6282267f02ed26a29235f1.svg";
+   const Fe = a.p + "static/media/icon-check-circle-solid-green600.bb00cd083afc9e1fd11c3bc0a77a7c8f.svg";
+   const Te = a.p + "static/media/icon-clock-outline-blue.094bfae03b241685ad09dd7766198f14.svg";
+   const Ce = a.p + "static/media/icon-exclamation-circle-amber.67e71d458e438b5cab7bbf634973ded0.svg";
+   const Ie = a.p + "static/media/icon-exclamation-circle-yellow800.6879432f2306431797679c4ed48e4698.svg";
+   const Se = a.p + "static/media/icon-exclamation-circle-red700.03f863c9ca9d0995421c3bbb426a39e3.svg";
+   var Ae = a(71279);
+   const Ee = "'Montserrat', sans-serif",
+    Me = "'Baloo 2', 'Baloo', sans-serif",
+    De = {
+     success: {
+      background: "#F3FAF7",
+      color: "#046C4E",
+      icon: _e
+     },
+     info: {
+      background: "#EBF5FF",
+      color: "#1E429F",
+      icon: Te
+     },
+     warning: {
+      background: "#FDFDEA",
+      color: "#723B13",
+      icon: Ie
+     },
+     error: {
+      background: "#FDF2F2",
+      color: "#C81E1E",
+      icon: Se
+     }
+    },
+    Be = ({
+     open: e,
+     title: t,
+     subtitle: a,
+     onClose: n,
+     children: l,
+     testId: s
+    }) => (0, d.jsx)(Ae.A, {
+     open: e,
+     onClose: n,
+     width: 640,
+     className: "ioe-exam-dialog",
+     header: (0, d.jsxs)("div", {
+      className: "sticky top-0 z-[2] bg-[#FFFFFF] flex flex-col gap-2 items-center px-4 pt-6 sm:px-8 sm:pt-8",
+      children: [(0, d.jsx)("div", {
+       className: "relative shrink-0 w-16 h-16 overflow-hidden",
+       children: (0, d.jsx)("img", {
+        src: Y,
+        alt: "",
+        "aria-hidden": "true",
+        className: "absolute max-w-none w-full h-full"
+       })
+      }), (0, d.jsx)("p", {
+       className: "mb-0 w-full text-center text-[24px] leading-[30px] sm:text-[30px] sm:leading-[36px] text-[#0095DA] font-normal px-10 sm:px-12",
+       style: {
+        fontFamily: Me
+       },
+       "data-testid": s ? `${s}-title` : void 0,
+       children: t
+      }), a && (0, d.jsx)("p", {
+       className: "mb-0 w-full text-center text-[16px] leading-[1.4] font-medium text-[#4A5667]",
+       style: {
+        fontFamily: Ee
+       },
+       children: a
+      }), (0, d.jsx)("button", {
+       type: "button",
+       onClick: n,
+       "aria-label": "\u0110\xf3ng",
+       "data-testid": s ? `${s}-close` : void 0,
+       className: "absolute top-4 right-3 sm:top-8 sm:right-8 w-11 h-11 inline-flex items-center justify-center rounded-[12px] border-none bg-transparent cursor-pointer transition-colors hover:bg-[rgba(16,23,41,0.06)] active:bg-[rgba(16,23,41,0.12)]",
+       children: (0, d.jsx)("img", {
+        src: ke,
+        alt: "",
+        "aria-hidden": "true",
+        className: "w-6 h-6"
+       })
+      })]
+     }),
+     children: (0, d.jsx)("div", {
+      className: "flex flex-col gap-6 items-center px-4 pb-6 pt-6 sm:px-8 sm:pb-8",
+      "data-testid": s,
+      children: l
+     })
+    }),
+    $e = ({
+     tone: e,
+     children: t,
+     testId: a
+    }) => {
+     const {
+      background: n,
+      color: l,
+      icon: s
+     } = De[e];
+     return (0, d.jsxs)("div", {
+      className: "flex gap-3 items-center w-full px-5 py-2 rounded-[12px] min-h-[45px]",
+      style: {
+       background: n
+      },
+      "data-testid": a,
+      children: [s && (0, d.jsx)("img", {
+       src: s,
+       alt: "",
+       "aria-hidden": "true",
+       className: "w-6 h-6 shrink-0"
+      }), (0, d.jsx)("p", {
+       className: "mb-0 flex-1 min-w-0 text-[16px] leading-[26px] font-semibold",
+       style: {
+        fontFamily: Ee,
+        color: l
+       },
+       children: t
+      })]
+     })
+    },
+    Re = ({
+     children: e,
+     testId: t
+    }) => (0, d.jsx)("div", {
+     className: "flex flex-col items-start w-full px-5 py-3 rounded-[16px] bg-[#F8FAFC] overflow-hidden",
+     "data-testid": t,
+     children: e
+    }),
+    Le = ({
+     label: e,
+     value: t,
+     testId: a
+    }) => (0, d.jsxs)("div", {
+     className: "flex flex-col sm:flex-row gap-1 sm:gap-4 items-start w-full py-2 break-words",
+     "data-testid": a,
+     children: [(0, d.jsx)("p", {
+      className: "mb-0 shrink-0 w-full sm:w-[168px] text-[16px] leading-[1.4] font-normal text-[#4A5667]",
+      style: {
+       fontFamily: Ee
+      },
+      children: e
+     }), (0, d.jsx)("p", {
+      className: "mb-0 flex-1 min-w-0 text-[16px] leading-[1.4] font-semibold text-[#252525]",
+      style: {
+       fontFamily: Ee
+      },
+      children: t
+     })]
+    }),
+    Ve = ({
+     met: e,
+     title: t,
+     description: a,
+     actionLabel: n,
+     onAction: l,
+     testId: s
+    }) => e ? (0, d.jsxs)("div", {
+     className: "flex gap-4 items-center w-full px-5 py-4 rounded-[16px] bg-[#F3FAF7]",
+     "data-testid": s,
+     children: [(0, d.jsx)("img", {
+      src: Fe,
+      alt: "",
+      "aria-hidden": "true",
+      className: "w-6 h-6 shrink-0"
+     }), (0, d.jsx)("p", {
+      className: "mb-0 flex-1 min-w-0 text-[16px] leading-[24px] font-semibold text-[#252525]",
+      style: {
+       fontFamily: Ee
+      },
+      children: t
+     })]
+    }) : (0, d.jsxs)("div", {
+     className: "flex flex-col sm:flex-row gap-4 items-start sm:items-center w-full px-5 py-4 rounded-[16px] bg-[#FFFFFF] border border-solid border-[#CDD5E0]",
+     "data-testid": s,
+     children: [(0, d.jsxs)("div", {
+      className: "flex flex-1 min-w-0 gap-3 items-center w-full",
+      children: [(0, d.jsx)("img", {
+       src: Ce,
+       alt: "",
+       "aria-hidden": "true",
+       className: "w-6 h-6 shrink-0"
+      }), (0, d.jsxs)("div", {
+       className: "flex flex-col gap-1 items-start flex-1 min-w-0 break-words",
+       children: [(0, d.jsx)("p", {
+        className: "mb-0 w-full text-[16px] leading-[24px] font-semibold text-[#252525]",
+        style: {
+         fontFamily: Ee
+        },
+        children: t
+       }), a && (0, d.jsx)("p", {
+        className: "mb-0 w-full text-[14px] leading-[1.4] font-normal text-[#4A5667]",
+        style: {
+         fontFamily: Ee
+        },
+        children: a
+       })]
+      })]
+     }), n && l && (0, d.jsxs)("button", {
+      type: "button",
+      onClick: l,
+      "data-testid": s ? `${s}-action` : void 0,
+      className: "shrink-0 self-end sm:self-auto inline-flex gap-2 h-8 items-center justify-center pl-3 pr-2 py-[6px] rounded-[24px] border-none cursor-pointer bg-[#FF6B6B]",
+      style: {
+       boxShadow: "inset -3px -3px 2px 0px rgba(0,0,0,0.15)"
+      },
+      children: [(0, d.jsx)("span", {
+       className: "text-[14px] leading-[1.4] tracking-[0.42px] text-center text-[#FFFFFF] whitespace-nowrap font-normal",
+       style: {
+        fontFamily: Me
+       },
+       children: n
+      }), (0, d.jsx)("img", {
+       src: y,
+       alt: "",
+       "aria-hidden": "true",
+       className: "w-6 h-6 shrink-0"
+      })]
+     })]
+    }),
+    Ye = ({
+     children: e,
+     testId: t
+    }) => (0, d.jsx)("p", {
+     className: "mb-0 w-full text-[16px] leading-[1.4] font-normal text-[#252525]",
+     style: {
+      fontFamily: Ee
+     },
+     "data-testid": t,
+     children: e
+    });
+   var Oe = a(4159),
+    Xe = a.n(Oe),
+    He = a(36220),
+    Pe = a.n(He);
+   Xe().extend(Pe());
+   const We = /(?:Z|[+-]\d{2}:?\d{2})$/i,
+    Ge = e => {
+     if (!e || e.startsWith("0001-01-01")) return null;
+     const t = Xe().utc(e);
+     return t.isValid() ? We.test(e) ? t.add(420, "minute") : t : null
+    },
+    Ke = () => Xe()().utc().add(420, "minute"),
+    Ue = (e, t = "--") => {
+     const a = Ge(e);
+     return a ? `${a.format("HH:mm")}, ng\xe0y ${a.format("DD/MM/YYYY")}` : t
+    },
+    Ze = e => e.map((e, t) => (0, d.jsx)(Le, {
+     label: e.tenVaiTro,
+     value: e.hoTen,
+     testId: `exam-info-gvqt-${t}`
+    }, `${e.vaiTro}-${e.hoTen}-${t}`)),
+    qe = (e, t, a) => {
+     const n = [{
+      key: "account",
+      met: e.daXacThucSdt,
+      title: e.daXacThucSdt ? "\u0110\xe3 x\xe1c th\u1ef1c t\xe0i kho\u1ea3n" : "Ch\u01b0a x\xe1c th\u1ef1c t\xe0i kho\u1ea3n",
+      description: "B\u1ea1n c\u1ea7n x\xe1c th\u1ef1c t\xe0i kho\u1ea3n \u0111\u1ec3 \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n \u0111\u0103ng k\xfd tham gia.",
+      actionLabel: e.conHanDangKy ? "X\xe1c th\u1ef1c ngay" : void 0,
+      onAction: e.conHanDangKy ? t : void 0,
+      testId: "exam-info-condition-phone"
+     }, {
+      key: "practice",
+      met: e.daDatVongTuLuyen,
+      title: e.daDatVongTuLuyen ? "\u0110\xe3 ho\xe0n th\xe0nh v\xf2ng t\u1ef1 luy\u1ec7n y\xeau c\u1ea7u" : "Ch\u01b0a ho\xe0n th\xe0nh v\xf2ng t\u1ef1 luy\u1ec7n",
+      description: `B\u1ea1n c\u1ea7n ho\xe0n th\xe0nh v\xf2ng t\u1ef1 luy\u1ec7n ${e.vongTuLuyenYeuCau} \u0111\u1ec3 \u0111\u01b0\u1ee3c \u0111\u0103ng k\xfd tham gia.`,
+      actionLabel: e.conHanDangKy ? "T\u1ef1 luy\u1ec7n ngay" : void 0,
+      onAction: e.conHanDangKy ? a : void 0,
+      testId: "exam-info-condition-practice"
+     }];
+     return (0, d.jsxs)("div", {
+      className: "flex flex-col gap-3 items-start justify-center w-full",
+      children: [n.every(e => !e.met) && (0, d.jsx)(Ye, {
+       children: "B\u1ea1n c\u1ea7n ho\xe0n th\xe0nh c\xe1c \u0111i\u1ec1u ki\u1ec7n sau \u0111\u1ec3 \u0111\u01b0\u1ee3c \u0111\u0103ng k\xfd tham gia:"
+      }), n.sort((e, t) => Number(e.met) - Number(t.met)).map(({
+       key: e,
+       ...t
+      }) => (0, d.jsx)(Ve, {
+       ...t
+      }, e))]
+     })
+    },
+    ze = ({
+     open: e,
+     loading: t,
+     code: a,
+     message: s,
+     data: i,
+     onClose: o
+    }) => {
+     const r = (0, F.Zp)(),
+      c = (0, n.useCallback)(() => {
+       window.location.href = `https://ioe.vn/billing/security?returnUrl=${window.location.href}`
+      }, []),
+      h = (0, n.useCallback)(() => {
+       o(), r(Ne.G.PRACTICE_YOUR_SELF)
+      }, [r, o]),
+      m = (0, n.useMemo)(() => {
+       var e, o;
+       if (t) return {
+        title: "Th\xf4ng tin tham gia",
+        subtitle: void 0,
+        body: (0, d.jsxs)("div", {
+         className: "flex flex-col gap-3 w-full",
+         children: [(0, d.jsx)(l.EA, {
+          shape: "line",
+          height: 45,
+          radius: 12
+         }), (0, d.jsx)(l.EA, {
+          shape: "line",
+          height: 20
+         }), (0, d.jsx)(l.EA, {
+          shape: "line",
+          height: 20,
+          width: "80%"
+         })]
+        })
+       };
+       if (0 !== a || !i) return {
+        title: "Th\xf4ng tin tham gia",
+        subtitle: void 0,
+        body: (0, d.jsx)($e, {
+         tone: "error",
+         testId: "exam-info-error",
+         children: s || "H\u1ec7 th\u1ed1ng \u0111ang b\u1eadn, b\u1ea1n vui l\xf2ng th\u1eed l\u1ea1i sau nh\xe9!"
+        })
+       };
+       switch (i.maTrangThai) {
+        case "P1":
+         return {
+          title: "Ch\u01b0a \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n tham gia", subtitle: i.tenVong, body: qe(i, c, h)
+         };
+        case "P2":
+         return {
+          title: "Th\xf4ng tin tham gia", subtitle: i.tenVong, body: (0, d.jsxs)(n.Fragment, {
+           children: [(0, d.jsx)($e, {
+            tone: "info",
+            testId: "exam-info-status",
+            children: "\u0110\u1ee7 \u0111i\u1ec1u ki\u1ec7n tham gia \u2013 GVQT ch\u01b0a \u0111\u0103ng k\xfd"
+           }), (0, d.jsx)(Ye, {
+            children: "B\u1ea1n \u0111\xe3 \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n tham gia nh\u01b0ng ch\u01b0a \u0111\u01b0\u1ee3c \u0111\u0103ng k\xfd. H\xe3y nh\u1edd b\u1ed1 m\u1eb9 ho\u1eb7c th\u1ea7y c\xf4 li\xean h\u1ec7 gi\xe1o vi\xean qu\u1ea3n tr\u1ecb c\u1ee7a tr\u01b0\u1eddng \u0111\u1ec3 \u0111\u0103ng k\xfd tr\u01b0\u1edbc h\u1ea1n nh\xe9!"
+           }), (0, d.jsxs)(Re, {
+            testId: "exam-info-block",
+            children: [(0, d.jsx)(Le, {
+             label: "H\u1ea1n \u0111\u0103ng k\xfd",
+             value: Ue(i.finishRegisterDate),
+             testId: "exam-info-deadline"
+            }), Ze(null !== (e = i.gvqt) && void 0 !== e ? e : [])]
+           })]
+          })
+         };
+        case "P3":
+         return {
+          title: "Th\xf4ng tin tham gia", subtitle: i.tenVong, body: (0, d.jsxs)(n.Fragment, {
+           children: [(0, d.jsx)($e, {
+            tone: "error",
+            testId: "exam-info-status",
+            children: "\u0110\xe3 h\u1ebft h\u1ea1n \u0111\u0103ng k\xfd tham gia"
+           }), (0, d.jsx)(Ye, {
+            children: "R\u1ea5t ti\u1ebfc, b\u1ea1n ch\u01b0a \u0111\u01b0\u1ee3c \u0111\u0103ng k\xfd tham gia v\xf2ng n\xe0y. H\u1eb9n g\u1eb7p b\u1ea1n \u1edf v\xf2ng sau nh\xe9!"
+           })]
+          })
+         };
+        case "P4":
+         return {
+          title: "Th\xf4ng tin tham gia", subtitle: i.tenVong, body: (0, d.jsxs)(n.Fragment, {
+           children: [(0, d.jsx)($e, {
+            tone: "info",
+            testId: "exam-info-status",
+            children: "\u0110ang ch\u1edd duy\u1ec7t thay \u0111\u1ed5i th\xf4ng tin"
+           }), (0, d.jsx)(Ye, {
+            children: "Y\xeau c\u1ea7u thay \u0111\u1ed5i th\xf4ng tin c\u1ee7a b\u1ea1n \u0111ang \u0111\u01b0\u1ee3c x\u1eed l\xfd. B\u1ea1n h\xe3y ki\u1ec3m tra tr\u1ea1ng th\xe1i x\u1eed l\xfd \u1edf trang th\xf4ng tin c\xe1 nh\xe2n !"
+           }), (null === (o = i.gvqt) || void 0 === o ? void 0 : o.length) > 0 && (0, d.jsx)(Re, {
+            testId: "exam-info-block",
+            children: Ze(i.gvqt)
+           })]
+          })
+         };
+        case "P5":
+         return {
+          title: "Th\xf4ng tin tham gia", subtitle: i.tenVong, body: (0, d.jsxs)(n.Fragment, {
+           children: [(0, d.jsx)($e, {
+            tone: "success",
+            testId: "exam-info-status",
+            children: "\u0110\xe3 \u0111\u0103ng k\xfd - Ch\u1edd Tham gia"
+           }), (0, d.jsxs)("div", {
+            className: "flex flex-col gap-2 items-start w-full",
+            children: [(0, d.jsx)("p", {
+             className: "mb-0 w-full text-[16px] leading-[1.4] font-semibold text-[#252525]",
+             style: {
+              fontFamily: Ee
+             },
+             children: "Th\xf4ng tin \u0111\xe3 \u0111\u0103ng k\xfd"
+            }), (0, d.jsxs)(Re, {
+             testId: "exam-info-block",
+             children: [(0, d.jsx)(Le, {
+              label: "H\u1ecd v\xe0 t\xean",
+              value: i.hoTen,
+              testId: "exam-info-name"
+             }), (0, d.jsx)(Le, {
+              label: "Kh\u1ed1i",
+              value: i.khoi,
+              testId: "exam-info-block-grade"
+             }), (0, d.jsx)(Le, {
+              label: "L\u1edbp",
+              value: i.tenLop,
+              testId: "exam-info-class"
+             }), (0, d.jsx)(Le, {
+              label: "Tr\u01b0\u1eddng",
+              value: i.tenTruong,
+              testId: "exam-info-school"
+             })]
+            })]
+           })]
+          })
+         };
+        default:
+         return {
+          title: "Th\xf4ng tin tham gia", subtitle: i.tenVong, body: (0, d.jsx)($e, {
+           tone: "info",
+           testId: "exam-info-status",
+           children: i.tenTrangThai
+          })
+         }
+       }
+      }, [a, i, h, c, t, s]);
+     return (0, d.jsx)(Be, {
+      open: e,
+      title: m.title,
+      subtitle: m.subtitle,
+      onClose: o,
+      testId: "exam-info-dialog",
+      children: m.body
+     })
+    },
+    Qe = {
+     1: "Ng\xe0y t\u1ed5 ch\u1ee9c",
+     2: "Ng\xe0y tr\u1ea3i nghi\u1ec7m",
+     3: "Ng\xe0y t\u1ed5 ch\u1ee9c"
+    },
+    Je = {
+     1: "V\xe0o l\xe0m b\xe0i",
+     2: "V\xe0o tr\u1ea3i nghi\u1ec7m",
+     3: "V\xe0o l\xe0m b\xe0i"
+    },
+    et = e => 0 === e.loaiThe || 1 === e.loaiThe || 2 === e.loaiThe || 3 === e.loaiThe ? e.loaiThe : e.traiNghiem ? 2 : ((e, t) => {
+     const a = Ge(e),
+      n = Ge(t);
+     if (!a || !n) return !1;
+     const l = Ke();
+     return !l.isBefore(a) && !l.isAfter(n)
+    })(e.startDate, e.endDate) ? 3 : 1,
+    tt = {
+     outline: {
+      className: "bg-[#FFFFFF] border border-solid border-[#FF6B6B] cursor-pointer",
+      color: "#FF6B6B",
+      icon: fe
+     },
+     solid: {
+      className: "bg-[#FF6B6B] border-none cursor-pointer",
+      color: "#FFFFFF",
+      icon: ve
+     },
+     disabled: {
+      className: "bg-[#E3E8EF] border-none cursor-not-allowed",
+      color: "#97A3B6",
+      icon: be
+     }
+    },
+    at = ({
+     label: e,
+     variant: t,
+     onClick: a,
+     testId: n
+    }) => {
+     const {
+      className: l,
+      color: s,
+      icon: i
+     } = tt[t], o = "disabled" === t;
+     return (0, d.jsxs)("button", {
+      type: "button",
+      disabled: o,
+      onClick: o ? void 0 : a,
+      "data-testid": n,
+      className: `inline-flex gap-2 items-center justify-center px-4 py-[10px] rounded-full shrink-0 ${l}`,
+      style: "solid" === t ? {
+       boxShadow: "inset -3px -3px 2px 0px rgba(54,65,83,0.15)"
+      } : void 0,
+      children: [(0, d.jsx)("span", {
+       className: "text-[14px] leading-5 whitespace-nowrap font-normal",
+       style: {
+        fontFamily: Me,
+        color: s
+       },
+       children: e
+      }), (0, d.jsx)("img", {
+       src: i,
+       alt: "",
+       "aria-hidden": "true",
+       className: "w-5 h-5 shrink-0"
+      })]
+     })
+    },
+    nt = ({
+     className: e = ""
+    }) => {
+     const t = (0, i.j)(),
+      a = (0, i.G)(we.DD),
+      o = (0, i.G)(we.k),
+      [r, c] = (0, n.useState)(!1),
+      h = a.data;
+     (0, n.useEffect)(() => {
+      t((0, ye.j)({
+       token: (0, s.gf)(),
+       serviceCode: "IOE"
+      }))
+     }, [t]);
+     const m = (0, n.useMemo)(() => h ? et(h) : null, [h]),
+      x = (0, n.useMemo)(() => h ? 2 === m ? h.traiNghiem : h : null, [h, m]),
+      u = (0, n.useCallback)(() => {
+       c(!0), t((0, ye.c)({
+        token: (0, s.gf)(),
+        serviceCode: "IOE"
+       }))
+      }, [t]),
+      p = (0, n.useCallback)(() => {
+       c(!1), t((0, we.XN)())
+      }, [t]),
+      g = (0, n.useCallback)(() => {
+       window.location.href = "https://ioe.vn/thi-cac-cap"
+      }, []);
+     if (a.loading) return (0, d.jsxs)("div", {
+      className: `flex flex-col items-start w-full ${e}`,
+      "data-testid": "official-round-skeleton",
+      children: [(0, d.jsx)(l.EA, {
+       shape: "line",
+       width: 320,
+       height: 36
+      }), (0, d.jsx)(l.EA, {
+       shape: "line",
+       height: 108,
+       radius: 24,
+       className: "mt-4"
+      })]
+     });
+     if (0 !== a.code || !h || null === m || 0 === m || !h.hienThe) return null;
+     const f = h.tenVong,
+      v = null !== x && void 0 !== x ? x : h,
+      b = ((e, t, a = "--") => {
+       const n = Ge(e),
+        l = Ge(t);
+       return n || l ? l ? n ? n.isSame(l, "day") ? n.format("DD/MM/YYYY") : `${n.format("DD/MM/YYYY")} - ${l.format("DD/MM/YYYY")}` : l.format("DD/MM/YYYY") : n.format("DD/MM/YYYY") : a
+      })(v.startDate, v.endDate),
+      j = ((e, t) => {
+       const a = Ge(e),
+        n = Ge(t);
+       if (!a && !n) return !1;
+       const l = Ke();
+       return (!a || !l.isBefore(a, "day")) && (!n || !l.isAfter(n, "day"))
+      })(v.startDate, v.endDate);
+     return (0, d.jsxs)(n.Fragment, {
+      children: [(0, d.jsxs)("div", {
+       className: `flex flex-col items-start w-full ${e}`,
+       "data-testid": "official-round",
+       children: [(0, d.jsx)(O, {
+        title: "V\xf2ng ch\xednh th\u1ee9c!"
+       }), (0, d.jsxs)("div", {
+        className: "relative w-full mt-0 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border border-solid border-[#0095DA] rounded-[24px] p-6 bg-[#FFFFFF] overflow-hidden",
+        children: [(0, d.jsx)("div", {
+         className: "hidden lg:flex absolute top-[-8px] right-[18px] w-[147.775px] h-[123.317px] items-center justify-center pointer-events-none",
+         children: (0, d.jsx)("img", {
+          src: je,
+          alt: "",
+          "aria-hidden": "true",
+          className: "w-[133.811px] h-[104.76px] object-cover opacity-20 rotate-[8.47deg]"
+         })
+        }), (0, d.jsxs)("div", {
+         className: "relative flex flex-col gap-1 items-start min-w-0",
+         children: [(0, d.jsx)("p", {
+          className: "mb-0 text-[20px] leading-7 font-semibold text-[#252525]",
+          style: {
+           fontFamily: Ee
+          },
+          "data-testid": "official-round-name",
+          children: f
+         }), (0, d.jsxs)("div", {
+          className: "flex gap-2 items-center",
+          children: [(0, d.jsx)("img", {
+           src: ge,
+           alt: "",
+           "aria-hidden": "true",
+           className: "w-4 h-4 shrink-0"
+          }), (0, d.jsx)("p", {
+           className: "mb-0 text-[14px] leading-[1.4] font-normal text-[#4A5667]",
+           style: {
+            fontFamily: Ee
+           },
+           "data-testid": "official-round-phase",
+           children: `${Qe[m]}: ${b}`
+          })]
+         })]
+        }), (0, d.jsxs)("div", {
+         className: "relative flex flex-wrap gap-3 items-center",
+         children: [(0, d.jsx)(at, {
+          label: "Ki\u1ec3m tra th\xf4ng tin \u0111\u0103ng k\xfd",
+          variant: "outline",
+          onClick: u,
+          testId: "official-round-check-info"
+         }), (0, d.jsx)(at, {
+          label: Je[m],
+          variant: j ? "solid" : "disabled",
+          onClick: j ? g : void 0,
+          testId: "official-round-enter-exam"
+         })]
+        })]
+       })]
+      }), (0, d.jsx)(ze, {
+       open: r,
+       loading: o.loading,
+       code: o.code,
+       message: o.message,
+       data: o.data,
+       onClose: p
+      })]
+     })
+    },
+    lt = () => (0, d.jsxs)("div", {
+     className: "grid grid-cols-12 gap-[24px] pb-[40px] pt-[16px] items-stretch",
+     children: [(0, d.jsx)("div", {
+      className: "col-span-12 lg:col-span-8",
+      children: (0, d.jsx)(b, {
+       className: "h-full"
+      })
+     }), (0, d.jsx)("div", {
+      className: "col-span-12 lg:col-span-4",
+      children: (0, d.jsx)(m, {
+       className: "h-full"
+      })
+     }), (0, d.jsx)(nt, {
+      className: "col-span-12"
+     }), (0, d.jsxs)("div", {
+      className: "col-span-12 grid grid-cols-12 gap-x-[24px] gap-y-[24px] lg:gap-y-0",
+      children: [(0, d.jsx)("div", {
+       className: "col-span-12",
+       children: (0, d.jsx)(O, {
+        className: "hidden lg:inline",
+        title: "B\u1ea1n \u0111ang l\xe0m r\u1ea5t t\u1ed1t, nhi\u1ec7m v\u1ee5 ti\u1ebfp theo!"
+       })
+      }), (0, d.jsxs)("div", {
+       className: "col-span-12 lg:col-span-8",
+       children: [(0, d.jsx)(O, {
+        className: "inline lg:hidden",
+        title: "B\u1ea1n \u0111ang l\xe0m r\u1ea5t t\u1ed1t, nhi\u1ec7m v\u1ee5 ti\u1ebfp theo!"
+       }), (0, d.jsx)(C, {})]
+      }), (0, d.jsx)("div", {
+       className: "col-span-12 lg:col-span-4",
+       children: (0, d.jsx)(V, {})
+      })]
+     }), (0, d.jsx)("div", {
+      className: "col-span-12 lg:col-span-6",
+      children: (0, d.jsx)(K, {})
+     }), (0, d.jsx)("div", {
+      className: "col-span-12 lg:col-span-6",
+      children: (0, d.jsx)(J, {})
+     }), (0, d.jsx)("div", {
+      className: "col-span-12",
+      children: (0, d.jsx)(pe, {})
+     })]
+    }),
+    st = lt
+  }
+ }
+]);

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOE: Hấp dẫn - mê say - thấy ngay kết quả - Đang chuyển sang đăng nhập </title>
+    <meta name="Googlebot" content="index,follow,archive" />
+    <meta name="robots" content="index, follow" />
+    <meta id="pageDescription" name="description" content="Olympic tiếng anh, thi tiếng anh internet, thi tiếng anh trực tuyến, kiểm tra kiến thức tiếng anh,English Online Contest, Olympic English, goIOE, IOE, hấp dẫn, mê say, kết quả" />
+    <meta id="pageDescription1" name="description1" content="giáo dục, học trực tuyến, vtc online, cổng giáo dục, day hoc, bai giang, giang truc tuyen, hoc mai,thi truc tuyen, thi cu, luyen thi, luyen thi online" />
+    <meta id="pageKeywords" name="keywords" content="Thi tiếng Anh trên mạng,THCS,Tiểu học,THPT,tiếng anh,Olympic tiếng anh,thi tiếng anh internet,thi tiếng anh trực tuyến,English Online Contest,Olympic English, goIOE, IOE, Cuộc thi tiếng anh Bộ Giáo Dục Đào Tạo VTC Online, dạy học, bổ túc, bổ túc văn hóa" />
+    <meta id="pageKeywords1" name="keywords1" content="SEO,Search Engine Optimization,anh văn, tiếng anh, thi trực tuyến, thi cử, luyện thi, luyện thi online, Edu online, giao duc, chia se cong dong, chia se, ket ban, giao luu, bai giang, giang truc tuyen, hoc truc tuyen, bo tuc, hoc mai,anh, anh van, thi cu, luyen thi online, sach giao khoa" />
+    <meta property="og:image" content="https://ioe.vn/images/logos/ioe-logo.png">
+    <!-- META FOR FACEBOOK -->
+    <meta property="og:site_name" content="IOE - Cuộc thi Olympic tiếng Anh trực tuyến số 1 Việt Nam" />
+    <meta property="og:rich_attachment" content="true" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" itemprop="url" content="https://ioe.vn" />
+    <meta property="og:image" itemprop="thumbnailUrl" content="https://cdn-s3.vtconline.vn/ioe-resource-02/filePublish/NewsImages/slide/2026/7/mini%20banner%201_1.png?v=639259614829442447" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="354" />
+    <meta content="IOE - Cuộc thi Olympic tiếng Anh trực tuyến số 1 Việt Nam" itemprop="headline" property="og:title" />
+    <meta content="Olympic tiếng Anh, thi tiếng Anh trực tuyến, kiểm tra kiến thức tiếng Anh theo chương trình của Bộ giáo dục và Đào tạo, bài giảng tiếng Anh trực tuyến, học tiếng Anh trực tuyến, trắc nghiệm online IELTS, TOEIC…" itemprop="description" property="og:description" />
+    
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/lib/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/base.css?v=4OLX58UGi_LRUUa0zbxkCrOGhfufOTqWLyQC7zn4pYo" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-545WWBC"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+</head>
+
+<body>
+    <input type="hidden" id="rootPath" value="https://ioe.vn" />
+    <div class="body-wrapper">
+        <main role="main">
+            <div class="text-center" style="width:100%;height:100vh;display:flex;align-items:center;justify-content:center">
+    <img style="max-width:90px" src="/images/processing1.gif" alt="Đang chuyển" />
+</div>
+
+        </main>
+    </div>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main/ComLibs.js?v=tXZf67yWv-k7acrYt2VP7yMZs0M8-m8EPaAj8Z3IOBo"></script>
+    <script src="/js/main/goOauth.js?v=n7gaxAdEPs-O2m-MpPLwgaYXzjkgyzEUqP12oN83Nbs"></script>
+
+    <script>
+        ComLibs.Init();
+        goOauth.Init();
+    </script>
+    <script src="/js/pkce-utils.js?v=ocso8rExv_dzTR57pzPOlvJD5PTj9bEzyvcO8Ppc2fY"></script>
+    
+    <script>
+        (function () {
+            // Server đã build URL SSO + state (chứa nonce) cùng 1 chỗ → client chỉ ghi nonce vào
+            // sessionStorage rồi follow URL. KHÔNG còn 2 nonce khác nguồn.
+            var SSO_URL = "https://edu.go.vn/user?sv=ioe\u0026client_id=ioe-trang-chu\u0026redirect_uri=https%3A%2F%2Fioe.vn%2Fsso%2Fsignin-goplay\u0026skip_login=false\u0026state=eyJ1cmkiOiIvIiwic3QiOiIxNGI4MzUxN2JmYTc0MWQ5ODJkZjdkNWFlZDhjMjU2YyIsInJ0IjoibG9naW4ifQ";
+            var NONCE = "14b83517bfa741d982df7d5aed8c256c";
+            var RETURN_URL = "/";
+
+            var KEYS = {
+                TOKEN: '_token', RF: 'rf', UID: '_uid', NAME: 'ioe_name',
+                ACCOUNT: 'ioe_account_id', EXP_AT: 'ioe_exp_at',
+                NONCE: 'ioe_sso_nonce', ANON: 'ioe_sso_anonymous',
+                RETURN: 'ioe_return_url',
+                CODE_V: 'ioe_pkce_v'
+            };
+
+            // Xóa token cũ (user vào đây qua click "Đăng nhập" — coi như reset session)
+            ['TOKEN', 'RF', 'UID', 'NAME', 'ACCOUNT', 'EXP_AT', 'ANON'].forEach(function (k) {
+                try { sessionStorage.removeItem(KEYS[k]); } catch (e) {}
+            });
+
+            try {
+                sessionStorage.setItem(KEYS.NONCE, NONCE);
+                sessionStorage.setItem(KEYS.RETURN, RETURN_URL);
+            } catch (e) {
+                console.error('[SSO login] sessionStorage write failed:', e);
+            }
+
+            // PKCE — dùng PkceUtils từ pkce-utils.js (load bởi _ssoLayout), đồng bộ
+            var pkce = PkceUtils.generatePkce();
+            try { sessionStorage.setItem(KEYS.CODE_V, pkce.verifier); } catch (e) {}
+            PkceUtils.storePkceVerifier(pkce.verifier);
+            var url = PkceUtils.appendParam(SSO_URL, 'code_challenge', pkce.challenge);
+            url = PkceUtils.appendParam(url, 'code_challenge_method', 'S256');
+            console.log('[SSO login] nonce=', NONCE, 'pkce=yes, redirect to:', url);
+            window.location.replace(url);
+        })();
+    </script>
+
+</body>
+
+</html>

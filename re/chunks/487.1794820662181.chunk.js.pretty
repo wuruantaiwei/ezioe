@@ -1,0 +1,1120 @@
+"use strict";
+(globalThis.webpackChunkmyioe_hocsinh_v3 ||= []).push([
+ [487], {
+  57779(e, t, i) {
+   i.d(t, {
+    A: () => l
+   });
+   var s = i(9950);
+   var a = i(44414);
+   const n = () => (0, a.jsx)("svg", {
+     width: "16",
+     height: "16",
+     viewBox: "0 0 16 16",
+     fill: "none",
+     xmlns: "http://www.w3.org/2000/svg",
+     "aria-hidden": "true",
+     children: (0, a.jsx)("path", {
+      d: "M6 4L10 8L6 12",
+      stroke: "#677589",
+      strokeWidth: "1.5",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+     })
+    }),
+    l = ({
+     items: e,
+     className: t = ""
+    }) => null !== e && void 0 !== e && e.length ? (0, a.jsx)("nav", {
+     "aria-label": "Breadcrumb",
+     className: `ioe-breadcrumb ${t}`,
+     "data-testid": "breadcrumb",
+     children: e.map((t, i) => {
+      const l = i === e.length - 1,
+       d = l || !t.href;
+      return (0, a.jsxs)(s.Fragment, {
+       children: [d ? (0, a.jsx)("span", {
+        className: "ioe-breadcrumb__item ioe-breadcrumb__item--active",
+        "aria-current": "page",
+        "data-testid": `breadcrumb-item-${t.key}`,
+        children: t.label
+       }) : t.onClick ? (0, a.jsx)("button", {
+        type: "button",
+        className: "ioe-breadcrumb__item ioe-breadcrumb__item--link",
+        "data-testid": `breadcrumb-item-${t.key}`,
+        onClick: e => {
+         e.preventDefault(), t.onClick && t.onClick()
+        },
+        children: t.label
+       }) : (0, a.jsx)("a", {
+        href: t.href,
+        className: "ioe-breadcrumb__item ioe-breadcrumb__item--link",
+        "data-testid": `breadcrumb-item-${t.key}`,
+        children: t.label
+       }), !l && (0, a.jsx)("span", {
+        className: "ioe-breadcrumb__separator",
+        "aria-hidden": "true",
+        "data-testid": "breadcrumb-separator",
+        children: (0, a.jsx)(n, {})
+       })]
+      }, t.key)
+     })
+    }) : null
+  },
+  48807(e, t, i) {
+   var s = i(9950),
+    a = i(44414);
+   const n = () => (0, a.jsxs)("svg", {
+     width: "36",
+     height: "36",
+     viewBox: "0 0 24 24",
+     fill: "none",
+     xmlns: "http://www.w3.org/2000/svg",
+     "aria-hidden": "true",
+     children: [(0, a.jsx)("path", {
+      d: "M16.5 10.5V6.75a4.5 4.5 0 0 0-9 0V10.5",
+      stroke: "#0095DA",
+      strokeWidth: "1.6",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+     }), (0, a.jsx)("rect", {
+      x: "3.75",
+      y: "10.5",
+      width: "16.5",
+      height: "11.25",
+      rx: "2.25",
+      stroke: "#0095DA",
+      strokeWidth: "1.6"
+     }), (0, a.jsx)("circle", {
+      cx: "12",
+      cy: "16.5",
+      r: "1.25",
+      fill: "#0095DA"
+     }), (0, a.jsx)("path", {
+      d: "M12 17.75v1.5",
+      stroke: "#0095DA",
+      strokeWidth: "1.4",
+      strokeLinecap: "round"
+     })]
+    }),
+    l = () => (0, a.jsxs)("svg", {
+     width: "15",
+     height: "15",
+     viewBox: "0 0 15 15",
+     fill: "none",
+     xmlns: "http://www.w3.org/2000/svg",
+     "aria-hidden": "true",
+     children: [(0, a.jsx)("circle", {
+      cx: "7.5",
+      cy: "7.5",
+      r: "6.25",
+      stroke: "#D97706",
+      strokeWidth: "1.25"
+     }), (0, a.jsx)("path", {
+      d: "M7.5 4.5V7.5l2.25 1.5",
+      stroke: "#D97706",
+      strokeWidth: "1.25",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+     })]
+    }),
+    d = ({
+     message: e,
+     fallbackMessage: t,
+     badgeLabel: i,
+     className: s = ""
+    }) => (0, a.jsxs)("div", {
+     role: "status",
+     className: `flex w-full min-h-[320px] flex-col items-center justify-center gap-5 rounded-[24px] bg-[#F8F9FA] px-8 py-[52px] font-['Montserrat',sans-serif] ${s}`,
+     children: [(0, a.jsx)("div", {
+      className: "flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-2 border-[#BEDBFF] bg-[#EFF6FF]",
+      children: (0, a.jsx)(n, {})
+     }), i && (0, a.jsxs)("div", {
+      className: "inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-[#FDE68A] bg-[#FFFBEB] px-5 py-[7px]",
+      children: [(0, a.jsx)(l, {}), (0, a.jsx)("span", {
+       className: "text-[13px] font-semibold tracking-[0.01em] text-[#D97706]",
+       children: i
+      })]
+     }), (0, a.jsx)("p", {
+      className: "m-0 max-w-[560px] text-center text-[14px] font-medium leading-[22px] text-[#677589]",
+      children: (null === e || void 0 === e ? void 0 : e.trim()) || t
+     })]
+    }),
+    r = (0, s.memo)(d);
+   i.d(t, ["A", 0, r])
+  },
+  17593(e, t, i) {
+   i.d(t, {
+    A: () => n
+   });
+   i(9950);
+   var s = i(33679);
+   var a = i(44414);
+   const n = ({
+    title: e,
+    date: t,
+    description: i,
+    iconSrc: n,
+    className: l = ""
+   }) => (0, a.jsxs)("div", {
+    className: `ioe-page-heading ${l}`,
+    children: [(0, a.jsx)("h2", {
+     className: "ioe-page-heading__title",
+     title: e,
+     "data-testid": "page-heading-title",
+     children: e
+    }), t && (0, a.jsxs)("div", {
+     className: "ioe-page-heading__date-row",
+     children: [n ? (0, a.jsx)("img", {
+      src: n,
+      alt: "",
+      "aria-hidden": "true",
+      className: "ioe-page-heading__icon"
+     }) : (0, a.jsx)("span", {
+      className: "ioe-page-heading__icon",
+      children: (0, a.jsx)(s.yr, {})
+     }), (0, a.jsxs)("p", {
+      className: "ioe-page-heading__date",
+      "data-testid": "page-heading-date",
+      children: ["Th\u1eddi gian m\u1edf v\xf2ng: ", (0, a.jsx)("time", {
+       dateTime: t,
+       children: t
+      })]
+     })]
+    }), i && (0, a.jsx)("p", {
+     className: "ioe-page-heading__date",
+     "data-testid": "page-heading-description",
+     children: i
+    })]
+   })
+  },
+  79528(e, t, i) {
+   i.r(t), i.d(t, {
+    PracticeYourselfPage: () => H,
+    default: () => M
+   });
+   var s = i(13564),
+    a = i(57779),
+    n = i(17593),
+    l = i(9950);
+   const d = i.p + "static/media/icon-star.2c2c0ca941391cc62680.png";
+   var r = i(33679);
+   var o = i(44414);
+   const c = {
+     completed: "Ho\xe0n th\xe0nh",
+     current: "V\xf2ng hi\u1ec7n t\u1ea1i",
+     open: "\u0110ang m\u1edf",
+     locked: "Ch\u01b0a m\u1edf"
+    },
+    h = () => (0, o.jsxs)("div", {
+     className: "ioe-round-list__connector",
+     "aria-hidden": "true",
+     children: [(0, o.jsx)("span", {}), (0, o.jsx)("span", {}), (0, o.jsx)("span", {})]
+    }),
+    m = ({
+     item: e,
+     iconSrc: t,
+     currentRef: i
+    }) => {
+     const s = c[e.status],
+      a = "locked" === e.status,
+      n = "current" === e.status;
+     return (0, o.jsxs)("div", {
+      ref: "current" === e.status ? i : void 0,
+      className: `ioe-round-list__item ioe-round-list__item--${e.status}`,
+      style: {
+       cursor: "default"
+      },
+      onClick: a ? void 0 : e.onClick,
+      role: a ? void 0 : "button",
+      tabIndex: a ? -1 : 0,
+      "aria-label": `${e.title} \u2013 ${s}`,
+      "aria-disabled": a,
+      "data-testid": `round-list-item-${e.id}`,
+      onKeyDown: t => {
+       var i;
+       a || "Enter" !== t.key && " " !== t.key || (t.preventDefault(), null === (i = e.onClick) || void 0 === i || i.call(e))
+      },
+      children: [n && (0, o.jsx)("img", {
+       src: d,
+       alt: "",
+       "aria-hidden": "true",
+       className: "ioe-round-list__sparkle ioe-round-list__sparkle--lg"
+      }), (0, o.jsxs)("div", {
+       className: "ioe-round-list__item-inner",
+       children: [(0, o.jsxs)("div", {
+        className: "ioe-round-list__item-left",
+        children: [(0, o.jsx)("div", {
+         className: "ioe-round-list__item-title-wrap",
+         children: (0, o.jsx)("p", {
+          className: "ioe-round-list__item-title",
+          "data-testid": "round-list-item-title",
+          children: e.title
+         })
+        }), (0, o.jsxs)("div", {
+         className: "ioe-round-list__item-date-row",
+         children: [t ? (0, o.jsx)("img", {
+          src: t,
+          alt: "",
+          "aria-hidden": "true",
+          className: "ioe-round-list__item-date-icon"
+         }) : (0, o.jsx)("span", {
+          className: "ioe-round-list__item-date-icon",
+          children: (0, o.jsx)(r.yr, {})
+         }), (0, o.jsx)("p", {
+          className: "ioe-round-list__item-date-text",
+          "data-testid": "round-list-item-date",
+          children: (0, o.jsx)("time", {
+           dateTime: e.date,
+           children: e.date
+          })
+         })]
+        })]
+       }), (0, o.jsx)("div", {
+        className: "ioe-round-list__item-status-wrap",
+        children: (0, o.jsx)("p", {
+         className: "ioe-round-list__item-status",
+         "data-testid": "round-list-item-status",
+         children: s
+        })
+       })]
+      })]
+     })
+    },
+    x = ({
+     items: e,
+     iconSrc: t,
+     maxHeight: i,
+     className: s = ""
+    }) => {
+     const a = (0, l.useRef)(null),
+      n = (0, l.useRef)(null);
+     return (0, l.useEffect)(() => {
+      if (!n.current || !a.current) return;
+      const e = a.current,
+       t = n.current,
+       i = t.offsetTop,
+       s = t.offsetHeight,
+       l = i - e.clientHeight / 2 + s / 2;
+      e.scrollTo({
+       top: Math.max(0, l),
+       behavior: "smooth"
+      })
+     }, [e]), null !== e && void 0 !== e && e.length ? (0, o.jsx)("div", {
+      ref: a,
+      className: `ioe-round-list ${s}`,
+      role: "list",
+      "aria-label": "Danh s\xe1ch v\xf2ng thi",
+      "data-testid": "round-list",
+      style: i ? {
+       maxHeight: i,
+       overflowY: "auto",
+       paddingRight: 4,
+       scrollbarWidth: "thin"
+      } : void 0,
+      children: e.map((i, s) => (0, o.jsxs)(l.Fragment, {
+       children: [(0, o.jsx)("div", {
+        role: "listitem",
+        children: (0, o.jsx)(m, {
+         item: i,
+         iconSrc: t,
+         currentRef: n
+        })
+       }), s < e.length - 1 && (0, o.jsx)(h, {})]
+      }, i.id))
+     }) : null
+    },
+    u = ["V\xf2ng t\u1ef1 luy\u1ec7n", "S\u1ed1 l\u1ea7n thi", "\u0110i\u1ec3m cao nh\u1ea5t", "Th\u1eddi gian l\xe0m b\xe0i"],
+    g = ({
+     description: e = "T\u1ed5ng h\u1ee3p k\u1ebft qu\u1ea3 c\xe1c v\xf2ng t\u1ef1 luy\u1ec7n c\u1ee7a IOE",
+     rows: t = [],
+     onContinue: i,
+     onViewLeaderboard: s,
+     className: a = ""
+    }) => (0, o.jsxs)("div", {
+     className: `ioe-practice-result ${a}`,
+     children: [(0, o.jsxs)("div", {
+      className: "ioe-practice-result__action-row",
+      children: [(0, o.jsx)("p", {
+       className: "ioe-practice-result__desc",
+       children: e
+      }), (0, o.jsxs)("div", {
+       className: "ioe-practice-result__btn-group",
+       children: [(0, o.jsx)("button", {
+        type: "button",
+        className: "ioe-practice-result__btn",
+        onClick: i,
+        children: "Ti\u1ebfp t\u1ee5c t\u1ef1 luy\u1ec7n"
+       }), (0, o.jsx)("button", {
+        type: "button",
+        className: "ioe-practice-result__btn",
+        onClick: s,
+        children: "B\u1ea3ng x\u1ebfp h\u1ea1ng"
+       })]
+      })]
+     }), (0, o.jsx)("div", {
+      className: "ioe-practice-result__table-wrap",
+      children: (0, o.jsxs)("table", {
+       className: "ioe-practice-result__table",
+       children: [(0, o.jsx)("thead", {
+        children: (0, o.jsx)("tr", {
+         children: u.map(e => (0, o.jsx)("th", {
+          children: e
+         }, e))
+        })
+       }), (0, o.jsx)("tbody", {
+        children: 0 === t.length ? (0, o.jsx)("tr", {
+         children: (0, o.jsx)("td", {
+          colSpan: 4,
+          style: {
+           color: "#9CA3AF",
+           fontStyle: "italic"
+          },
+          children: "Ch\u01b0a c\xf3 d\u1eef li\u1ec7u"
+         })
+        }) : t.map(e => {
+         var t, i, s;
+         return (0, o.jsxs)("tr", {
+          children: [(0, o.jsx)("td", {
+           children: e.round
+          }), (0, o.jsx)("td", {
+           children: null !== (t = e.attempts) && void 0 !== t ? t : "--"
+          }), (0, o.jsx)("td", {
+           children: null !== (i = e.highScore) && void 0 !== i ? i : "--"
+          }), (0, o.jsx)("td", {
+           children: null !== (s = e.duration) && void 0 !== s ? s : "--"
+          })]
+         }, e.id)
+        })
+       })]
+      })
+     })]
+    });
+   var p = i(5014),
+    j = i(42838),
+    v = i(39658),
+    b = i(8019),
+    _ = i(28285),
+    f = i(54384),
+    k = i(18728),
+    y = i(40894),
+    N = i(21766),
+    w = i(71279),
+    T = i(40221);
+   const C = () => (0, o.jsx)("tr", {
+     children: (0, o.jsx)("td", {
+      colSpan: 6,
+      style: {
+       padding: 0,
+       border: "none"
+      },
+      children: (0, o.jsxs)("div", {
+       style: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 12,
+        padding: "40px 24px",
+        width: "100%"
+       },
+       children: [(0, o.jsxs)("svg", {
+        width: "64",
+        height: "64",
+        viewBox: "0 0 64 64",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        "aria-hidden": "true",
+        children: [(0, o.jsx)("rect", {
+         x: "10",
+         y: "8",
+         width: "36",
+         height: "46",
+         rx: "4",
+         fill: "#EFF6FF",
+         stroke: "#BEDBFF",
+         strokeWidth: "1.5"
+        }), (0, o.jsx)("rect", {
+         x: "18",
+         y: "20",
+         width: "20",
+         height: "2.5",
+         rx: "1.25",
+         fill: "#BEDBFF"
+        }), (0, o.jsx)("rect", {
+         x: "18",
+         y: "27",
+         width: "16",
+         height: "2.5",
+         rx: "1.25",
+         fill: "#BEDBFF"
+        }), (0, o.jsx)("rect", {
+         x: "18",
+         y: "34",
+         width: "12",
+         height: "2.5",
+         rx: "1.25",
+         fill: "#BEDBFF"
+        }), (0, o.jsx)("circle", {
+         cx: "44",
+         cy: "46",
+         r: "11",
+         fill: "white",
+         stroke: "#BEDBFF",
+         strokeWidth: "1.5"
+        }), (0, o.jsx)("circle", {
+         cx: "44",
+         cy: "46",
+         r: "6.5",
+         stroke: "#BEDBFF",
+         strokeWidth: "1.5"
+        }), (0, o.jsx)("line", {
+         x1: "49",
+         y1: "51",
+         x2: "54",
+         y2: "56",
+         stroke: "#BEDBFF",
+         strokeWidth: "2",
+         strokeLinecap: "round"
+        }), (0, o.jsx)("text", {
+         x: "44",
+         y: "50",
+         textAnchor: "middle",
+         fontSize: "8",
+         fontWeight: "700",
+         fill: "#C8D8F0",
+         fontFamily: "Montserrat, sans-serif",
+         children: "?"
+        })]
+       }), (0, o.jsx)("p", {
+        style: {
+         fontFamily: "'Montserrat', sans-serif",
+         fontSize: 14,
+         fontWeight: 500,
+         color: "#9CA3AF",
+         margin: 0,
+         textAlign: "center",
+         lineHeight: 1.5
+        },
+        children: "Ch\u01b0a c\xf3 d\u1eef li\u1ec7u b\xe0i thi"
+       }), (0, o.jsx)("p", {
+        style: {
+         fontFamily: "'Montserrat', sans-serif",
+         fontSize: 12,
+         fontWeight: 400,
+         color: "#C4CADA",
+         margin: 0,
+         textAlign: "center",
+         lineHeight: 1.5
+        },
+        children: "Danh s\xe1ch b\xe0i thi s\u1ebd \u0111\u01b0\u1ee3c c\u1eadp nh\u1eadt s\u1edbm"
+       })]
+      })
+     })
+    }),
+    A = ({
+     statusExam: e
+    }) => {
+     switch (e) {
+      case _.HV.FINISHED:
+      case _.HV.LOCKED:
+       return (0, o.jsx)(r.bu, {});
+      case _.HV.CAN_PLAY:
+       return (0, o.jsx)(r.qh, {});
+      default:
+       return (0, o.jsx)(l.Fragment, {
+        children: "---"
+       })
+     }
+    },
+    F = ({
+     status: e = "---"
+    }) => (0, o.jsx)("div", {
+     className: "ioe-exam-detail__status",
+     children: (0, o.jsx)(A, {
+      statusExam: e
+     })
+    }),
+    S = () => (0, o.jsx)("tr", {
+     children: ["30%", "12%", "12%", "18%", "14%", "14%"].map((e, t) => (0, o.jsx)("td", {
+      children: (0, o.jsx)("span", {
+       style: {
+        display: "block",
+        height: 14,
+        width: e,
+        margin: "0 auto",
+        borderRadius: 6,
+        background: "linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)",
+        backgroundSize: "400px 100%",
+        animation: "skeleton-shimmer 1.4s ease-in-out infinite"
+       }
+      })
+     }, t))
+    }),
+    B = ({
+     rows: e,
+     loading: t = !1,
+     summary: i
+    }) => {
+     var s, a, n, l;
+     return (0, o.jsxs)(o.Fragment, {
+      children: [(0, o.jsx)("style", {
+       children: "\n      @keyframes skeleton-shimmer {\n        0%   { background-position: -400px 0; }\n        100% { background-position:  400px 0; }\n      }\n    "
+      }), (0, o.jsx)("div", {
+       className: "ioe-exam-detail__table-wrap",
+       children: (0, o.jsxs)("table", {
+        className: "ioe-exam-detail__table",
+        "data-testid": "mandatory-table",
+        children: [(0, o.jsx)("thead", {
+         "data-testid": "mandatory-table-header",
+         children: (0, o.jsx)("tr", {
+          children: ["B\xe0i thi", "L\u1ea7n thi", "\u0110i\u1ec3m", "Th\u1eddi gian", "Tr\u1ea1ng th\xe1i", "H\xe0nh \u0111\u1ed9ng"].map(e => (0, o.jsx)("th", {
+           children: e
+          }, e))
+         })
+        }), (0, o.jsx)("tbody", {
+         children: t ? Array.from({
+          length: 4
+         }).map((e, t) => (0, o.jsx)(S, {}, t)) : e.length > 0 ? e.map(e => (0, o.jsxs)("tr", {
+          "data-testid": `mandatory-table-row-${e.id}`,
+          children: [(0, o.jsx)("td", {
+           children: e.name
+          }), (0, o.jsx)("td", {
+           children: e.attempts
+          }), (0, o.jsx)("td", {
+           children: e.score
+          }), (0, o.jsx)("td", {
+           children: e.duration
+          }), (0, o.jsx)("td", {
+           children: (0, o.jsx)(F, {
+            status: e.status
+           })
+          }), (0, o.jsx)("td", {
+           children: [_.HV.CAN_PLAY, _.HV.NOT_STARTED].includes(e.status) && (0, o.jsx)("button", {
+            type: "button",
+            className: "ioe-exam-detail__do-btn",
+            onClick: e.onStart,
+            "data-testid": `exam-detail-do-btn-${e.id}`,
+            children: "L\xe0m b\xe0i"
+           })
+          })]
+         }, e.id)) : (0, o.jsx)(C, {})
+        }), !t && e.length > 0 && i && (0, o.jsxs)("tfoot", {
+         children: [(0, o.jsxs)("tr", {
+          children: [(0, o.jsx)("td", {
+           children: "T\u1ed5ng \u0111i\u1ec3m"
+          }), (0, o.jsx)("td", {}), (0, o.jsx)("td", {
+           children: null !== (s = i.totalScore) && void 0 !== s ? s : "---"
+          }), (0, o.jsx)("td", {
+           children: null !== (a = i.totalDuration) && void 0 !== a ? a : "---"
+          }), (0, o.jsx)("td", {}), (0, o.jsx)("td", {})]
+         }), (0, o.jsxs)("tr", {
+          children: [(0, o.jsx)("td", {
+           children: "K\u1ebft qu\u1ea3 cao nh\u1ea5t"
+          }), (0, o.jsx)("td", {}), (0, o.jsx)("td", {
+           children: null !== (n = i.bestScore) && void 0 !== n ? n : "---"
+          }), (0, o.jsx)("td", {
+           children: null !== (l = i.bestDuration) && void 0 !== l ? l : "---"
+          }), (0, o.jsx)("td", {}), (0, o.jsx)("td", {})]
+         })]
+        })]
+       })
+      })]
+     })
+    },
+    D = ({
+     rows: e,
+     loading: t = !1
+    }) => (0, o.jsx)("div", {
+     className: "ioe-exam-detail__table-wrap",
+     children: (0, o.jsxs)("table", {
+      className: "ioe-exam-detail__table",
+      children: [(0, o.jsx)("thead", {
+       children: (0, o.jsx)("tr", {
+        children: ["B\xe0i thi", "L\u1ea7n thi", "\u0110i\u1ec3m", "Th\u1eddi gian", "H\xe0nh \u0111\u1ed9ng"].map(e => (0, o.jsx)("th", {
+         children: e
+        }, e))
+       })
+      }), (0, o.jsx)("tbody", {
+       children: t ? Array.from({
+        length: 4
+       }).map((e, t) => (0, o.jsx)(S, {}, t)) : e.length > 0 ? e.map(e => (0, o.jsxs)("tr", {
+        children: [(0, o.jsx)("td", {
+         children: e.name
+        }), (0, o.jsx)("td", {
+         children: e.attempts
+        }), (0, o.jsx)("td", {
+         children: e.score
+        }), (0, o.jsx)("td", {
+         children: e.duration
+        }), (0, o.jsx)("td", {
+         children: [_.HV.CAN_PLAY, _.HV.NOT_STARTED].includes(e.status) && (0, o.jsx)("button", {
+          type: "button",
+          className: "ioe-exam-detail__do-btn",
+          onClick: e.onStart,
+          children: "L\xe0m b\xe0i"
+         })
+        })]
+       }, e.id)) : (0, o.jsx)(C, {})
+      })]
+     })
+    }),
+    L = ({
+     open: e
+    }) => (0, o.jsx)("svg", {
+     width: "20",
+     height: "20",
+     viewBox: "0 0 20 20",
+     fill: "none",
+     xmlns: "http://www.w3.org/2000/svg",
+     "aria-hidden": "true",
+     className: "ioe-exam-detail__guide-icon " + (e ? "ioe-exam-detail__guide-icon--open" : ""),
+     children: (0, o.jsx)("path", {
+      d: "M5 8L10 13L15 8",
+      stroke: "#FF6B6B",
+      strokeWidth: "1.5",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+     })
+    }),
+    E = ({
+     onViewLeaderboard: e,
+     onViewHistory: t,
+     onSaveResult: i,
+     className: s = ""
+    }) => {
+     const a = (0, j.j)(),
+      n = (0, j.G)(f.RS),
+      [d, r] = (0, l.useState)(!1),
+      [c, h] = (0, l.useState)(),
+      [m, x] = (0, l.useState)(!1),
+      [u, g] = (0, l.useState)(!1),
+      [p, C] = (0, l.useState)(!1),
+      A = (0, l.useCallback)(() => {
+       a((0, k.Vp)({
+        token: (0, v.gf)(),
+        serviceCode: "IOE"
+       }))
+      }, [a]),
+      F = (0, l.useCallback)(async e => {
+       const {
+        code: t,
+        data: i,
+        message: s
+       } = await y.MU.post("https://api-edu.go.vn/ioe-service/v3/TuLuyen/setinfo", {
+        idExercise: e.idexercise,
+        deviceId: (0, v.IP)(),
+        round: e.round,
+        gameId: e.gameId,
+        token: (0, v.gf)(),
+        redirectUrl: window.location.href
+       });
+       0 === t ? (h(i), x(e => !e)) : N.Ay.error({
+        message: s
+       })
+      }, []),
+      S = (0, l.useMemo)(() => {
+       var e;
+       return (null === (e = n.data) || void 0 === e ? void 0 : e.roundInfoRes.lstgames.filter(e => e.isRank).map((e, t) => ({
+        id: e.gameId,
+        name: `B\xe0i thi s\u1ed1 ${t+1}`,
+        attempts: e.LanThi,
+        score: e.mark,
+        duration: e.totalTime > 0 ? (0, b.bl)(e.totalTime) : 0,
+        status: e.Status,
+        onStart: () => F(e)
+       }))) || []
+      }, [n, F]),
+      E = (0, l.useMemo)(() => {
+       var e, t, i, s, a;
+       const l = null !== (e = null === (t = n.data) || void 0 === t ? void 0 : t.roundInfoRes.lstgames.filter(e => e.isRank)) && void 0 !== e ? e : [],
+        d = null === (i = n.data) || void 0 === i ? void 0 : i.resultMax,
+        r = l.reduce((e, t) => e + t.LanThi, 0),
+        o = l.reduce((e, t) => e + t.mark, 0),
+        c = l.reduce((e, t) => e + t.totalTime, 0);
+       return {
+        totalAttempts: r,
+        totalScore: o,
+        totalDuration: c > 0 ? (0, b.bl)(c) : 0,
+        bestScore: null !== (s = null === d || void 0 === d ? void 0 : d.totalScore) && void 0 !== s ? s : "---",
+        bestDuration: (null !== (a = null === d || void 0 === d ? void 0 : d.totalTime) && void 0 !== a ? a : 0) > 0 ? (0, b.bl)(d.totalTime) : "---"
+       }
+      }, [n]),
+      R = (0, l.useMemo)(() => {
+       var e;
+       return (null === (e = n.data) || void 0 === e ? void 0 : e.roundInfoRes.lstgames.filter(e => !e.isRank).map(e => ({
+        id: e.gameId,
+        name: `B\xe0i s\u1ed1 ${S.length+1}`,
+        attempts: e.LanThi,
+        score: e.mark,
+        duration: e.totalTime > 0 ? (0, b.bl)(e.totalTime) : 0,
+        status: e.Status,
+        isRank: e.isRank,
+        onStart: () => F(e)
+       }))) || []
+      }, [n, S, F]),
+      I = (0, l.useMemo)(() => S.length > 0 && S.every(e => e.status === _.HV.FINISHED), [S]),
+      H = (0, l.useMemo)(() => R.filter(e => e.status === _.HV.NOT_STARTED).map(e => `B\xe0i s\u1ed1 ${e.name}`).join(", ") || "", [R]),
+      M = () => {
+       h(void 0), x(!m)
+      };
+     return (0, l.useEffect)(() => {
+      A()
+     }, [A]), (0, o.jsxs)("div", {
+      className: `ioe-exam-detail ${s}`,
+      children: [(0, o.jsxs)("div", {
+       className: "flex flex-col gap-[5px]",
+       children: [(0, o.jsxs)("button", {
+        type: "button",
+        className: "ioe-exam-detail__guide",
+        onClick: () => {
+         r(e => !e)
+        },
+        "aria-expanded": d,
+        "data-testid": "exam-detail-guide-btn",
+        children: [(0, o.jsx)(L, {
+         open: d
+        }), (0, o.jsx)("p", {
+         className: "ioe-exam-detail__guide-label",
+         children: "H\u01b0\u1edbng d\u1eabn"
+        })]
+       }), d && (0, o.jsxs)("div", {
+        className: "flex flex-col gap-[15.5px] ioe-exam-detail__guide-content",
+        children: [(0, o.jsxs)("div", {
+         children: [(0, o.jsx)("span", {
+          className: "text-[1rem] font-bold leading-[22px]",
+          children: "C\u1ea5u tr\xfac m\u1ed7i v\xf2ng T\u1ef1 luy\u1ec7n g\u1ed3m 5 b\xe0i thi, trong \u0111\xf3:"
+         }), (0, o.jsxs)("ul", {
+          className: "ml-[20px] text-[1rem] font-normal flex flex-col gap-[5px] py-[5px]",
+          children: [(0, o.jsxs)("li", {
+           className: "leading-5",
+           children: ["B\xe0i thi s\u1ed1 ", (0, o.jsx)("b", {
+            className: "text-[#0095DA]",
+            children: "1-2-3-4"
+           }), ": B\u1ea1n c\u1ea7n \u0111\u1ea1t \xedt nh\u1ea5t ", (0, o.jsx)("b", {
+            className: "text-[#0095DA]",
+            children: "70%"
+           }), " s\u1ed1 \u0111i\u1ec3m m\u1ed7i b\xe0i thi \u0111\u1ec3 ho\xe0n th\xe0nh"]
+          }), (0, o.jsxs)("li", {
+           className: "leading-5",
+           children: ["B\xe0i thi t\u1ef1 ch\u1ecdn (K\u1ef9 n\u0103ng N\xf3i): B\u1ea1n luy\u1ec7n t\u1eadp k\u1ef9 n\u0103ng N\xf3i v\u1edbi c\xf4ng ngh\u1ec7 AI, b\xe0i thi n\xe0y", " ", (0, o.jsx)("b", {
+            className: "text-[#0095DA]",
+            children: "kh\xf4ng ph\u1ea3i \u0111i\u1ec1u ki\u1ec7n b\u1eaft bu\u1ed9c"
+           }), " \u0111\u1ec3 ho\xe0n th\xe0nh v\xf2ng"]
+          })]
+         })]
+        }), (0, o.jsxs)("div", {
+         children: [(0, o.jsx)("span", {
+          children: "L\xe0m l\u1ea1i:"
+         }), (0, o.jsx)("ul", {
+          className: "text-[1rem] font-normal",
+          children: (0, o.jsx)("li", {
+           children: 'Kh\xf4ng gi\u1edbi h\u1ea1n s\u1ed1 l\u1ea7n l\xe0m l\u1ea1i c\xe1c v\xf2ng T\u1ef1 luy\u1ec7n tr\u01b0\u1edbc khi \u1ea5n "Ghi l\u1ea1i k\u1ebft qu\u1ea3".'
+          })
+         })]
+        }), (0, o.jsxs)("div", {
+         children: [(0, o.jsx)("span", {
+          children: "Ho\xe0n th\xe0nh T\u1ef1 luy\u1ec7n:"
+         }), (0, o.jsx)("ul", {
+          className: "text-[1rem] font-normal",
+          children: (0, o.jsx)("li", {
+           children: 'Nh\u1ea5n n\xfat "Ghi l\u1ea1i k\u1ebft qu\u1ea3" \u0111\u1ec3 ho\xe0n th\xe0nh v\xf2ng T\u1ef1 luy\u1ec7n v\xe0 chuy\u1ec3n \u0111\u1ebfn v\xf2ng ti\u1ebfp theo.'
+          })
+         })]
+        }), (0, o.jsxs)("div", {
+         children: [(0, o.jsx)("span", {
+          children: "K\u1ebft qu\u1ea3 v\xe0 x\u1ebfp h\u1ea1ng:"
+         }), (0, o.jsxs)("ul", {
+          className: "ml-[20px] text-[1rem] font-normal flex flex-col gap-[5px] py-[5px]",
+          children: [(0, o.jsxs)("li", {
+           className: "leading-5",
+           children: ["K\u1ebft qu\u1ea3 c\u1ee7a m\u1ed9t v\xf2ng T\u1ef1 luy\u1ec7n \u0111\u01b0\u1ee3c t\xednh b\u1eb1ng ", (0, o.jsx)("b", {
+            className: "text-[#0095DA]",
+            children: "t\u1ed5ng \u0111i\u1ec3m v\xe0 t\u1ed5ng th\u1eddi gian l\xe0m b\xe0i"
+           }), " c\u1ee7a 4 b\xe0i thi 1-2-3-4."]
+          }), (0, o.jsxs)("li", {
+           className: "leading-5",
+           children: ["H\u1ec7 th\u1ed1ng ch\u1ec9 l\u01b0u l\u1ea1i ", (0, o.jsx)("b", {
+            children: "k\u1ebft qu\u1ea3 cao nh\u1ea5t"
+           }), " trong c\xe1c l\u1ea7n l\xe0m v\xf2ng T\u1ef1 luy\u1ec7n v\xe0 k\u1ebft qu\u1ea3 n\xe0y \u0111\u01b0\u1ee3c s\u1eed d\u1ee5ng \u0111\u1ec3 x\xe9t th\u1ee9 h\u1ea1ng c\u1ee7a t\xe0i kho\u1ea3n trong B\u1ea3ng x\u1ebfp h\u1ea1ng tu\u1ea7n."]
+          })]
+         })]
+        })]
+       })]
+      }), (0, o.jsxs)("div", {
+       className: "ioe-exam-detail__section",
+       children: [(0, o.jsxs)("div", {
+        className: "ioe-exam-detail__section-meta",
+        children: [(0, o.jsx)("p", {
+         className: "ioe-exam-detail__section-title",
+         "data-testid": "exam-detail-mandatory-title",
+         children: "B\xe0i thi b\u1eaft bu\u1ed9c"
+        }), (0, o.jsx)("p", {
+         className: "ioe-exam-detail__section-desc",
+         "data-testid": "exam-detail-mandatory-desc",
+         children: "V\u01b0\u1ee3t qua c\xe1c v\xf2ng t\u1ef1 luy\u1ec7n \u0111\u1ec3 tham gia c\xe1c v\xf2ng thi ch\xednh th\u1ee9c c\xe1c c\u1ea5p c\u1ee7a IOE"
+        })]
+       }), (0, o.jsx)(B, {
+        loading: n.loading,
+        rows: S,
+        summary: E
+       }), (0, o.jsxs)("div", {
+        className: "ioe-exam-detail__actions",
+        children: [(0, o.jsxs)("div", {
+         className: "ioe-exam-detail__action-group",
+         children: [(0, o.jsx)("button", {
+          type: "button",
+          className: "ioe-exam-detail__btn-outline",
+          onClick: t,
+          "data-testid": "exam-detail-btn-leaderboard",
+          children: "L\u1ecbch s\u1eed t\u1ef1 luy\u1ec7n"
+         }), (0, o.jsx)("button", {
+          type: "button",
+          className: "ioe-exam-detail__btn-outline",
+          onClick: e,
+          "data-testid": "exam-detail-btn-leaderboard",
+          children: "Xem b\u1ea3ng x\u1ebfp h\u1ea1ng"
+         })]
+        }), (0, o.jsxs)("div", {
+         className: "ioe-exam-detail__action-group",
+         children: [(0, o.jsx)("button", {
+          type: "button",
+          disabled: p || n.loading || !I,
+          className: I ? "ioe-exam-detail__btn-spring" : "ioe-exam-detail__btn-grey",
+          onClick: async () => {
+           if (!p) {
+            C(!0);
+            try {
+             const {
+              code: e,
+              message: t
+             } = await y.MU.post("https://api-edu.go.vn/ioe-service/v3/TuLuyen/cancelresult", {
+              token: (0, v.gf)()
+             });
+             if (0 !== e) return void N.Ay.error({
+              message: t
+             });
+             A()
+            } finally {
+             C(!1)
+            }
+           }
+          },
+          "data-testid": "exam-detail-btn-retry",
+          children: "L\xe0m l\u1ea1i"
+         }), (0, o.jsx)("button", {
+          type: "button",
+          disabled: p || n.loading || !I,
+          className: I ? "ioe-exam-detail__btn-spring" : "ioe-exam-detail__btn-grey",
+          onClick: () => {
+           I && g(!u)
+          },
+          "data-testid": "exam-detail-btn-save",
+          children: "Ghi l\u1ea1i k\u1ebft qu\u1ea3"
+         })]
+        })]
+       })]
+      }), (0, o.jsxs)("div", {
+       className: "ioe-exam-detail__section",
+       style: {
+        alignItems: "flex-start"
+       },
+       children: [(0, o.jsxs)("div", {
+        className: "ioe-exam-detail__section-meta",
+        children: [(0, o.jsx)("p", {
+         className: "ioe-exam-detail__section-title",
+         "data-testid": "exam-detail-optional-title",
+         children: "B\xe0i thi t\u1ef1 ch\u1ecdn"
+        }), (0, o.jsx)("p", {
+         className: "ioe-exam-detail__section-desc",
+         "data-testid": "exam-detail-optional-desc",
+         children: "B\xe0i thi k\u1ef9 n\u0103ng n\xf3i s\u1eed d\u1ee5ng tr\xed tu\u1ec7 nh\xe2n t\u1ea1o (AI) nh\u1eadn di\u1ec7n gi\u1ecdng n\xf3i v\xe0 \u0111\xe1nh gi\xe1 ph\xe1t \xe2m"
+        })]
+       }), (0, o.jsx)(D, {
+        loading: n.loading,
+        rows: R
+       })]
+      }), (0, o.jsx)(w.A, {
+       open: m,
+       title: "Ch\xfa \xfd",
+       onClose: M,
+       footer: (0, o.jsxs)("div", {
+        className: "flex gap-3 justify-center px-8 pb-6",
+        children: [(0, o.jsx)(T.A, {
+         className: "w-full max-w-[188px]",
+         label: "Hu\u1ef7",
+         variant: "outline",
+         onClick: M
+        }), (0, o.jsx)(T.A, {
+         className: "w-full max-w-[188px]",
+         label: "X\xe1c nh\u1eadn",
+         variant: "spring",
+         onClick: () => window.location.href = (null === c || void 0 === c ? void 0 : c.urlgame) + ""
+        })]
+       }),
+       children: (0, o.jsxs)("div", {
+        className: "px-8 pb-4 text-[1rem] text-[#677589]",
+        children: [(0, o.jsx)("div", {
+         className: "font-bold text-center mb-[16px]",
+         children: "(*) C\xe1c tr\u01b0\u1eddng h\u1ee3p thi sai lu\u1eadt:"
+        }), "- \u0110\u0103ng nh\u1eadp m\u1ed9t t\xe0i kho\u1ea3n tr\xean hai m\xe1y ho\u1eb7c hai tr\xecnh duy\u1ec7t kh\xe1c nhau v\xe0 thi c\xf9ng m\u1ed9t th\u1eddi \u0111i\u1ec3m", (0, o.jsx)("br", {}), "- \u0110ang l\xe0m b\xe0i thi m\xe0 t\u1ea3i l\u1ea1i trang \u0111\u1ec1 thi ho\u1eb7c tho\xe1t ra kh\xf4ng n\u1ed9p b\xe0i", (0, o.jsx)("br", {}), "- M\u1edf nhi\u1ec1u c\u1eeda s\u1ed5 v\xe0o thi m\u1ed9t l\xfac", (0, o.jsx)("br", {}), "C\xe1c tr\u01b0\u1eddng h\u1ee3p vi ph\u1ea1m s\u1ebd b\u1ecb h\u1ec7 th\u1ed1ng t\u1ef1 \u0111\u1ed9ng tho\xe1t ra ngo\xe0i v\xe0 t\xednh m\u1ed9t l\u1ea7n tr\u01b0\u1ee3t v\xf2ng thi"]
+       })
+      }), (0, o.jsx)(w.A, {
+       open: u,
+       title: "Ch\xfa \xfd",
+       onClose: () => g(!u),
+       footer: (0, o.jsxs)("div", {
+        className: "flex gap-3 justify-center px-8 pb-6",
+        children: [(0, o.jsx)(T.A, {
+         className: "w-full max-w-[188px]",
+         label: "Hu\u1ef7",
+         variant: "outline",
+         onClick: () => g(!u)
+        }), (0, o.jsx)(T.A, {
+         className: "w-full max-w-[188px]",
+         label: "X\xe1c nh\u1eadn",
+         variant: "spring",
+         onClick: () => i && i()
+        })]
+       }),
+       children: (0, o.jsx)("div", {
+        className: "px-8 pb-4 text-[1rem] text-[#677589]",
+        children: R.filter(e => e.status === _.HV.NOT_STARTED).length > 0 ? `B\u1ea1n ch\u01b0a ho\xe0n th\xe0nh ${H} (t\u1ef1 ch\u1ecdn). Khi h\u1ec7 th\u1ed1ng ghi k\u1ebft qu\u1ea3, b\u1ea1n s\u1ebd kh\xf4ng th\u1ec3 quay l\u1ea1i \u0111\u1ec3 l\xe0m ${H}. B\u1ea1n c\xf3 mu\u1ed1n ho\xe0n th\xe0nh kh\xf4ng?` : "B\u1ea1n c\xf3 \u0111\u1ed3ng \xfd ghi l\u1ea1i k\u1ebft qu\u1ea3"
+       })
+      })]
+     })
+    };
+   var R = i(48807),
+    I = i(13557);
+   const H = () => {
+     var e, t;
+     const i = (0, s.Zp)(),
+      d = (0, j.j)(),
+      r = (0, j.G)(f.wG),
+      c = (0, j.G)(f.JU),
+      h = (0, j.G)(f.RS),
+      m = (0, j.G)(I.Qg),
+      [u, w] = (0, l.useState)(!1),
+      T = null === h || void 0 === h || null === (e = h.data) || void 0 === e || null === (t = e.roundInfoRes) || void 0 === t ? void 0 : t.bilInfo;
+     (0, l.useEffect)(() => {
+      d((0, k.IM)({
+       token: (0, v.gf)(),
+       serviceCode: "IOE"
+      }))
+     }, [d]);
+     const C = [{
+       key: "home",
+       label: "Trang ch\u1ee7",
+       href: "/",
+       onClick: () => i("/")
+      }, {
+       key: "practiceYourSelf",
+       label: "T\u1ef1 luy\u1ec7n",
+       href: "tu-luyen",
+       onClick: () => i(p.ROUTER_APP.PRACTICE_YOUR_SELF)
+      }],
+      A = (0, l.useMemo)(() => {
+       var e;
+       return (null === (e = c.data) || void 0 === e ? void 0 : e.lst.map(e => ({
+        id: e.Id,
+        round: `V\xf2ng ${e.Round}`,
+        attempts: e.ExamCount,
+        duration: (0, b.bl)(e.TotalTime),
+        highScore: e.TotalScore
+       }))) || []
+      }, [c]),
+      F = (0, l.useMemo)(() => {
+       var e;
+       return (null === r || void 0 === r || null === (e = r.data) || void 0 === e ? void 0 : e.map(e => ({
+        id: e.id,
+        date: (0, b.V$)(e.startDate, !1, !1),
+        status: _.MM[e.status],
+        title: e.name
+       }))) || []
+      }, [r]),
+      S = (0, l.useMemo)(() => {
+       var e;
+       return (null === (e = F.find(e => e.id === (null === T || void 0 === T ? void 0 : T.current_round))) || void 0 === e ? void 0 : e.date) || ""
+      }, [F, T]),
+      B = "https://ioe.vn/tong-hop/bang-xep-hang/tu-luyen";
+     return (0, o.jsxs)("div", {
+      className: "mb-[40px]",
+      children: [(0, o.jsx)("div", {
+       className: "mb-[44px]",
+       children: (0, o.jsx)(a.A, {
+        items: C
+       })
+      }), (0, o.jsxs)("div", {
+       className: "grid grid-cols-12 gap-[24px]",
+       children: [(0, o.jsx)("div", {
+        className: "col-span-12 lg:col-span-9",
+        children: u ? (0, o.jsx)(g, {
+         rows: A,
+         onContinue: () => w(!u),
+         onViewLeaderboard: () => window.location.href = B
+        }) : null === h.data ? (0, o.jsxs)(l.Fragment, {
+         children: [(0, o.jsx)(n.A, {
+          title: "V\xf2ng T\u1ef1 luy\u1ec7n"
+         }), (0, o.jsx)(R.A, {
+          className: "mt-2",
+          message: h.message,
+          fallbackMessage: "V\xf2ng T\u1ef1 luy\u1ec7n s\u1ebd m\u1edf tr\u1edf l\u1ea1i sau khi k\u1ef3 thi k\u1ebft th\xfac.",
+          badgeLabel: h.isClosed ? "V\xf2ng T\u1ef1 luy\u1ec7n t\u1ea1m \u0111\xf3ng" : void 0
+         })]
+        }) : (0, o.jsxs)(l.Fragment, {
+         children: [(0, o.jsx)(n.A, {
+          title: `V\xf2ng T\u1ef1 luy\u1ec7n ${(null===T||void 0===T?void 0:T.current_round)>(null===T||void 0===T?void 0:T.sysRound)?null===T||void 0===T?void 0:T.sysRound:null===T||void 0===T?void 0:T.current_round} - Kh\u1ed1i l\u1edbp ${null===m||void 0===m?void 0:m.i_block}`,
+          date: S
+         }), (0, o.jsx)(E, {
+          className: "mt-2",
+          onViewLeaderboard: () => window.location.href = B,
+          onSaveResult: async () => {
+           const {
+            code: e,
+            message: t
+           } = await y.MU.post("https://api-edu.go.vn/ioe-service/v3/TuLuyen/comfirmresult", {
+            token: (0, v.gf)()
+           });
+           0 === e ? (d((0, k.Ry)({
+            token: (0, v.gf)(),
+            serviceCode: "IOE"
+           })), d((0, k.IM)({
+            token: (0, v.gf)(),
+            serviceCode: "IOE"
+           })), window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+           }), w(!u)) : N.Ay.error({
+            message: t
+           })
+          },
+          onViewHistory: () => {
+           d((0, k.Ry)({
+            token: (0, v.gf)(),
+            serviceCode: "IOE"
+           })), window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+           }), w(!u)
+          }
+         })]
+        })
+       }), (0, o.jsxs)("div", {
+        className: "col-span-12 lg:col-span-3",
+        children: [(0, o.jsx)(n.A, {
+         title: "L\u1ecbch m\u1edf T\u1ef1 luy\u1ec7n",
+         className: "mb-[32px]"
+        }), (0, o.jsx)(x, {
+         maxHeight: 758,
+         items: F.map(e => ({
+          ...e
+         }))
+        })]
+       })]
+      })]
+     })
+    },
+    M = H
+  }
+ }
+]);
