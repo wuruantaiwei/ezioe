@@ -7,3 +7,4 @@ vosk>=0.3.45
 # Pillow>=10         # icon cho khay
 # pyinstaller>=6     # đóng gói .exe
 # wordfreq>=3        # xếp hạng từ theo tần suất (chất lượng điền từ)
+# edge-tts>=7        # giọng neural cho bài nói (tốt hơn hẳn giọng SAPI mặc định)

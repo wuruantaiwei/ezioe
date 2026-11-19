@@ -483,10 +483,10 @@
   "type": 2
  },
  "15cbf04d6bef3eb5": {
-  "answer": "81b57e86-1c0e-474f-96ce-11a213f6f955",
+  "answer": "b1c6a7b2-bb5f-4799-9013-ab6cc0656f3f",
   "content": "Her diary contains detailed accounts of her travels around Europe.",
   "point": 98,
-  "seen": "2026-11-19 21:44:06",
+  "seen": "2026-11-19 22:06:34",
   "type": 13
  },
  "17932fbfe1d83f8e": {
@@ -1176,10 +1176,10 @@
   "type": 7
  },
  "3abb80dafd9224e0": {
-  "answer": "7d28aa69-0d57-420f-baae-8944c78e66c9",
+  "answer": "8fb84215-ddde-4e75-a2e0-fbeb71ea34be",
   "content": "Absorb",
-  "point": 96,
-  "seen": "2026-11-19 21:45:02",
+  "point": 99,
+  "seen": "2026-11-19 22:08:46",
   "type": 12
  },
  "3aefdd2bcb104ddc": {
@@ -1288,10 +1288,10 @@
   "type": 2
  },
  "3fe38905a1251c0b": {
-  "answer": "f349835c-1895-4c5b-b9e7-467ef4ee9cc0",
+  "answer": "3910737e-1167-4f04-90b7-3d362e2cea39",
   "content": "Protect",
-  "point": 99,
-  "seen": "2026-11-19 21:41:54",
+  "point": 98,
+  "seen": "2026-11-19 22:08:52",
   "type": 12
  },
  "4030288f3aadb01b": {
@@ -1456,10 +1456,10 @@
   "type": 1
  },
  "47369eb1788164fe": {
-  "answer": "48eef713-7e88-4746-8b52-f7aa303b2192",
+  "answer": "88534934-9cbf-424c-b9a4-6c57ab11a9e5",
   "content": "Peace",
-  "point": 97,
-  "seen": "2026-11-19 21:43:43",
+  "point": 99,
+  "seen": "2026-11-19 22:07:10",
   "type": 12
  },
  "47c56fee6778c6b0": {
@@ -1685,6 +1685,13 @@
   "point": 10,
   "seen": "2026-11-19 18:03:59",
   "type": 10
+ },
+ "4fecc1954ae138e7": {
+  "answer": "691b8d56-243c-42cd-adb2-0697addbeb5f",
+  "content": "Carbon dioxide and soot are two of the most dangerous air pollutants.",
+  "point": 90,
+  "seen": "2026-11-19 22:09:13",
+  "type": 13
  },
  "50143e737047b408": {
   "answer": "energetic|/ˌenəˈdʒetɪk/",
@@ -2177,10 +2184,10 @@
   "type": 1
  },
  "652cfe97448129b3": {
-  "answer": "80a5b43c-1797-47f7-a8bd-247ccef75f9e",
+  "answer": "cd31c8a8-831f-4b79-b8e8-456ae18b97b0",
   "content": "Soot like all black things absorbs sunlight and heats up the atmosphere.",
-  "point": 92,
-  "seen": "2026-11-19 21:45:20",
+  "point": 94,
+  "seen": "2026-11-19 22:09:12",
   "type": 13
  },
  "6565dab76d88e75b": {
@@ -2506,10 +2513,10 @@
   "type": 1
  },
  "768ed720cfa8e0b4": {
-  "answer": "82351e51-a8b6-4ab9-82a1-9fb711ce7098",
+  "answer": "1e7a694a-e5d4-4920-9674-ce75e9b4b9d2",
   "content": "Capture",
-  "point": 67,
-  "seen": "2026-11-19 21:44:59",
+  "point": 99,
+  "seen": "2026-11-19 22:07:12",
   "type": 12
  },
  "76c6d7e5a1cdd947": {
@@ -2674,10 +2681,10 @@
   "type": 10
  },
  "7eb94b2e21ca601c": {
-  "answer": "b88e0442-0a8a-430e-a988-e6880dc8ac70",
+  "answer": "f4f44887-514c-43a6-9904-6ce0f9165934",
   "content": "Decade",
-  "point": 95,
-  "seen": "2026-11-19 21:43:46",
+  "point": 99,
+  "seen": "2026-11-19 22:08:55",
   "type": 12
  },
  "7eb9ceacb78b0c8d": {
@@ -2786,10 +2793,10 @@
   "type": 3
  },
  "84576cd16953d414": {
-  "answer": "cf31d233-7dfe-4ab4-ade5-5894642c693f",
+  "answer": "e5548226-e9f0-4f11-b51e-7fc22ce47d32",
   "content": "Against",
-  "point": 96,
-  "seen": "2026-11-19 21:45:05",
+  "point": 99,
+  "seen": "2026-11-19 22:08:58",
   "type": 12
  },
  "845d643ace4351cf": {
@@ -2798,6 +2805,13 @@
   "point": 0,
   "seen": "2026-11-19 01:23:56",
   "type": 1
+ },
+ "84cfb6c698a7bd26": {
+  "answer": "f8ab0cda-f7aa-4c59-9388-e3ce9d8db457",
+  "content": "Do you discuss any environmental issues with your pen pal?",
+  "point": 95,
+  "seen": "2026-11-19 22:09:01",
+  "type": 13
  },
  "84e39f5b58c22054": {
   "answer": "endure",
@@ -2933,10 +2947,10 @@
   "type": 2
  },
  "8d73b1a37c36fc0f": {
-  "answer": "b5b0453c-2662-45ee-8e15-158170e3b47a",
+  "answer": "74a2d7ec-ea0e-478e-9bc8-4deb8f4c319c",
   "content": "Solution",
-  "point": 99,
-  "seen": "2026-11-19 21:45:08",
+  "point": 98,
+  "seen": "2026-11-19 22:06:19",
   "type": 12
  },
  "8da876e7e43aed5d": {
@@ -3262,10 +3276,10 @@
   "type": 1
  },
  "9fa2d4e1677092e8": {
-  "answer": "1da1c9e8-81d5-4837-b697-5d209c9a3a2a",
+  "answer": "e3d4d020-fbb7-4a58-8499-d343a6ed0525",
   "content": "Can you lend me the book when you finish reading it?",
   "point": 98,
-  "seen": "2026-11-19 21:44:07",
+  "seen": "2026-11-19 22:09:05",
   "type": 13
  },
  "9fbaf70d05105482": {
@@ -3584,10 +3598,10 @@
   "type": 2
  },
  "adda0f35a5a81b0b": {
-  "answer": "955dd071-32ef-41f5-9028-07a63530e35a",
+  "answer": "9a2c0315-7459-4645-8b13-832f134781f5",
   "content": "Volunteer",
   "point": 99,
-  "seen": "2026-11-19 21:43:50",
+  "seen": "2026-11-19 22:08:49",
   "type": 12
  },
  "adfb621215fa1d2e": {
@@ -3640,10 +3654,10 @@
   "type": 2
  },
  "b0cabad1dc0579bb": {
-  "answer": "57abaa79-78fc-4200-955a-c03c49e9599a",
+  "answer": "3fb7f776-8e98-4560-892f-02a7ff5b428a",
   "content": "The more organic food we consume, the more health benefits we gain.",
-  "point": 99,
-  "seen": "2026-11-19 21:45:13",
+  "point": 97,
+  "seen": "2026-11-19 22:09:08",
   "type": 13
  },
  "b0dde0c10c53ee87": {
@@ -4606,10 +4620,10 @@
   "type": 7
  },
  "de64a4cae7419e87": {
-  "answer": "d4a1a160-3560-4a3a-8991-1d3b5e66c35b",
+  "answer": "4e60b1c2-839f-4ae9-8148-a1dba088b45b",
   "content": "An American soldier found it and saved it from being burnt.",
-  "point": 97,
-  "seen": "2026-11-19 21:45:16",
+  "point": 98,
+  "seen": "2026-11-19 22:07:31",
   "type": 13
  },
  "de69f091839022df": {

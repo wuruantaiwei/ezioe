@@ -1231,3 +1231,45 @@ def test_sentence_pronunciation_counts_as_speaking():
 
     assert games.T_SPEAK_TEXT == 13
     assert set(games.SPEAK_TYPES) == {12, 13}
+
+
+# ------------------------------------------------------------- giọng nói neural
+def test_neural_voice_detection():
+    from ioeauto import tts
+
+    assert tts.NEURAL_RE.match("en-US-AriaNeural")
+    assert not tts.NEURAL_RE.match("Microsoft Zira Desktop")
+    assert not tts.NEURAL_RE.match("")
+
+
+def test_neural_voice_is_used_and_cached(tmp_path, monkeypatch):
+    from ioeauto import tts
+
+    monkeypatch.setattr(tts, "CACHE", str(tmp_path))
+    calls = []
+
+    def fake_edge(text, voice):
+        calls.append((text, voice))
+        return b"RIFF" + b"\x00" * 40
+
+    monkeypatch.setattr(tts, "_edge", fake_edge)
+    assert tts.speak("Absorb", "en-US-AriaNeural") .startswith(b"RIFF")
+    assert tts.speak("Absorb", "en-US-AriaNeural") .startswith(b"RIFF")
+    assert len(calls) == 1                      # lần hai lấy từ cache
+    assert calls[0] == ("Absorb", "en-US-AriaNeural")
+
+
+def test_neural_failure_falls_back_to_sapi(tmp_path, monkeypatch):
+    from ioeauto import tts
+
+    monkeypatch.setattr(tts, "CACHE", str(tmp_path))
+    monkeypatch.setattr(tts, "_edge", lambda text, voice: (_ for _ in ()).throw(OSError("mạng")))
+    monkeypatch.setattr(tts, "_powershell", lambda text, path, voice="": _write(path))
+    monkeypatch.setattr(tts, "_espeak", lambda text, path: False)
+    assert tts.speak("Absorb", "en-US-AriaNeural").startswith(b"RIFF")
+
+
+def _write(path):
+    with open(path, "wb") as fh:
+        fh.write(b"RIFF-sapi")
+    return True

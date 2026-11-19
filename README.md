@@ -368,8 +368,12 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
 * Bài **nói** (type 12 và 13) đã chạy được bằng API, không cần micro: hợp đồng dò
   từ SDK của IOE — `start_stream_v3` → `vad-file` → `stop_stream_v3` → `answercheck`
   với `ans` là `request_id` (không phải audio base64). Bật bằng `speaking.submit`
-  hoặc `--with-speaking`. Điểm phụ thuộc chất lượng TTS: giọng SAPI đạt 60–100%,
-  tốt nhất là cài thêm giọng bản ngữ và đặt `speaking.voice`.
+  hoặc `--with-speaking`.
+* Giọng nói: mặc định `speaking.voice = "en-US-AriaNeural"` (neural, cần mạng,
+  `pip install edge-tts`; tự lùi về SAPI khi mạng lỗi, kết quả cache trong
+  `data/tts/`). Giọng neural hơn giọng SAPI cũ 2-3% điểm chấm từng câu
+  (98 so với 96) nhờ ngữ điệu; đặt `""` để quay lại giọng SAPI offline.
+  Trần thực tế của bài nói hiện ~600/1000 vì một nửa số câu có `Point: 0`.
 * Bài **nghe - chép** (type 1) được chấm theo tỉ lệ từ khớp nên thường 40–70%;
   ngưỡng pass là ~70% nên có bài phải chạy lại vài lần mới qua.
 * Các dạng còn lại (điền từ, sắp xếp, nối cặp, trắc nghiệm, điền ký tự) đạt 90–100

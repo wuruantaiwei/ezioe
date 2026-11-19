@@ -48,7 +48,12 @@ DEFAULTS: dict = {
     "max_rounds_per_day": 0,
     "wait_for_round": True,
     "notify": {"telegram": {"token": "", "chat_id": ""}},
-    "speaking": {"tts": True, "voice": "", "submit": False, "play": False},
+    "speaking": {
+        "tts": True,
+        "voice": "en-US-AriaNeural",   # giọng neural (edge-tts); "" = giọng SAPI mặc định
+        "submit": False,
+        "play": False,
+    },
     "endpoints": {},
 }
 

@@ -953,7 +953,7 @@ def _attempt(
                                         speak_token)
             if value:                           # báo server biết đã nộp câu này
                 try:
-                    session.check(question, value, index, exam_count=index)
+                    session.check(question, value, index, exam_count=1)
                 except ApiError:
                     pass
         else:
@@ -963,7 +963,7 @@ def _attempt(
             _store(bank, question, value, point)
         if question["type"] in SPEAK_TYPES and speaking and speaking.get("submit"):
             answers.append({"ans": value, "point": point, "questId": question["id"],
-                            "position": index, "examCount": index})
+                            "position": index, "examCount": 1})
         else:
             answers.append({"ans": value, "point": point, "questId": question["id"],
                             "position": index})
