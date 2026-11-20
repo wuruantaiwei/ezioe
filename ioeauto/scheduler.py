@@ -32,13 +32,29 @@ def _quote(text: str) -> str:
 
 
 def _windows_install(every: int | None, at: str, dry: bool) -> int:
-    command = " ".join(_quote(part) for part in _program())
-    args = ["schtasks", "/Create", "/F", "/TN", TASK, "/TR", command]
+    """Ghi một .bat rồi giao cho Task Scheduler: có log, không phụ thuộc PATH.
+
+    Task Scheduler chạy không có terminal; nhét lệnh thẳng vào `/TR` thì dấu
+    ngoặc và `>>` rất dễ bị hiểu sai, nên dùng file .bat có sẵn `cd` và `>>`.
+    """
+    from .paths import app_root, data_dir
+
+    log = os.path.join(data_dir(), "task.log")
+    bat = os.path.join(data_dir(), "task.bat")
+    NL = chr(13) + chr(10)
+    program = _program()
+    body = ["@echo off", f'cd /d "{app_root()}"',
+            " ".join(_quote(part) for part in program) + f' >> "{log}" 2>&1']
+    if not dry:
+        with open(bat, "w", encoding="utf-8", newline=NL) as fh:
+            fh.write(NL.join(body) + NL)
+    args = ["schtasks", "/Create", "/F", "/TN", TASK, "/TR", f'"{bat}"']
     if every:
         args += ["/SC", "MINUTE", "/MO", str(max(1, every))]
     else:
         args += ["/SC", "DAILY", "/ST", at]
     if dry:
+        print(NL.join(body))
         print(" ".join(args))
         return 0
     proc = subprocess.run(args, capture_output=True, text=True)

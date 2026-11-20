@@ -132,6 +132,32 @@ def ask(png: bytes, prompt: str, config: dict) -> dict:
     return parse(text)
 
 
+def ask_text(prompt: str, config: dict) -> str:
+    """Như `ask` nhưng không gửi ảnh: dùng cho câu hỏi chỉ cần suy luận chữ."""
+    name, key, model, base = provider(config)
+    if not name or not key:
+        raise VisionError("chưa cấu hình AI trong mục `vision` của data/config.json")
+    if name == "gemini":
+        url = f"{base or 'https://generativelanguage.googleapis.com/v1beta'}/models/{model}:generateContent?key={key}"
+        body = {"contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}}
+        out = _post_json(url, body, {})
+        parts = ((out.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [{}]
+        return parts[0].get("text", "")
+    if name == "anthropic":
+        url = f"{base}/messages"
+        body = {"model": model, "max_tokens": 400, "temperature": 0.2,
+                "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}]}]}
+        out = _post_json(url, body, {"x-api-key": key, "anthropic-version": "2023-06-01"})
+        return "".join(part.get("text", "") for part in out.get("content") or [])
+    url = f"{base}/chat/completions"
+    body = {"model": model, "temperature": 0.2, "max_tokens": 400,
+            "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}]}]}
+    out = _post_json(url, body, {"Authorization": f"Bearer {key}"})
+    message = (out.get("choices") or [{}])[0].get("message") or {}
+    return message.get("content") or message.get("reasoning_content") or ""
+
+
 def parse(text: str) -> dict:
     match = re.search(r"\{.*\}", text or "", re.S)
     if not match:

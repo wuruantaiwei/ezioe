@@ -367,7 +367,7 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
 
 * Đây là công cụ học tập/ngâm cứu API; dùng cho tài khoản của bạn.
 * Bài **nói** (type 12 và 13) đã chạy được bằng API, không cần micro: hợp đồng dò
-  từ SDK của IOE — `start_stream_v3` → `vad-file` → `stop_stream_v3` → `answercheck`
+  từ SDK của IOE — `extra_data` phải là **game token** (JWT, thiếu là 0 điểm) — `start_stream_v3` → `vad-file` → `stop_stream_v3` → `answercheck`
   với `ans` là `request_id` (không phải audio base64). Bật bằng `speaking.submit`
   hoặc `--with-speaking`.
 * Giọng nói: mặc định `speaking.voice = "en-US-AriaNeural"` (neural, cần mạng,
@@ -376,10 +376,12 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
   (98 so với 96) nhờ ngữ điệu; đặt `""` để quay lại giọng SAPI offline.
   Trần thực tế của bài nói hiện ~600/1000 vì một nửa số câu có `Point: 0`.
 * Bài **điền từ giấu cả từ** (type 2, nội dung chỉ là `******` hoặc `___` + `numTChar`)
-  không có đáp án trong payload: tool đoán theo độ dài + ngữ pháp rồi **dò
-  `answercheck` song song** (tới 12.000 ứng viên, ngưỡng 400 giây/câu). Đáp án
-  đúng được lưu vào bank **theo câu** nên các vòng sau gần như tức thì.
-  Một lượt đầu có thể chỉ 60–80/100, chạy lại 2–3 lượt là 100.
+  không có đáp án trong payload. Ba lớp: (1) bank theo câu, (2) **AI gợi ý ứng
+  viên** (`aihint`, bật mặc định khi có khoá AI — AI chỉ đề xuất, `answercheck`
+  vẫn chấm từng từ nên sai không lọt), (3) dò song song toàn bộ từ cùng độ dài
+  (tới 12.000 từ, 400 giây/câu) khi hai lớp trên không xong. Đáp án đúng lưu vào
+  bank theo câu nên các vòng sau tức thì: bài test từ 0 lên **100/100 trong 38
+  giây** sau 2 lượt. Tắt bằng `"aihint": {"enabled": false}`.
 * Bài **nghe - chép** (type 1) được chấm theo tỉ lệ từ khớp nên thường 40–70%;
   ngưỡng pass là ~70% nên có bài phải chạy lại vài lần mới qua.
 * Các dạng còn lại (điền từ, sắp xếp, nối cặp, trắc nghiệm, điền ký tự) đạt 90–100

@@ -30,6 +30,8 @@ DEFAULTS: dict = {
     "jobs": 1,
     "turbo": False,
     "oracle": True,
+    "aihint": {"enabled": True},          # AI gợi ý từ cho câu giấu cả từ
+
     "fallback": "none",       # "ai" = khi API chết thì mở trình duyệt cho AI bấm
     "vision": {
         "provider": "",       # openai | gemini | anthropic (rỗng = đoán theo biến môi trường)

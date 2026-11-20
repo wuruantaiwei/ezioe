@@ -44,6 +44,15 @@ BANK_LOCK = threading.Lock()
 T_FILL = 3      # words dragged into a masked sentence / paragraph
 T_PAIR = 7      # matching pairs (left card | right card)
 T_CHOICE = 10   # multiple choice, usually listening
+AI_CONFIG: dict = {}
+
+
+def use_ai_hints(config: dict) -> None:
+    """Bật/tắt phần gợi ý bằng AI cho cả tiến trình (cli gọi lúc bắt đầu)."""
+    AI_CONFIG.clear()
+    AI_CONFIG.update(config or {})
+
+
 T_SPEAK = 12    # AI scored pronunciation (word)
 T_SPEAK_TEXT = 13  # AI scored pronunciation (sentence) - cùng hợp đồng với T_SPEAK
 SPEAK_TYPES = (T_SPEAK, T_SPEAK_TEXT)
@@ -203,8 +212,9 @@ def gap_sentence(question: dict) -> tuple[str, int]:
     """
     desc = str((question.get("Description") or {}).get("content") or "")
     own = str(question["content"]["content"] or "")
-    text = desc or own
-    hit = GAP.search(text) or GAP.search(own)
+    # Description có thể là URL file nghe: chỉ dùng khi nó thật sự có chỗ trống
+    text = desc if (desc and GAP.search(desc)) else own
+    hit = GAP.search(text)
     length = int(question.get("numTChar") or 0)
     if not hit:
         return text, length
@@ -672,6 +682,7 @@ class Session:
             "examKey": self.exam_key,
             "IPClient": "string",
             "deviceId": "string",
+            "gameId": self.game_id,
         }
 
     def _game(self, action: str, body: dict) -> dict:
@@ -769,6 +780,13 @@ class Session:
             values = ["True", "False"]
         if known:
             values = [known] + [v for v in values if v != known]
+        if len(values) > 24 and AI_CONFIG.get("aihint"):
+            # chỗ trống bị giấu cả từ: AI gợi ý vài từ, oracle vẫn chấm từng từ
+            from . import aihint
+
+            hints = aihint.candidates(question, AI_CONFIG, skip=values)
+            if hints:
+                values = hints + values
         best, best_point = values[0] if values else "", 0
         if not use_oracle or self.oracle_dead:
             return best, 0
@@ -956,11 +974,14 @@ def ftech_token() -> str:
     return json.loads(body)["data"]["token"]
 
 
-def speak_answer(question: dict, voice: str = "", token: str = "") -> tuple[str, int]:
+def speak_answer(question: dict, voice: str = "", token: str = "",
+                 game_token: str = "") -> tuple[str, int]:
     """Nộp audio cho một câu nói.
 
     Hợp đồng (dò từ SDK của IOE, 19/11/2026):
-      1. `POST /ioe/start_stream_v3` {reference_text, english_accent, extra_data}
+      0. `extra_data` phải đúng **game token** (JWT): server dùng nó để gắn bản
+       ghi với bài làm, thiếu thì mọi câu trả `point: 0` dù AI chấm 99.
+    1. `POST /ioe/start_stream_v3` {reference_text, english_accent, extra_data}
          -> {request_id, minio_link}
       2. `POST /vad-api.../vad-file` (multipart file) -> {is_silence}
       3. `POST /ioe/stop_stream_v3` (multipart file + request_id + extra_data="{}")
@@ -981,7 +1002,8 @@ def speak_answer(question: dict, voice: str = "", token: str = "") -> tuple[str,
     bearer = token or ftech_token()
     auth = {"Origin": "https://ioe.vn", "User-Agent": SPEAK_UA, "Authorization": "Bearer " + bearer}
     _status, body = _http(FTECH_STREAM, json.dumps({
-        "reference_text": text, "english_accent": "en-us", "extra_data": ""}).encode(),
+        "reference_text": text, "english_accent": "en-us",
+        "extra_data": game_token}).encode(),
         {"Content-Type": "application/json", **auth})
     try:
         request_id = (json.loads(body).get("data") or {}).get("request_id") or ""
@@ -992,7 +1014,7 @@ def speak_answer(question: dict, voice: str = "", token: str = "") -> tuple[str,
     vad_body, vad_type = _multipart({}, request_id + ".wav", wav)
     _http(FTECH_VAD, vad_body, {"Content-Type": vad_type, **auth})   # im lặng vẫn gửi
     body_bytes, content_type = _multipart({
-        "request_id": request_id, "reference_text": text, "extra_data": "{}",
+        "request_id": request_id, "reference_text": text, "extra_data": game_token,
         "english_accent": "en-us"}, request_id + ".wav", wav)
     _status, body = _http(FTECH_STOP, body_bytes, {"Content-Type": content_type, **auth})
     try:
@@ -1058,10 +1080,10 @@ def _attempt(
                 search = max(search, 400.0)     # phải dò cả từ: cần nhiều lượt thử
         if speaking and speaking.get("submit") and question["type"] in SPEAK_TYPES:
             value, point = speak_answer(question, str(speaking.get("voice") or ""),
-                                        speak_token)
+                                        speak_token, session.token)
             if value:                           # báo server biết đã nộp câu này
                 try:
-                    session.check(question, value, index, exam_count=1)
+                    point = session.check(question, value, index, exam_count=1) or point
                 except ApiError:
                     pass
         else:

@@ -197,6 +197,7 @@ def _run_account(user: str, password: str, config: dict, bank: dict, *,
     if budget and report.rounds_today(user) >= budget:
         print(f"{user}: đã đủ {budget} vòng hôm nay, bỏ qua", flush=True)
         return rows
+    games.use_ai_hints(config)
     client = _client(user, password)
     bil = client.balance() or {}
     print(f"== {user} | RUBY {bil.get('RUBY')} | coin {bil.get('goCoin')}", flush=True)

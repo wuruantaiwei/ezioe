@@ -1313,3 +1313,77 @@ def test_type_two_bank_key_uses_the_sentence():
                Description={"content": "A good ___ can change you."}, numTChar=6)
     assert games.qkey(first) != games.qkey(second)      # cùng "******" vẫn khác nhau
     assert games.qkey(first) == games.qkey(first)
+
+
+# ------------------------------------------------------- gợi ý đáp án bằng AI
+def _masked(sentence, num):
+    return q(type=games.T_SHAPE, content={"content": ""},
+             Description={"content": sentence}, numTChar=num)
+
+
+def test_aihint_keeps_only_right_length(monkeypatch):
+    from ioeauto import aihint, vision
+
+    monkeypatch.setattr(vision, "ask_text",
+                        lambda prompt, cfg: '{"candidates": ["affect", "renewable", "air"]}')
+    got = aihint.candidates(_masked("Some chemicals ___ the air quality.", 6),
+                            {"aihint": {"enabled": True}})
+    assert got == ["affect"]
+
+
+def test_aihint_accepts_plain_lines_and_dedupes(monkeypatch):
+    from ioeauto import aihint, vision
+
+    monkeypatch.setattr(vision, "ask_text", lambda prompt, cfg: "affect\neffect\naffect")
+    got = aihint.candidates(_masked("Some chemicals ___ the air.", 6),
+                            {"aihint": {"enabled": True}})
+    assert got == ["affect", "effect"]
+
+
+def test_aihint_skips_known_words(monkeypatch):
+    from ioeauto import aihint, vision
+
+    monkeypatch.setattr(vision, "ask_text", lambda prompt, cfg: '{"candidates": ["affect", "effect"]}')
+    got = aihint.candidates(_masked("Some chemicals ___ the air.", 6),
+                            {"aihint": {"enabled": True}}, skip=["affect"])
+    assert got == ["effect"]
+
+
+def test_aihint_off_by_config(monkeypatch):
+    from ioeauto import aihint, vision
+
+    calls = []
+    monkeypatch.setattr(vision, "ask_text", lambda p, c: calls.append(1) or '{"candidates": ["x"]}')
+    assert aihint.candidates(_masked("Some ___ air.", 3), {"aihint": {"enabled": False}}) == []
+    assert not calls
+
+
+def test_aihint_survives_ai_failure(monkeypatch):
+    from ioeauto import aihint, vision
+
+    def boom(prompt, cfg):
+        raise RuntimeError("mạng")
+
+    monkeypatch.setattr(vision, "ask_text", boom)
+    assert aihint.candidates(_masked("Some ___ air.", 3), {"aihint": {"enabled": True}}) == []
+
+
+def test_hints_are_tried_before_the_long_list(monkeypatch):
+    from ioeauto import games
+
+    class Fake(games.Session):
+        def __init__(self):
+            self.oracle_dead = False
+            self.truth_game = False
+            self.pool = []
+
+        def check(self, question, value, position, exam_count=None):
+            return 10 if value == "affect" else 0
+
+    games.use_ai_hints({"aihint": {"enabled": True}})
+    monkeypatch.setattr("ioeauto.aihint.candidates", lambda *a, **k: ["wrong", "affect"])
+    words = ["w%02d" % i for i in range(40)]          # danh sách dài -> kích hoạt AI
+    monkeypatch.setattr(games, "candidates", lambda *a, **k: list(words))
+    session = Fake()
+    best, point = session.answer(_masked("Some chemicals ___ the air.", 6), 1, {})
+    assert (best, point) == ("affect", 10)
