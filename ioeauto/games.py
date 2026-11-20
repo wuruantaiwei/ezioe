@@ -780,6 +780,19 @@ class Session:
             values = ["True", "False"]
         if known:
             values = [known] + [v for v in values if v != known]
+        if AI_CONFIG.get("aihint"):
+            from . import aihint
+
+            if heard:
+                fixed = aihint.refine(heard[0], AI_CONFIG)
+                if fixed:
+                    values = fixed + values
+            if question["type"] == T_FILL and not choices:
+                sizes = sizes_of(question)
+                guess = aihint.fill(str((question.get("Description") or {}).get("content") or ""),
+                                    sizes, AI_CONFIG)
+                if guess:
+                    values = guess + values
         if len(values) > 24 and AI_CONFIG.get("aihint"):
             # chỗ trống bị giấu cả từ: AI gợi ý vài từ, oracle vẫn chấm từng từ
             from . import aihint

@@ -1406,3 +1406,38 @@ def test_speak_answer_keeps_the_better_recording(monkeypatch):
                                     "game-jwt", "en-US-MichelleNeural")
     assert (rid, score) == ("rid-b", 92)
     assert len(seen) == 2                        # ghi 2 lần rồi giữ bản tốt hơn
+
+
+def test_aihint_refine_and_fill(monkeypatch):
+    from ioeauto import aihint, vision
+
+    monkeypatch.setattr(vision, "ask_text",
+                        lambda p, c: '{"text": "He goes to school every day."}'
+                        if "sửa" in p or "Câu tiếng Anh" in p else '{"words": ["affect"]}')
+    cfg = {"aihint": {"enabled": True}}
+    fixed = aihint.refine("he go to school every days", cfg)
+    assert fixed[0] == "He goes to school every day."      # bản có dấu câu lên đầu
+    assert "He goes to school every day" in fixed
+    assert aihint.fill("Some chemicals * the air.", [6], cfg) == ["affect"]
+    assert aihint.fill("Some chemicals * the air.", [7], cfg) == []      # sai độ dài
+
+
+def test_ai_refined_sentence_is_tried_first(monkeypatch):
+    from ioeauto import games, asr
+
+    class Fake(games.Session):
+        def __init__(self):
+            self.oracle_dead = False
+            self.truth_game = False
+            self.pool = []
+
+        def check(self, question, value, position, exam_count=None):
+            return 10 if value.endswith("day.") else 5
+
+    games.use_ai_hints({"aihint": {"enabled": True}})
+    monkeypatch.setattr(games, "heard_candidates", lambda question: ["he go to school every days"])
+    monkeypatch.setattr(asr, "rank_options", lambda *a: [])
+    monkeypatch.setattr("ioeauto.aihint.refine", lambda text, cfg: ["He goes to school every day."])
+    question = q(type=games.T_DICTATION, content={"content": ""})
+    best, point = Fake().answer(question, 1, {})
+    assert best == "He goes to school every day." and point == 10

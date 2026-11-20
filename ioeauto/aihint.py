@@ -94,3 +94,63 @@ def candidates(question: dict, config: dict, limit: int = MAX_HINTS,
         return []
     bad = {w.lower() for w in (skip or [])}
     return [w for w in _parse(raw, length, pattern) if w not in bad]
+
+
+REFINE = """Câu tiếng Anh sau do máy nghe tự động ghi lại, có thể sai chính tả hoặc
+thiếu từ. Hãy sửa lại cho đúng chính tả và ngữ pháp, giữ nguyên ý và độ dài xấp xỉ.
+Chỉ trả JSON: {{"text": "câu đã sửa"}}.
+
+Câu: {text}"""
+
+FILL = """Bạn là giáo viên tiếng Anh. Điền {count} chỗ trống (đánh dấu *) trong câu,
+mỗi chỗ đúng số chữ cái ghi kèm. Chỉ trả JSON:
+{{"words": ["từ1", "từ2"]}} theo đúng thứ tự chỗ trống.
+
+Câu: {sentence}
+Độ dài từng chỗ: {sizes}"""
+
+
+def refine(transcript: str, config: dict) -> list[str]:
+    """Bản sửa chính tả/ngữ pháp cho câu nghe được (dạng nghe - chép)."""
+    text = _clean(transcript)
+    if not text or not (config.get("aihint") or {}).get("enabled", True):
+        return []
+    try:
+        raw = vision.ask_text(REFINE.format(text=text), config)
+    except Exception:                        # noqa: BLE001
+        return []
+    start, end = raw.find("{"), raw.rfind("}")
+    fixed = ""
+    if start >= 0 and end > start:
+        try:
+            fixed = _clean(str((json.loads(raw[start:end + 1]) or {}).get("text") or ""))
+        except ValueError:
+            fixed = ""
+    fixed = fixed or _clean(raw)
+    out = []
+    for candidate in (fixed, fixed.rstrip("."), fixed.capitalize()):
+        if candidate and candidate.lower() != text.lower() and candidate not in out:
+            out.append(candidate)
+    return out[:3]
+
+
+def fill(sentence: str, sizes: list[int], config: dict) -> list[str]:
+    """Cả câu đã điền, do AI nghĩ (câu điền nhiều chỗ trống)."""
+    if not sizes or not (config.get("aihint") or {}).get("enabled", True):
+        return []
+    prompt = FILL.format(count=len(sizes), sentence=_clean(sentence), sizes=sizes)
+    try:
+        raw = vision.ask_text(prompt, config)
+    except Exception:                        # noqa: BLE001
+        return []
+    start, end = raw.find("{"), raw.rfind("}")
+    words: list[str] = []
+    if start >= 0 and end > start:
+        try:
+            words = [str(w) for w in (json.loads(raw[start:end + 1]) or {}).get("words") or []]
+        except ValueError:
+            words = []
+    words = [w.strip().lower() for w in words][:len(sizes)]
+    if len(words) != len(sizes) or any(len(w) != n for w, n in zip(words, sizes)):
+        return []
+    return ["|".join(words)]

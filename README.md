@@ -385,7 +385,11 @@ data/        session.json, answers.json, en10k.txt, words_alpha.txt
   (tới 12.000 từ, 400 giây/câu) khi hai lớp trên không xong. Đáp án đúng lưu vào
   bank theo câu nên các vòng sau tức thì: bài test từ 0 lên **100/100 trong 38
   giây** sau 2 lượt. Tắt bằng `"aihint": {"enabled": false}`.
-* Bài **nghe - chép** (type 1) được chấm theo tỉ lệ từ khớp nên thường 40–70%;
+* Bài **nghe - chép** (type 1): ASR (Vosk) nghe rồi **AI sửa chính tả/ngữ pháp**
+  trước khi nộp, bản thô vẫn để sau làm dự phòng. Bài **điền câu** (type 3) khi đề
+  không cho đáp án thì AI điền cả câu theo đúng độ dài từng chỗ, oracle chấm lại.
+* Bài nghe - chép được chấm theo tỉ lệ từ khớp nên trần vẫn thấp (40–70%), AI chỉ
+  vớt phần chính tả/ngữ pháp;
   ngưỡng pass là ~70% nên có bài phải chạy lại vài lần mới qua.
 * Các dạng còn lại (điền từ, sắp xếp, nối cặp, trắc nghiệm, điền ký tự) đạt 90–100
   nhờ đáp án server gửi kèm và oracle `answercheck`.
