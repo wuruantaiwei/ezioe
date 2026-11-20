@@ -202,6 +202,13 @@
   "seen": "2026-11-19 12:31:41",
   "type": 2
  },
+ "0726840775b01109": {
+  "answer": "green_|belt",
+  "content": "green_",
+  "point": 10,
+  "seen": "2026-11-20 07:30:47",
+  "type": 7
+ },
  "074686f50659b5b2": {
   "answer": "Social skills can be developed when a teen uses social media.",
   "content": "Social skills can be developed when a teen uses social media.",
@@ -1161,12 +1168,26 @@
   "seen": "2026-11-20 06:41:18",
   "type": 2
  },
+ "350c62258b951b17": {
+  "answer": "traffic_|jam",
+  "content": "traffic_",
+  "point": 10,
+  "seen": "2026-11-20 07:30:38",
+  "type": 7
+ },
  "35d8556a41025667": {
   "answer": "dress",
   "content": "Ao dai is our traditional _____. We wear it every Monday at school.",
   "point": 10,
   "seen": "2026-11-19 09:40:44",
   "type": 10
+ },
+ "363f883ab739bb38": {
+  "answer": "public_|transport",
+  "content": "public_",
+  "point": 10,
+  "seen": "2026-11-20 07:30:56",
+  "type": 7
  },
  "369f12a5d74c22e7": {
   "answer": "n",
@@ -1398,6 +1419,13 @@
   "point": 25,
   "seen": "2026-11-19 01:31:05",
   "type": 1
+ },
+ "3eabc811a6cc33f7": {
+  "answer": "wet_|market",
+  "content": "wet_",
+  "point": 10,
+  "seen": "2026-11-20 07:30:50",
+  "type": 7
  },
  "3f06ff400d649f06": {
   "answer": "pigs",
@@ -2204,6 +2232,13 @@
   "seen": "2026-11-19 07:11:40",
   "type": 1
  },
+ "5c52fa1645051a29": {
+  "answer": "rush_|hour",
+  "content": "rush_",
+  "point": 10,
+  "seen": "2026-11-20 07:30:44",
+  "type": 7
+ },
  "5c54b0be262177bf": {
   "answer": "iving|oney|rice|goda|brating",
   "content": "One of our special customs during Tet is (1) g***** and receiving “lucky money,” or li xi in Vietnamese. On the first days of the New Year, older family members give red envelopes with (2) m**** inside to children and young adults to wish them luck, health, and success. The envelopes are often decorated with symbols of good fortune, like flowers or traditional designs. Another custom is gathering together as a family to share a big meal. We prepare special dishes like sticky (3) **** cakes, boiled chicken, and fruit to enjoy together. This meal is important because it helps us start the New Year with happiness and unity. Some families also go to the (4) pa**** or a temple to pray for blessings and good luck. These customs make Tet a warm and meaningful time for everyone, bringing family members closer together and (5) cele******* the hope of a happy year ahead.",
@@ -2699,6 +2734,13 @@
   "content": "Solve",
   "point": 10,
   "seen": "2026-11-19 12:05:13",
+  "type": 7
+ },
+ "700c155b90dcd5f0": {
+  "answer": "urban_|sprawl",
+  "content": "urban_",
+  "point": 10,
+  "seen": "2026-11-20 07:31:00",
   "type": 7
  },
  "70435bd82a325107": {
@@ -4718,10 +4760,10 @@
   "type": 1
  },
  "c9cbc6e9cca4defb": {
-  "answer": "She has|a good|command|of|spoken English.",
+  "answer": "So quickly|has the town|grown|that even|local taxi drivers|sometimes get|lost.",
   "content": "",
   "point": 10,
-  "seen": "2026-11-20 07:06:18",
+  "seen": "2026-11-20 07:30:38",
   "type": 5
  },
  "c9f2b66d2b06957a": {
