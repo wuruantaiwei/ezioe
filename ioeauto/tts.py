@@ -25,6 +25,12 @@ def _cache_key(text: str, voice: str) -> str:
     return hashlib.sha1(f"{voice}|{text}".encode()).hexdigest()[:20]
 
 
+def _split_voice(voice: str) -> tuple[str, str]:
+    """Tách "en-US-AriaNeural|-10%" thành (tên giọng, tốc độ)."""
+    name, _, rate = (voice or "").partition("|")
+    return name.strip(), rate.strip()
+
+
 def _edge(text: str, voice: str) -> bytes:
     """Giọng neural của Microsoft qua edge-tts (cần mạng) -> WAV 16 kHz mono."""
     import asyncio
@@ -34,7 +40,8 @@ def _edge(text: str, voice: str) -> bytes:
     import soundfile as sf
 
     async def collect() -> bytes:
-        stream = edge_tts.Communicate(text, voice).stream()
+        name, speed = _split_voice(voice)
+        stream = edge_tts.Communicate(text, name, rate=speed or "+0%").stream()
         chunks = b""
         async for part in stream:
             if part["type"] == "audio":
@@ -104,7 +111,7 @@ def speak(text: str, voice: str = "") -> bytes:
     """
     if not text.strip():
         return b""
-    if NEURAL_RE.match(voice or ""):
+    if NEURAL_RE.match(_split_voice(voice)[0]):
         os.makedirs(CACHE, exist_ok=True)
         stored = os.path.join(CACHE, _cache_key(text, voice) + ".wav")
         if os.path.exists(stored):

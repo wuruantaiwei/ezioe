@@ -1387,3 +1387,22 @@ def test_hints_are_tried_before_the_long_list(monkeypatch):
     session = Fake()
     best, point = session.answer(_masked("Some chemicals ___ the air.", 6), 1, {})
     assert (best, point) == ("affect", 10)
+
+
+def test_speak_answer_keeps_the_better_recording(monkeypatch):
+    from ioeauto import games, tts
+
+    monkeypatch.setattr(tts, "speak", lambda text, voice="": b"RIFF")
+    seen = []
+
+    def fake_record(text, voice, extra, bearer):
+        seen.append(voice)
+        return (("rid-a", 60) if voice.endswith("-20%") else ("rid-b", 92))
+
+    monkeypatch.setattr(games, "_record", fake_record)
+    monkeypatch.setattr(games, "ftech_token", lambda: "tok")
+    question = q(type=games.T_SPEAK, content={"content": "Surgeon"})
+    rid, score = games.speak_answer(question, "en-US-AriaNeural|-20%", "",
+                                    "game-jwt", "en-US-MichelleNeural")
+    assert (rid, score) == ("rid-b", 92)
+    assert len(seen) == 2                        # ghi 2 lần rồi giữ bản tốt hơn

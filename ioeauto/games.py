@@ -975,35 +975,49 @@ def ftech_token() -> str:
 
 
 def speak_answer(question: dict, voice: str = "", token: str = "",
-                 game_token: str = "") -> tuple[str, int]:
-    """Nộp audio cho một câu nói.
+                 game_token: str = "", alt_voice: str = "") -> tuple[str, int]:
+    """Nộp audio cho một câu nói, trả (request_id, điểm chấm của AI).
 
     Hợp đồng (dò từ SDK của IOE, 19/11/2026):
-      0. `extra_data` phải đúng **game token** (JWT): server dùng nó để gắn bản
-       ghi với bài làm, thiếu thì mọi câu trả `point: 0` dù AI chấm 99.
-    1. `POST /ioe/start_stream_v3` {reference_text, english_accent, extra_data}
+      0. `extra_data` phải đúng **game token** (JWT): server dùng nó gắn bản ghi
+         với bài làm, thiếu thì mọi câu trả `point: 0` dù AI chấm 99.
+      1. `POST /ioe/start_stream_v3` {reference_text, english_accent, extra_data}
          -> {request_id, minio_link}
       2. `POST /vad-api.../vad-file` (multipart file) -> {is_silence}
-      3. `POST /ioe/stop_stream_v3` (multipart file + request_id + extra_data="{}")
+      3. `POST /ioe/stop_stream_v3` (multipart file + request_id + extra_data)
          -> {data:{score_data:{accuracy_score}}}
       4. `answercheck` với `ans` = {questId, examCount, ans: request_id, position}
 
-    `ans` **không phải** audio base64 mà là `request_id` phía server.
-    Trả (request_id, điểm chấm của AI; 0 nếu lỗi).
+    `ans` **không phải** audio base64 mà là `request_id` phía server. Game cho
+    ghi 2 lần nên `alt_voice` cho phép thu 2 bản và giữ bản điểm cao hơn.
     """
     from . import tts
 
     text = str(question["content"]["content"] or "").strip()
     if not text:
         return "", 0
+    extra = game_token or "{}"          # multipart bỏ field rỗng -> lỗi 4004
+    bearer = token or ftech_token()
+    best: tuple[str, int] = ("", 0)
+    for option in (voice, alt_voice):
+        if not option and best[0]:
+            continue
+        got = _record(text, option, extra, bearer)
+        if got[1] > best[1]:
+            best = got
+    return best
+
+
+def _record(text: str, voice: str, extra: str, bearer: str) -> tuple[str, int]:
+    from . import tts
+
     wav = tts.speak(text, voice)
     if not wav:
         return "", 0
-    bearer = token or ftech_token()
-    auth = {"Origin": "https://ioe.vn", "User-Agent": SPEAK_UA, "Authorization": "Bearer " + bearer}
+    auth = {"Origin": "https://ioe.vn", "User-Agent": SPEAK_UA,
+            "Authorization": "Bearer " + bearer}
     _status, body = _http(FTECH_STREAM, json.dumps({
-        "reference_text": text, "english_accent": "en-us",
-        "extra_data": game_token}).encode(),
+        "reference_text": text, "english_accent": "en-us", "extra_data": extra}).encode(),
         {"Content-Type": "application/json", **auth})
     try:
         request_id = (json.loads(body).get("data") or {}).get("request_id") or ""
@@ -1012,9 +1026,9 @@ def speak_answer(question: dict, voice: str = "", token: str = "",
     if not request_id:
         return "", 0
     vad_body, vad_type = _multipart({}, request_id + ".wav", wav)
-    _http(FTECH_VAD, vad_body, {"Content-Type": vad_type, **auth})   # im lặng vẫn gửi
+    _http(FTECH_VAD, vad_body, {"Content-Type": vad_type, **auth})      # im lặng vẫn gửi
     body_bytes, content_type = _multipart({
-        "request_id": request_id, "reference_text": text, "extra_data": game_token,
+        "request_id": request_id, "reference_text": text, "extra_data": extra,
         "english_accent": "en-us"}, request_id + ".wav", wav)
     _status, body = _http(FTECH_STOP, body_bytes, {"Content-Type": content_type, **auth})
     try:
@@ -1080,7 +1094,8 @@ def _attempt(
                 search = max(search, 400.0)     # phải dò cả từ: cần nhiều lượt thử
         if speaking and speaking.get("submit") and question["type"] in SPEAK_TYPES:
             value, point = speak_answer(question, str(speaking.get("voice") or ""),
-                                        speak_token, session.token)
+                                        speak_token, session.token,
+                                        str(speaking.get("alt_voice") or ""))
             if value:                           # báo server biết đã nộp câu này
                 try:
                     point = session.check(question, value, index, exam_count=1) or point
